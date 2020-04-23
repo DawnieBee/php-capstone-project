@@ -1,5 +1,16 @@
 <?php
 
+/*
+ * ********************* * 
+ * Dawn Baker            *
+ * Intro PHP             *
+ * Assignment 1          *
+ * for Steve George      *
+ * ********************* *
+ */
+
+$title = "Honey...We're Home";
+
 require __DIR__ . '/../includes/header.inc.php';
 
 ?>
@@ -12,7 +23,7 @@ require __DIR__ . '/../includes/header.inc.php';
              height="603" /> 
   </div>
       <div class="hero_text1 curved_borders">
-        <h2>Honey...We're Home</h2>
+        <h2><?=$title?></h2>
         <p>
           A Web site for people who are looking to move to Winnipeg and want to 
           know the neighbourhoods to decide where they want to live.

@@ -1,11 +1,11 @@
 <!doctype html>
 <!--  
-/*  
- * Dawn Baker
- * Intro PHP
- * Assignment 1
- * for Steve George
- */
+ * ********************* * 
+ * Dawn Baker            *
+ * Intro PHP             *
+ * Assignment 1          *
+ * for Steve George      *
+ * ********************* *
 --> 
 <html lang="en">
   <head>

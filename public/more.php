@@ -1,4 +1,13 @@
 <?php
+/*
+ * ********************* * 
+ * Dawn Baker            *
+ * Intro PHP             *
+ * Assignment 1          *
+ * for Steve George      *
+ * ********************* *
+ */
+
 
 require __DIR__ . '/../includes/header.inc.php';
 
