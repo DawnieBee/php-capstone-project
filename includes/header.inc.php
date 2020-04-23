@@ -7,9 +7,10 @@
  * for Steve George      *
  * ********************* *
 --> 
+
 <html lang="en">
   <head>
-    <title>Honey...We're Home home page</title>
+    <title><?=$title?></title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="https://fonts.googleapis.com/css?family=Caveat:700&display=swap" rel="stylesheet">
@@ -63,7 +64,7 @@
                 <img src="images/main_logo150x170.png" width="150" height="170" alt="Honey I'm Home Logo" />  
             </picture>
           </div>
-          <h1 class="title_text">Honey...We're Home</h1>
+          <h1 class="title_text"><?=$title?></h1>
           <nav id="main_nav">
             <ul>
               <li class="curved_borders"><a class="active" href="index.php">Home</a></li>

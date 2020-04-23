@@ -7,6 +7,7 @@
  * for Steve George      *
  * ********************* *
  */
+$title = "Areas";
 
 require __DIR__ . '/../includes/header.inc.php';
 

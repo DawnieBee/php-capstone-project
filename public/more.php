@@ -7,7 +7,7 @@
  * for Steve George      *
  * ********************* *
  */
-
+$title = "Community Services";
 
 require __DIR__ . '/../includes/header.inc.php';
 

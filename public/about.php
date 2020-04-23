@@ -7,6 +7,9 @@
  * for Steve George      *
  * ********************* *
 */
+
+$title = "About Us";
+
 require __DIR__ . '/../includes/header.inc.php';
 
 ?>
