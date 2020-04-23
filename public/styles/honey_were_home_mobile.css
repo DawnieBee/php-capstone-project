@@ -1,0 +1,199 @@
+/*
+//////////////////////////////////////////
+//                                      //
+//     HTML5/CSS3 Capstone Project      //
+//                 by                   //
+//             Dawn Baker               //
+//        Instructor Brent Scott        //
+//                                      //
+////////////////////////////////////////// 
+*/
+body{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  margin: 0;
+}
+#wrapper{
+  margin: 0 auto;
+  background: linear-gradient(#c7e0e8,#e1e6e6);
+  position: relative;
+  border-radius: 0 0 15px 15px;
+}
+#wrapper{
+  width: 100%; 
+}
+.header_container{
+  display: block;
+}
+header{
+  width: 100%;
+  background-color: #eee;
+  height: 180px;
+  box-sizing: border-box;
+}
+.title_text{
+  font-family: 'Caveat', cursive;
+  font-weight: 700;
+  font-size: 3em;
+  float: right;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: #ff0;
+  text-shadow: 1px 2px 2px #000;
+  z-index: 1;
+}
+#logo img{
+  width: 90px;
+  height: 110px;
+}
+#logo{
+  position: absolute;
+  top: 20px;
+  left: 150px;
+  z-index: 1;
+}
+#main_nav{
+  left: 0;
+  display: block;
+  position: absolute;
+}
+#main_nav ul{
+  margin-top: 0;
+  margin-left: -50px;
+}
+#main_nav ul li{
+  float: left;
+  clear: both;
+  padding: 9px;
+  border-radius: 0;
+  background-color: #333;
+  width: 75px;
+  text-align: center
+  }
+#main_nav ul li a{
+  text-decoration: none;
+  color: #ff0;
+  
+}
+/*  this is section area of home page */
+
+#hero_container{
+  padding: 0;
+  margin-left: 0;
+}
+#hero_container img{
+  width: 100%;
+  height: auto;
+}
+div .hero_text1, .hero_text2{
+  padding: 20px;
+}
+.text_container{
+  padding: 20px;
+}
+/* this is the more page for the table  */
+table.areas{
+  border: 2px solid #333;
+  border-spacing: 0px;
+  border-collapse: collapse;
+  width: 500px;
+  color: #333;
+  margin: 0 auto;
+}
+table.areas caption{
+  background-color: #333;
+  color: #ff0;
+  font-size: 1em;
+  padding: 7px;
+}
+table.areas td, table.areas th{
+  border: 1px solid #333;
+  padding: 3px;
+}
+table.areas th, table.areas tr:first-child th:first-child{
+  text-align: left;
+  font-weight: 700;
+}
+#table_container{
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+#form_container{
+  width: 100%;
+}
+/*this is for the areas page  */
+div .show_me{
+  padding-top: 20px;
+  display: block;
+  height: auto;
+  
+}
+#container h2{
+  text-align: left;
+}
+div .box{
+  width: 100%;
+  height: auto;
+}
+
+/*  footer styling */
+footer{
+  width: 100%;
+}
+.footer_nav{
+  display: block;
+  text-align: left;
+}
+.footer_nav ul{
+  list-style-type: none;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+.footer_nav ul li{
+  padding: 9px;
+  background-color: #333;
+  width: 100%;
+  box-sizing: border-box;
+}
+.footer_nav ul li a{
+  text-decoration: none;
+  text-decoration: none;
+  color: #ff0;
+}
+
+@media screen and (max-width: 579px){
+  .title_text{
+  font-family: 'Caveat', cursive;
+  font-weight: 700;
+  font-size: 2em;
+  float: right;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: #ff0;
+  text-shadow: 1px 2px 2px #000;
+  z-index: 1;
+  }
+  #logo img{
+    width: 90px;
+    height: 110px;
+  }
+  #logo{
+    position: absolute;
+    top: 20px;
+    left: 150px;
+    z-index: 1;
+  }
+}
+
+
+
+
+
+
+
+

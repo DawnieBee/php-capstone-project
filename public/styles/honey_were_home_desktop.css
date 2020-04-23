@@ -1,0 +1,307 @@
+/*
+//////////////////////////////////////////
+//                                      //
+//     HTML5/CSS3 Capstone Project      //
+//                 by                   //
+//             Dawn Baker               //
+//        Instructor Brent Scott        //
+//                                      //
+////////////////////////////////////////// 
+*/
+body{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  margin: 0;
+}
+#wrapper{
+  width: 960px;
+  margin: 0 auto;
+  background: linear-gradient(#c7e0e8,#e1e6e6);
+  position: relative;
+  border-radius: 0 0 15px 15px;
+  height: auto;
+}
+
+.curved_borders{
+  border-radius: 15px;
+}
+.boxshadow{
+  box-shadow: 0 1px 3px 4px #bababb;
+}
+/*    header container styling  */
+
+header{
+  position: relative;
+  max-width: 960px;
+  height: 180px;
+  background-color: #eee;
+}
+#logo{
+  position: absolute;
+  top: 0rem;
+  left: 20px;
+  z-index: 1;
+  width: 150px;
+  height: 170px;
+}
+.title_text{
+  font-family: 'Caveat', cursive;
+  font-weight: 700;
+  font-size: 4em;
+  float: right;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: #ff0;
+  text-shadow: 1px 2px 2px #000;
+  z-index: 1;
+}
+/* Styles for navigation */
+#main_nav{
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  float: right;
+  right: 20px;
+  z-index: 1;
+}
+nav ul{
+  list-style-type: none;
+}
+nav ul li{
+  float: left;
+  clear: right;
+  margin-left: 12px;
+  width: 75px;
+  text-align: center;
+  background-color: #333;
+  padding: 8px;
+  -webkit-transition-duration: 0.6s;
+  transition-duration: 0.6s;
+  -webkit-transform: scale(1);
+  transform: scale(1)
+}
+nav ul li:hover{
+  width: 100px;
+  border-radius: 5px; 
+  -webkit-transform: scale(1.1,1.1);
+  transform: scale(1.1,1.1);
+}
+nav ul li a{
+  text-decoration: none;
+  color: #ff0;
+}
+section{
+	max-width: 960px;
+	min-height: 450px;
+}
+
+/*home page styling */
+#hero_container{
+  padding: 0;  
+  width: 100%;
+}
+#hero_container img{
+  width: 100%;
+  height: auto;
+  box-sizing: border-box;
+}
+.hero img{
+  background-image: url(images/forks_wpg_hero.jpg);
+  position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 960px;
+  height: 603px;
+  opacity: 0.8;
+}
+.hero_text1{
+  font-size: 1rem;
+  text-align: center;
+  width: 400px;
+  background-color: rgba(0,0,0,.1);
+  color: #fff;
+  z-index: 1;
+  text-shadow: 2px 2px 5px #000;
+  left: 20px;
+  top: 205px;
+  padding: 5px;
+  position: absolute;
+}
+.hero_text2{
+  font-size: 1rem;
+  text-align: center;
+  width: 400px;
+  background-color: rgba(0,0,0,.1);
+  color: #fff;
+  z-index: 1;
+  text-shadow: 2px 2px 5px #000;
+  right: 20px;
+  top: 390px;
+  padding: 5px;
+  position: absolute;
+}
+
+/*end of home page styling */
+
+/* areas page styling */
+#stjames{
+  margin-left: -36px;
+} 
+.box:hover{
+  opacity: 70%;
+}
+.show_me{
+  background-color: #eee;
+  border: 1px solid #eee;
+  width: 200px;
+  height: 200px;
+  padding: 10px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: none;
+}
+.box:hover .show_me{
+  display: block;
+}
+/* end of areas page styling */
+
+/*more page styling  */
+#table_container{
+  margin: 20px;
+}
+table.areas{
+  border: 2px solid #333;
+  border-spacing: 0px;
+  border-collapse: collapse;
+  width: 700px;
+  color: #333;
+  margin: 0 auto;
+}
+table.areas caption{
+  background-color: #333;
+  color: #ff0;
+  font-size: 1.5em;
+  padding: 7px;
+}
+table.areas td, table.areas th{
+  border: 1px solid #333;
+  padding: 3px;
+}
+table.areas th, table.areas tr:first-child th:first-child{
+  text-align: left;
+  font-weight: 700;
+}
+
+/*  this is the form styling  */
+#form_container{
+  margin: 20px;
+}
+#form_container h3{
+  text-align: center;
+}
+form fieldset{
+  width: 400px;
+  border: 1px solid #333;
+  margin: 0 auto;
+  font-size: 0.9em;
+}
+form legend{
+  background-color: #333;
+  color: #ff0;
+  width: 45px;
+  text-align: center;
+  padding: 6px;
+  border: 1px solid #333;
+  border-radius: 15px;
+  box-shadow: 0 1px 1px rgba(0,0,0,.6);
+}
+form label{
+  clear: both;
+  width: 130px;
+  display: block;
+  float: left;
+}
+form input + label{
+  float: none;
+  display: inline;
+  width: auto;
+}
+form input[type="submit"]{
+  margin-left: 25em;
+}
+
+p .submit_buttons input{
+  margin-left: 20px;
+}
+/* end of form styling */
+
+#events_container{
+  border: 1px solid #333;
+  padding: 20px;
+  margin: 20px;
+}
+/* end of more page styling */ 
+
+/*  footer styling */
+
+footer{
+  background-color: #eee;
+  height: 80px;
+  position: relative;
+  border-radius: 0 0 15px 15px;
+}
+.footer_nav{
+  display: inline-block;
+  width: 100%;
+}
+.footer_nav ul{
+  list-style-type: none;
+}
+.footer_nav ul li{
+  float: left;
+  width: 25%;
+  box-sizing: border-box;
+  text-align: center;
+  color: #fff;
+}
+.footer_nav ul li a{
+  text-decoration: none;
+  color: #000; 
+  font-weight: 700;
+}
+.clearfix::after{
+  content: "";
+  clear: both;
+}
+
+@media screen (min-width: 768px) and (max-width: 960px){
+  #wrapper{
+    width: 100%;
+  }
+}
+
+
+
+
+
+
+
+
+
+@media (max-width:977px){
+  #wrapper {
+	width: 100%;
+	-moz-border-end-width: 100%;
+  }
+	
+  #logo picture img {
+	
+  }
+  #hero_container .hero img {
+    
+  }
+
+
+}
