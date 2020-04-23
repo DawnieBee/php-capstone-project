@@ -1,11 +1,9 @@
 <!--  
-/**   
- * Dawn Baker
- * Intro PHP
- * Assignment 1
- * for Steve George
+/* 
+ * Dawn Baker            
+ * Intro PHP             
+ * Assignment 1          
  */
-/
 --> 
 <!--      this is is the footer content  -->
       <footer>

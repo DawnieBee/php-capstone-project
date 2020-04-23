@@ -1,17 +1,16 @@
 <?php
 
-/*
- * ********************* * 
- * Dawn Baker            *
- * Intro PHP             *
- * Assignment 1          *
- * for Steve George      *
- * ********************* *
+/* 
+ * Dawn Baker            
+ * Intro PHP             
+ * Assignment 1          
  */
 
 $title = "Honey...We're Home";
 
-
+if($title == "Honey...We're Home") {
+    
+}
 
 require __DIR__ . '/../includes/header.inc.php';
 

@@ -1,12 +1,10 @@
 <?php
-/*
- * ********************* * 
- * Dawn Baker            *
- * Intro PHP             *
- * Assignment 1          *
- * for Steve George      *
- * ********************* *
+/* 
+ * Dawn Baker            
+ * Intro PHP             
+ * Assignment 1          
  */
+
 $title = "Areas";
 
 require __DIR__ . '/../includes/header.inc.php';
