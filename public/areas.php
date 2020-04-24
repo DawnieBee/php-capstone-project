@@ -10,28 +10,6 @@ $title = "Areas";
 require __DIR__ . '/../includes/header.inc.php';
 
 ?>
-     
-    <style>      
-/*      main content  */
-      
-      h2{
-        text-align: center;
-      } 
-      /* main container for the boxes */
-      #container{
-        margin-top: 20px;
-        margin-bottom: 30px;
-      }
-      .box{
-        display: block;
-        position: relative;
-        width: 600px;
-        left: 20px;
-        margin-bottom: 20px;
-      }
-
-    </style>
-
       <section>
        
         <div id="container" class="clearfix">

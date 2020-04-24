@@ -10,27 +10,7 @@ $title = "About Us";
 require __DIR__ . '/../includes/header.inc.php';
 
 ?>
-    <style>
-    
-/*      main content  */
-      
-      section{
-        min-height: 450px;
-        width: 100%;
-      }
-      section h1, h2, h3, p{
-        margin: 10px 20px 5px 20px;
-        line-height: 1.4em;
-      }
-      .floated{
-        float: right;
-        margin: 30px 20px 15px 20px;
-      }
-
-    </style>
-
-    
-      <section class="clearfix">
+     <section class="clearfix">
         <h2>Winnipeg</h2>
         <p>
           

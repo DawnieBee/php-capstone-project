@@ -8,10 +8,6 @@
 
 $title = "Honey...We're Home";
 
-if($title == "Honey...We're Home") {
-    
-}
-
 require __DIR__ . '/../includes/header.inc.php';
 
 ?>

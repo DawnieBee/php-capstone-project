@@ -11,22 +11,6 @@ $title = "Community Services";
 require __DIR__ . '/../includes/header.inc.php';
 
 ?> 
-    <style>
-
-      /*  main content  */
-      
-      section{
-        min-height: 450px;
-      }
-      h2, h3, p{
-        padding: 20px;
-        margin: 0 auto;
-      }
-      /*   styles for the table  */
-
-
-    </style>
-
       <section>
         <h2>Community Services</h2>
         <p>

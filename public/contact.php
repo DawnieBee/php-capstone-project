@@ -11,65 +11,6 @@ $title = "Contact Us";
 require __DIR__ . '/../includes/header.inc.php';
 
 ?> 
-<!-- style content for contact page     -->
-    <style>
-      
-      /*  main content  */
-      
-      h2, h3, address, p{
-        padding: 20px;
-        margin: 0 auto; 
-      }
-      #form_container{
-        position: relative;
-        padding: 20px;
-      }
-      form legend{
-        background-color: #333;
-        color: #ff0;
-        width: 88px;
-        text-align: left;
-        padding: 6px;
-        border: 1px solid #333;
-        border-radius: 15px;
-        box-shadow: 0 1px 1px rgba(0,0,0,.6);
-      }
-      form label{
-        clear: both;
-        width: 130px;
-        display: block;
-        float: left;
-      }
-      form fieldset{
-        width: 500px;
-        border: 1px solid #333;
-        margin-bottom: 20px;
-        font-size: 0.9em;
-        border-radius: 15px;
-      }
-      form input[type="text"],
-      form input[type="email"],
-      form input[type="tel"]{
-        border: 1px solid #000;
-        width: 200px;
-        background-color: #fff;
-        font-size: 1.1em;
-        -webkit-transition: all .3s ease-in-out;
-        transition: all .3s ease-in-out;
-        box-shadow: inset 1px 1px 2px rgba(0,0,0,.5);
-      }
-      datalist{
-        float: left;
-        display: none;
-      }
-      form input:hover{
-        background-color: #ffb;
-        box-shadow: 0 0 6px #ccc;
-      }
-      
-    </style> 
-
-    
       <section>
         
         <h2>Honey...We're Home</h2>
