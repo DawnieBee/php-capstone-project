@@ -1,10 +1,9 @@
 <?php
-/* 
- * Dawn Baker            
- * Intro PHP             
- * Assignment 1          
- */
 
+ini_set('display_errors', 1);
+ini_set('error_reporting', E_ALL);
+
+define('ENV', 'DEVELOPMENT'); // DEVELOPMENT (LOCAL) OR PRODUCTION (SALSA)  or TESTING
 // start a session 
 // this allows us to save data and access it on another page IF that 
 // page has loaded this config file
@@ -35,10 +34,28 @@ if(isset($_SESSION['post'])) {
 // define the constant GST, set it's value to 0.5
 define('GST', 0.5);
 
-// define DB connection parameters
-define('DB_USER', 'web_user');
-define('DB_PASS', 'mypass');
+// Define DB connection parameters
+if(ENV === 'DEVELOPMENT') {
+    define('DB_DSN', 'mysql:host=localhost;dbname=neighborhoods_db');
+    define('DB_USER', 'root');
+    define('DB_PASS', '');
+}
+
+if(ENV === 'PRODUCTION') {
+    define('DB_DSN', 'mysql:host=localhost;dbname=wdd2');
+    define('DB_USER', 'wdd2');
+    define('DB_PASS', 'hgf43');
+}
 
 
+// Connect to MySQL
+
+// mysqli
+// PDO
+
+// resource/object
+$dbh = new PDO(DB_DSN, DB_USER, DB_PASS);
+// Must set PDO to show errors, or it will fail silently
+$dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 require 'functions.php';
