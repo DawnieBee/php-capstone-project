@@ -99,7 +99,7 @@ require __DIR__ . '/../config.php';
       form legend{
         background-color: #333;
         color: #ff0;
-        width: 88px;
+        width: 130px;
         text-align: left;
         padding: 6px;
         border: 1px solid #333;
