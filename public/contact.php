@@ -3,7 +3,7 @@
 /* 
  * Dawn Baker            
  * Intro PHP             
- * Assignment 1          
+ * Assignment 2         
  */
 
 $title = "Contact Us";

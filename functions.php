@@ -2,7 +2,7 @@
 /* 
  * Dawn Baker            
  * Intro PHP             
- * Assignment 1          
+ * Assignment 2         
  */
 
 /**
