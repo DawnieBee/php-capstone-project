@@ -85,12 +85,15 @@ require __DIR__ . '/../config.php';
     <!-- style content for contact page -->
     <?php if($title == "Contact Us") : ?>
     <style>
-      
-      /*  main content  */
-      
       h2, h3, address, p{
         padding: 20px;
         margin: 0 auto; 
+      }
+      .required:before {
+        content: "*";
+        padding-right:; 5px;
+        color: #900;
+        font-weight: 700;
       }
       #form_container{
         position: relative;
