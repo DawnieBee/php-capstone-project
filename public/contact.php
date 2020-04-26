@@ -59,11 +59,26 @@ require __DIR__ . '/../includes/header.inc.php';
                 <input list="area" name="area" />
               </label>
               <datalist id="area">
-                <option value="St James">St James</option>
-                <option value="Elmwood">Elmwood</option>
+                <option value="Old Kildonan">Old Kildonan</option>
+                <option value="Point Douglas">Point Douglas</option>
+                <option value="Mynarski">Mynarski</option>
                 <option value="Downtown">Downtown</option>
+                <option value="North Kildonan">North Kildonan</option>
+                <option value="East Kildonan">East Kildonan</option>
+                <option value="Elmwood">Elmwood</option>
                 <option value="Transcona">Transcona</option>
                 <option value="St Boniface">St Boniface</option>
+                <option value="Ft Rouge">Ft Rouge</option>
+                <option value="Ft Garry">Ft Garry</option>
+                <option value="River Heights">River Heights</option>
+                <option value="St Vital">St Vital</option>
+                <option value="St Norbert">St Norbert</option>
+                <option value="Whyteridge">Whyteridge</option>
+                <option value="Tuxedo">Tuxedo</option>
+                <option value="Charleswood">Charleswood</option>
+                <option value="St Charles">St Charles</option>
+                <option value="St James">St James</option>
+                <option value="Brooklands/Weston">Brooklands/Weston</option>
               </datalist>
             </p> 
           </fieldset>
