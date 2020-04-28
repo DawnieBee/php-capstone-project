@@ -57,6 +57,15 @@ if(empty($_POST['password'])) {
 if(empty($_POST['confirm_password'])) {
     $errors['confirm_password'] = 'Confirm Password is a required field';
 } 
-
-
 dd($errors);
+// saving errros into the $_SESSION array 
+if(count($errors) > 0) {
+    // add the $errors to the SESSION
+    $_SESSION['errors'] = $errors;
+    $_SESSION['post'] = $_POST;
+    // redirect back to contact page registration form
+    header("Location: contact.php");
+    die;
+}
+
+
