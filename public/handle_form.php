@@ -10,3 +10,8 @@
 
 require __DIR__ . '/../config.php';
 
+session_start();
+
+
+// empty $errors array
+$errors = [];
