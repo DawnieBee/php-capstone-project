@@ -4,6 +4,9 @@
  * Intro PHP             
  * Assignment 2          
  */
+/**
+ * registration success page
+ */
 
 $title = "Registration Success!";
 
