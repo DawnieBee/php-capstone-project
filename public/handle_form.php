@@ -71,5 +71,3 @@ if(count($errors) > 0) {
     header("Location: contact.php");
     die;
 }
-
-
