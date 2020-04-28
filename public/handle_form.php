@@ -37,9 +37,10 @@ if(empty($_POST['phone_num'])) {
     $errors['phone_num'] = 'Phone Number is a required field';
 } elseif(!is_numeric($_POST['phone_num'])) {
     $errors['phone_num'] = 'Phone Number must be numeric, no dashes or spaces';
-} elseif(mb_strlen($_POST['phone_num']) < 10) {
-    $errors['phone_num'] = 'Phone Number must include area code';
-}
+} 
+// elseif(mb_strlen($_POST['phone_num']) < 10) {
+//     $errors['phone_num'] = 'Phone Number must include area code';
+// }
 if(empty($_POST['address'])) {
     $errors['address'] = 'Address is a required field';
 } 
