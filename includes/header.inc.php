@@ -7,9 +7,7 @@
  */
 
 require __DIR__ . '/../config.php';
-?>
-
-<!doctype html>
+?><!doctype html>
 
 <html lang="en">
 <head>
@@ -89,6 +87,9 @@ require __DIR__ . '/../config.php';
         padding: 20px;
         margin: 0 auto; 
       }
+      .errors {
+        color: #f00;
+      }
       .required:before {
         content: "*";
         padding-right:; 5px;
@@ -142,6 +143,34 @@ require __DIR__ . '/../config.php';
         box-shadow: 0 0 6px #ccc;
       } 
     </style> 
+    <?php endif; ?>
+    <?php if($title === "Registration Success!") : ?>
+    <style> 
+        .user_info{
+          margin-bottom: 20px;
+        }   
+        h2, p{
+          padding: 20px;
+          margin: 0 auto;
+        }
+        table{
+          border: 2px solid #bababb;
+          border-spacing: 0px;
+          border-collapse: collapse;
+          width: 500px;
+          margin: 0 auto;
+        }
+        table td, table th{
+          border: 1px solid #bababb;
+          padding: 10px;
+        }
+        table th, table tr:first-child th:first-child{
+          text-align: left;
+          font-weight: 700;
+          padding: 3px;
+        }
+
+    </style>
     <?php endif; ?>
     <!-- end more style -->
     <!--[if ie 8]>

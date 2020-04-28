@@ -5,11 +5,10 @@
     Assignment 2
  */
 
-
 ini_set('display_errors', 1);
 ini_set('error_reporting', E_ALL);
 
-define('ENV', 'DEVELOPMENT'); // DEVELOPMENT (LOCAL) OR PRODUCTION (SALSA)  or TESTING
+define('ENV', 'PRODUCTION'); // DEVELOPMENT (LOCAL) OR PRODUCTION (SALSA)  or TESTING
 // start a session 
 // this allows us to save data and access it on another page IF that 
 // page has loaded this config file
@@ -33,12 +32,10 @@ if(isset($_SESSION['post'])) {
     $post = [];
 }
 
-// Clear
 
 // Once this file is loaded, our porgram will have access to all the following constants 
 // Constant is a value that cannot be changed after it is set 
 // define the constant GST, set it's value to 0.5
-define('GST', 0.5);
 
 // Define DB connection parameters
 if(ENV === 'DEVELOPMENT') {

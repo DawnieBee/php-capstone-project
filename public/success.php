@@ -37,17 +37,43 @@ $result = $stmt->fetch(PDO::FETCH_ASSOC);
 
     <p>You have entered the following information:</p>
     <div class="user_info">
-        <ul>
-            <li><strong>First Name :</strong>&nbsp;&nbsp; <?=$result['first_name']?></li>
-            <li><strong>Last Name :</strong>&nbsp;&nbsp; <?=$result['last_name']?></li>
-            <li><strong>Email :</strong>&nbsp;&nbsp; <?=$result['email']?></li>
-            <li><strong>Phone Number :</strong>&nbsp;&nbsp; <?=$result['phone_num']?></li>
-            <li><strong>Address :</strong>&nbsp;&nbsp; <?=$result['address']?></li>
-            <li><strong>City :</strong>&nbsp;&nbsp; <?=$result['city']?></li>
-            <li><strong>Province :</strong>&nbsp;&nbsp; <?=$result['prov']?></li>
-            <li><strong>Postal Code :</strong>&nbsp;&nbsp; <?=$result['post_code']?></li>
-            <li><strong>Country :</strong>&nbsp;&nbsp; <?=$result['country']?></li>
-        </ul>
+        <table>
+            <tr>
+                <th><strong>First Name</strong></th>
+                <td><?=$result['first_name']?></td>
+            </tr>
+            <tr>
+                <th><strong>Last Name</strong></th> 
+                <td><?=$result['last_name']?></td>
+            </tr>
+            <tr>
+                <th><strong>Email</strong></th>
+                <td><?=$result['email']?></td>
+            </tr>
+            <tr>
+                <th><strong>Phone Number</strong></th> 
+                <td><?=$result['phone_num']?></td>
+            </tr>
+            <tr>
+                <td><strong>Address</strong></td>
+                <td><?=$result['address']?></td>
+            </tr>
+            <tr>
+                <td><strong>City</strong></td>
+                <td><?=$result['city']?></td>
+            </tr>
+            <tr>
+                <td><strong>Province</strong></td>
+                <td><?=$result['prov']?></td>
+            </tr>
+            <tr>
+                <td><strong>Postal Code</strong></td>
+                <td><?=$result['post_code']?></td>
+            </tr>
+                <td><strong>Country</strong></td>
+                <td><?=$result['country']?></td>
+            </tr>
+        </table>
     </div>
 <?php
 

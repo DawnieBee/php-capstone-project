@@ -62,9 +62,9 @@ require __DIR__ . '/../includes/header.inc.php';
             <p><label class="required" for="country">Country:</label>
               <input type="text" name="country" id="country" value="<?=old('country', $post)?>" /></p>
             <p><label class="required" for="password">Password:</label>
-              <input type="text" name="password" id="password" value="<?=old('password', $post)?>" /></p>
+              <input type="password" name="password" id="password" value="<?=old('password', $post)?>" /></p>
             <p><label class="required" for="confirm_password">Confirm Password:</label>
-              <input type="text" name="confirm_password" id="confirm_password" value="<?=old('confirm_password', $post)?>" /></p>
+              <input type="password" name="confirm_password" id="confirm_password" value="<?=old('confirm_password', $post)?>" /></p>
             <p>Would you like more information on one of these areas? Please choose from
               the list below:<br/><br/>
               <label>Area

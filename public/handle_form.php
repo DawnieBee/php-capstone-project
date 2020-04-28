@@ -11,6 +11,7 @@
 require __DIR__ . '/../config.php';
 
 
+
 // confirm form data is a POST request or die 
 if($_SERVER['REQUEST_METHOD'] !== 'POST') {
     die('Unsupported request method.');
@@ -37,10 +38,9 @@ if(empty($_POST['phone_num'])) {
     $errors['phone_num'] = 'Phone Number is a required field';
 } elseif(!is_numeric($_POST['phone_num'])) {
     $errors['phone_num'] = 'Phone Number must be numeric, no dashes or spaces';
-} 
-// elseif(mb_strlen($_POST['phone_num']) < 10) {
-//     $errors['phone_num'] = 'Phone Number must include area code';
-// }
+} elseif(strlen($_POST['phone_num']) < 10) {
+    $errors['phone_num'] = 'Phone Number must include area code';
+}
 if(empty($_POST['address'])) {
     $errors['address'] = 'Address is a required field';
 } 
@@ -62,7 +62,7 @@ if(empty($_POST['password'])) {
 if(empty($_POST['confirm_password'])) {
     $errors['confirm_password'] = 'Confirm Password is a required field';
 } 
-dd($errors);
+
 // saving errros into the $_SESSION array 
 if(count($errors) > 0) {
     // add the $errors to the SESSION
@@ -100,6 +100,7 @@ $stmt->execute($params);
 // redirect to success page 
 
 $user_id = $dbh->lastInsertId();
+
 
 if($user_id > 0) {
     header('Location: success.php?user_id=' . $user_id);

@@ -40,14 +40,9 @@ function esc_attr($string)
 {
     return htmlentities($string, ENT_QUOTES, "UTF-8");
 }
-/**
- * Retrieve old POST values
- * @param  String $field field name
- * @return String        
- */
 
 /**
- * Get old value from array (eg post) for output to form
+ * Get old value from array (eg post) for output to form  make form sticky! 
  * @param  String $field field name
  * @param  Array $post The array to get the field value from
  * @return String  The field value
