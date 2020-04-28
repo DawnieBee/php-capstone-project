@@ -10,6 +10,19 @@ if(empty($_GET['user_id'])) {
     die('Please use form to register');
 }
 
+$query = 'SELECT *
+            FROM users 
+            WHERE 
+            user_id = :user_id';
+$stmt = $dbh->prepare($query);
+$params = array(
+    ':user_id' => intval($_GET['user_id'])
+);
+
+$stmt->execute($params);
+
+$result = $stmt->fetch(PDO::FETCH_ASSOC);
+
 ?><!DOCTYPE html>
 <html lang="en">
 <head>

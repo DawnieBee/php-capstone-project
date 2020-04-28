@@ -95,3 +95,11 @@ $params = array(
 );
 // execute the query to database
 $stmt->execute($params);
+
+// redirect to success page 
+
+$user_id = $dbh->lastInsertId();
+
+if($user_id > 0) {
+    header('Location: success.php?user_id=' . $user_id);
+}
