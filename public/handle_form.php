@@ -10,7 +10,6 @@
 
 require __DIR__ . '/../config.php';
 
-session_start();
 
 // confirm form data is a POST request or die 
 if($_SERVER['REQUEST_METHOD'] !== 'POST') {
@@ -27,3 +26,33 @@ if(empty($_POST['first_name'])) {
 if(empty($_POST['last_name'])) {
     $errors['last_name'] = 'Last Name is a required field';
 } 
+if(empty($_POST['email'])) {
+    $errors['email'] = 'Email is a required field';
+} 
+if(empty($_POST['phone_num'])) {
+    $errors['phone_num'] = 'Phone Number is a required field';
+} 
+if(empty($_POST['address'])) {
+    $errors['address'] = 'Address is a required field';
+} 
+if(empty($_POST['city'])) {
+    $errors['city'] = 'City is a required field';
+} 
+if(empty($_POST['prov'])) {
+    $errors['prov'] = 'Province is a required field';
+} 
+if(empty($_POST['post_code'])) {
+    $errors['post_code'] = 'Postal Code is a required field';
+} 
+if(empty($_POST['country'])) {
+    $errors['country'] = 'Country is a required field';
+} 
+if(empty($_POST['password'])) {
+    $errors['password'] = 'Password is a required field';
+} 
+if(empty($_POST['confirm_password'])) {
+    $errors['confirm_password'] = 'Confirm Password is a required field';
+} 
+
+
+dd($errors);

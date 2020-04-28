@@ -53,8 +53,8 @@ require __DIR__ . '/../includes/header.inc.php';
               <input type="text" name="country" id="country" value="" /></p>
             <p><label class="required" for="password">Password:</label>
               <input type="text" name="password" id="password" value="" /></p>
-            <p><label class="required" for="password">Confirm Password:</label>
-              <input type="text" name="password" id="password" value="" /></p>
+            <p><label class="required" for="confirm_password">Confirm Password:</label>
+              <input type="text" name="confirm_password" id="confirm_password" value="" /></p>
             <p>Would you like more information on one of these areas? Please choose from
               the list below:<br/><br/>
               <label>Area
