@@ -79,3 +79,19 @@ $query = 'INSERT INTO users
             (first_name, last_name, email, phone_num, address, city, prov, post_code, country, password)
             VALUES 
             (:first_name, :last_name, :email, :phone_num, :address, :city, :prov, :post_code, :country, :password)';
+$stmt = $dbh->prepare($query);
+// binding the input to params 
+$params = array(
+    ':first_name' => $_POST['first_name'],
+    ':last_name' => $_POST['last_name'],
+    ':email' => $_POST['email'],
+    ':phone_num' => $_POST['phone_num'],
+    ':address' => $_POST['address'],
+    ':city' => $_POST['city'],
+    ':prov' => $_POST['prov'],
+    ':post_code' => $_POST['post_code'],
+    ':country' => $_POST['country'],
+    ':password' => $_POST['password']
+);
+// execute the query to database
+$stmt->execute($params);
