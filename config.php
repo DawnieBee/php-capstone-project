@@ -8,7 +8,7 @@
 ini_set('display_errors', 1);
 ini_set('error_reporting', E_ALL);
 
-define('ENV', 'PRODUCTION'); // DEVELOPMENT (LOCAL) OR PRODUCTION (SALSA)  or TESTING
+define('ENV', 'DEVELOPMENT'); // DEVELOPMENT (LOCAL) OR PRODUCTION (SALSA)  or TESTING
 // start a session 
 // this allows us to save data and access it on another page IF that 
 // page has loaded this config file

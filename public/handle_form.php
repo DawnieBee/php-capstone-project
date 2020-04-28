@@ -61,7 +61,9 @@ if(empty($_POST['password'])) {
 } 
 if(empty($_POST['confirm_password'])) {
     $errors['confirm_password'] = 'Confirm Password is a required field';
-} 
+} elseif($_POST['confirm_password'] !==$_POST['password']) {
+    $errors['confirm_password'] = 'Passwords do not match';
+}
 
 // saving errros into the $_SESSION array 
 if(count($errors) > 0) {
