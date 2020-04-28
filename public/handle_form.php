@@ -26,9 +26,13 @@ if(empty($_POST['first_name'])) {
 if(empty($_POST['last_name'])) {
     $errors['last_name'] = 'Last Name is a required field';
 } 
+// email validators to make sure is a valid email address 
 if(empty($_POST['email'])) {
     $errors['email'] = 'Email is a required field';
-} 
+} elseif(!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) { 
+    $errors['email'] = 'Email must be a valid email address';
+}
+
 if(empty($_POST['phone_num'])) {
     $errors['phone_num'] = 'Phone Number is a required field';
 } 
