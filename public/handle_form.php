@@ -71,3 +71,11 @@ if(count($errors) > 0) {
     header("Location: contact.php");
     die;
 }
+
+// all entered info is validated, now to create the record in the database for users table
+
+// query used to insert into users table
+$query = 'INSERT INTO users
+            (first_name, last_name, email, phone_num, address, city, prov, post_code, country, password)
+            VALUES 
+            (:first_name, :last_name, :email, :phone_num, :address, :city, :prov, :post_code, :country, :password)';
