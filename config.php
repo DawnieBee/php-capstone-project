@@ -8,10 +8,14 @@
 ini_set('display_errors', 1);
 ini_set('error_reporting', E_ALL);
 
-define('ENV', 'PRODUCTION'); // DEVELOPMENT (LOCAL) OR PRODUCTION (SALSA)  or TESTING
+// define('ENV', 'PRODUCTION'); // DEVELOPMENT (LOCAL) OR PRODUCTION (SALSA)  or TESTING
+
+require __DIR__ . '/env.php';
+
 // start a session 
 // this allows us to save data and access it on another page IF that 
 // page has loaded this config file
+
 session_start();
 
 // Form submission 
@@ -39,15 +43,15 @@ if(isset($_SESSION['post'])) {
 
 // Define DB connection parameters
 if(ENV === 'DEVELOPMENT') {
-    define('DB_DSN', 'mysql:host=localhost;dbname=neighborhoods_db');
+    define('DB_DSN', 'mysql:host=localhost;dbname=capstone');
     define('DB_USER', 'root');
     define('DB_PASS', '');
 }
 
 if(ENV === 'PRODUCTION') {
-    define('DB_DSN', 'mysql:host=localhost;dbname=wdd2');
-    define('DB_USER', 'wdd2');
-    define('DB_PASS', 'hgf43');
+    define('DB_DSN', 'mysql:host=localhost;dbname=capstone');
+    define('DB_USER', 'web_user');
+    define('DB_PASS', 'Alice2018*');
 }
 
 
