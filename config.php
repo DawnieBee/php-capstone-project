@@ -37,10 +37,6 @@ if(isset($_SESSION['post'])) {
 }
 
 
-// Once this file is loaded, our porgram will have access to all the following constants 
-// Constant is a value that cannot be changed after it is set 
-// define the constant GST, set it's value to 0.5
-
 // Define DB connection parameters
 if(ENV === 'DEVELOPMENT') {
     define('DB_DSN', 'mysql:host=localhost;dbname=capstone');

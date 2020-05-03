@@ -23,14 +23,22 @@ $errors = [];
 // name validators 
 if(empty($_POST['first_name'])) {
     $errors['first_name'] = 'First Name is a required field';
-} 
+} elseif(strlen($_POST['first_name']) < 2) {
+    $errors['first_name'] = 'First Name must have at least 2 characters';
+} elseif(strlen($_POST['first_name']) > 255) {
+    $errors['first_name'] = 'First Name must have maximum of 255 characters';
+}
 if(empty($_POST['last_name'])) {
     $errors['last_name'] = 'Last Name is a required field';
-} 
+} elseif(strlen($_POST['last_name']) < 2) {
+    $errors['last_name'] = 'Last Name must have at least 2 characters';
+} elseif(strlen($_POST['last_name']) > 255) {
+    $errors['last_name'] = 'Last Name must have maximum of 255 characters';
+}
 // email validators to make sure is a valid email address 
 if(empty($_POST['email'])) {
     $errors['email'] = 'Email is a required field';
-} elseif(!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) { 
+} elseif($_POST['email'] !== filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) { 
     $errors['email'] = 'Email must be a valid email address';
 }
 // phone # validators to make sure at least 10 digits with area code 
@@ -56,6 +64,7 @@ if(empty($_POST['post_code'])) {
 if(empty($_POST['country'])) {
     $errors['country'] = 'Country is a required field';
 } 
+
 if(empty($_POST['password'])) {
     $errors['password'] = 'Password is a required field';
 } 
@@ -105,5 +114,9 @@ $user_id = $dbh->lastInsertId();
 
 
 if($user_id > 0) {
-    header('Location: success.php?user_id=' . $user_id);
+    $_SESSION['user_id'] = $user_id;
+    header('Location: success.php');
+        die;
+} else {
+    die('There was a problem inserting the record');
 }

@@ -55,3 +55,20 @@ function old($field, $post)
         return '';
     }
 }
+
+/**
+ * cleaning up the label field
+ * @param  label  $field 
+ * @return label        removing and _ and capitalizing the fields 
+ */
+function label($field)
+{
+    // first_name  first name
+    $label = str_replace('_', ' ', $field);
+    // first_name  First Name
+    $label = ucwords($label);
+    return $label;
+}
+
+/* Validation Functions */
+

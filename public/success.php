@@ -13,7 +13,7 @@ $title = "Registration Success!";
 require __DIR__ . '/../includes/header.inc.php';
 
 
-if(empty($_GET['user_id'])) {
+if(empty($_SESSION['user_id'])) {
     die('Please use form to register');
 }
 
@@ -23,7 +23,7 @@ $query = 'SELECT *
             user_id = :user_id';
 $stmt = $dbh->prepare($query);
 $params = array(
-    ':user_id' => intval($_GET['user_id'])
+    ':user_id' => intval($_SESSION['user_id'])
 );
 
 $stmt->execute($params);
