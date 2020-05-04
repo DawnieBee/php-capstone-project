@@ -71,5 +71,16 @@ function label($field)
 }
 
 /* Validation Functions */
-
-
+/**
+ * Required fields
+ * @param  String  $field 
+ * @param  string  $value [Post value]
+ * @return boolean        
+ */
+function isRequired($field, $value)
+{
+    global $errors;
+    if(empty($value)) {
+    $errors[$field] = label($field) . ' is a required field';
+    }
+}

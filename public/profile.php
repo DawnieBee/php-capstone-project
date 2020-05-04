@@ -7,7 +7,6 @@
 /**
  * registration success page
  */
-
 $title = "Registration Success!";
 
 require __DIR__ . '/../includes/header.inc.php';
@@ -29,6 +28,12 @@ $params = array(
 $stmt->execute($params);
 
 $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+// if no user with that user_id die with an error message 
+if($result === false) {
+    die('We could not find that user');
+}
+ // otherwise load the page with the profile information
 
 
 

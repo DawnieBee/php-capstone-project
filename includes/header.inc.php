@@ -89,7 +89,10 @@ require __DIR__ . '/../config.php';
     <!-- style content for contact page -->
     <?php if($title == "Register With Us") : ?>
     <style>
-      
+      h2, h3, p{
+        margin: 10px 20px 5px 20px;
+        line-height: 1.4em;
+      }
       .errors {
         color: #f00;
       }

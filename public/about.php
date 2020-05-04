@@ -51,7 +51,7 @@ require __DIR__ . '/../includes/header.inc.php';
         <p>Owner and Website Creator: Dawn Baker<br />
             Sources: Community Members, City of Winnipeg information page, Internet sources
         </p>
-        
+        <p><a href="#">Back to Top</a></p>
       </section>
       
 <?php
