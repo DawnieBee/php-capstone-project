@@ -8,14 +8,14 @@
 * Handle Add User Form
  */
 
-require __DIR__ . '/../config.php';
-
-
 
 // confirm form data is a POST request or die 
 if($_SERVER['REQUEST_METHOD'] !== 'POST') {
     die('Unsupported request method.');
 }
+
+require __DIR__ . '/../config.php';
+
 
 // empty $errors array
 $errors = [];
@@ -111,12 +111,15 @@ $stmt->execute($params);
 // redirect to success page 
 
 $user_id = $dbh->lastInsertId();
-
-
+dd($user_id);
+/**
+ * if successful insert of user, redirect to the profile page with the user_id in $_SESSION
+ * or die.  give an error message if not successful 
+ */
 if($user_id > 0) {
     $_SESSION['user_id'] = $user_id;
     header('Location: success.php');
         die;
 } else {
-    die('There was a problem inserting the record');
+    die('Unable to insert new record');
 }

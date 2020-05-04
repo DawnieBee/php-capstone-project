@@ -39,6 +39,19 @@ require __DIR__ . '/../includes/header.inc.php';
           There are many neighborhoods in Winnipeg, diverse in culture and growing and changing every day.
           This Web site will highlight a few of these neighborhoods that we have information on.    
         </p>
+
+        <h2>Honey...We're Home</h2>
+        <address>
+          123 Any Street <br />
+          Winnipeg, MB <br />
+          R2A1A1 <br />
+          204-555-5555
+        </address>
+        
+        <p>Owner and Website Creator: Dawn Baker<br />
+            Sources: Community Members, City of Winnipeg information page, Internet sources
+        </p>
+        
       </section>
       
 <?php

@@ -10,6 +10,6 @@
     <li class="curved_borders"><a <?=($title == "About Us") ? 'class="current"' : ''?> href="about.php">About</a></li>
     <li class="curved_borders"><a <?=($title == "Areas") ? 'class="current"' : ''?> href="areas.php">Areas</a></li>
     <li class="curved_borders"><a <?=($title == "Community Services") ? 'class="current"' : ''?> href="more.php">More</a></li>
-    <li class="curved_borders"><a <?=($title == "Contact Us") ? 'class="current"' : ''?> href="contact.php">Contact</a></li>
-    <li class="curved_borders"><a href="contact.php">Sign Up!</a></li>
+    <li class="curved_borders"><a <?=($title == "Register With Us") ? 'class="current"' : ''?> href="register.php">Sign Up</a></li>
+    <li class="curved_borders"><a href="register.php">Log In</a></li>
 </ul>

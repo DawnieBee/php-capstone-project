@@ -6,27 +6,16 @@
  * Assignment 2         
  */
 
-$title = "Contact Us";
+$title = "Register With Us";
 $title2 = "Register With Us!";
 
 require __DIR__ . '/../includes/header.inc.php';
 
 ?> 
+    
       <section>
         
-        <h2>Honey...We're Home</h2>
-        <address>
-          123 Any Street <br />
-          Winnipeg, MB <br />
-          R2A1A1 <br />
-          204-555-5555
-        </address>
-        
-        <p>Owner and Website Creator: Dawn Baker<br />
-            Sources: Community Members, City of Winnipeg information page, Internet sources
-        </p>
-        
-        <p>If you would like to know more, fill in the form below:</p>
+        <p>To sign up, please fill in the form below:</p>
 
         <div id="form_container" class="clearfix">
         

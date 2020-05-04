@@ -14,7 +14,7 @@ require __DIR__ . '/../includes/header.inc.php';
 
 
 if(empty($_SESSION['user_id'])) {
-    die('Please use form to register');
+    die('Please sign up or login');
 }
 
 $query = 'SELECT *

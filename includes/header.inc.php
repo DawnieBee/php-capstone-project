@@ -34,6 +34,12 @@ require __DIR__ . '/../config.php';
         min-height: 450px;
         width: 100%;
       }
+      address{
+        padding-top: 3px;
+        padding-bottom: 3px;
+        padding-left: 40px;
+        margin: 0 auto;
+      }
       section h1, h2, h3, p{
         margin: 10px 20px 5px 20px;
         line-height: 1.4em;
@@ -81,12 +87,9 @@ require __DIR__ . '/../config.php';
     <!-- end more style -->
 
     <!-- style content for contact page -->
-    <?php if($title == "Contact Us") : ?>
+    <?php if($title == "Register With Us") : ?>
     <style>
-      h2, h3, address, p{
-        padding: 20px;
-        margin: 0 auto; 
-      }
+      
       .errors {
         color: #f00;
       }

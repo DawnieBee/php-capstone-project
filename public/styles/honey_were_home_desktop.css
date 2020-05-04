@@ -39,6 +39,7 @@ header{
   width: 150px;
   height: 170px;
 }
+
 .title_text{
   font-family: 'Caveat', cursive;
   font-weight: 700;
@@ -276,14 +277,6 @@ footer{
     width: 100%;
   }
 }
-
-
-
-
-
-
-
-
 
 @media (max-width:977px){
   #wrapper {

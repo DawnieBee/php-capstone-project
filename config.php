@@ -36,7 +36,6 @@ if(isset($_SESSION['post'])) {
     $post = [];
 }
 
-
 // Define DB connection parameters
 if(ENV === 'DEVELOPMENT') {
     define('DB_DSN', 'mysql:host=localhost;dbname=capstone');
@@ -50,12 +49,9 @@ if(ENV === 'PRODUCTION') {
     define('DB_PASS', 'Alice2018*');
 }
 
-
 // Connect to MySQL
-
 // mysqli
 // PDO
-
 // resource/object
 $dbh = new PDO(DB_DSN, DB_USER, DB_PASS);
 // Must set PDO to show errors, or it will fail silently
