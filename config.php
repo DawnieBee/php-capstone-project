@@ -8,8 +8,7 @@
 ini_set('display_errors', 1);
 ini_set('error_reporting', E_ALL);
 
-// define('ENV', 'PRODUCTION'); // DEVELOPMENT (LOCAL) OR PRODUCTION (SALSA)  or TESTING
-
+require __DIR__ . '/vendor/autoload.php';
 require __DIR__ . '/env.php';
 
 // start a session 

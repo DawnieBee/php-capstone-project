@@ -14,25 +14,15 @@ if($_SERVER['REQUEST_METHOD'] !== 'POST') {
     die('Unsupported request method.');
 }
 
-// empty $errors array
+$v = new Capstone\Validator();
+
 $errors = [];
-// function for required fields
-isRequired('first_name', $_POST['first_name']);
-isRequired('last_name', $_POST['last_name']);
-isRequired('email', $_POST['email']);
-isRequired('phone_num', $_POST['phone_num']);
-isRequired('address', $_POST['address']);
-isRequired('city', $_POST['city']);
-isRequired('prov', $_POST['prov']);
-isRequired('post_code', $_POST['post_code']);
-isRequired('country', $_POST['country']);
-isRequired('password', $_POST['password']);
-isRequired('confirm_password', $_POST['confirm_password']);
 
-validEmail('email', $_POST['email']);
+// required fields validation 
 
-isMinLength('first_name', $_POST['first_name']);
-isMinLength('last_name', $_POST['last_name']);
+
+
+
 
 // saving errros into the $_SESSION array 
 if(!empty($errors)) {
