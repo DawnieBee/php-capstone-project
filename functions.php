@@ -72,7 +72,7 @@ function label($field)
 
 /* Validation Functions */
 /**
- * Required fields
+ * Validate required fields
  * @param  String  $field 
  * @param  string  $value [Post value]
  * @return boolean        
@@ -81,6 +81,24 @@ function isRequired($field, $value)
 {
     global $errors;
     if(empty($value)) {
-    $errors[$field] = label($field) . ' is a required field';
+        if(empty($errors[$field])){
+            $errors[$field] = label($field) . ' is a required field';
+        }
     }
 }
+/**
+ * validate an email address
+ * @param  String $field 
+ * @param  String $value 
+ * @return boolean        [description]
+ */
+function validEmail($field, $value)
+{
+    global $errors;
+    if($value !== filter_var($value, FILTER_VALIDATE_EMAIL)){
+        if(empty($errors[$field])){
+            $errors[$field] = label($field) . ' must be a valid email address';
+        }
+    }
+}
+

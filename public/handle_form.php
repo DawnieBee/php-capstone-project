@@ -29,32 +29,8 @@ isRequired('country', $_POST['country']);
 isRequired('password', $_POST['password']);
 isRequired('confirm_password', $_POST['confirm_password']);
 
+validEmail('email', $_POST['email']);
 
-/*
-if(strlen($_POST['first_name']) < 2) {
-    $errors['first_name'] = 'First Name must have at least 2 characters';
-} elseif(strlen($_POST['first_name']) > 255) {
-    $errors['first_name'] = 'First Name must have maximum of 255 characters';
-}
-if(strlen($_POST['last_name']) < 2) {
-    $errors['last_name'] = 'Last Name must have at least 2 characters';
-} elseif(strlen($_POST['last_name']) > 255) {
-    $errors['last_name'] = 'Last Name must have maximum of 255 characters';
-}
-// email validators to make sure is a valid email address 
-if($_POST['email'] !== filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) { 
-    $errors['email'] = 'Email must be a valid email address';
-}
-// phone # validators to make sure at least 10 digits with area code 
-if(!is_numeric($_POST['phone_num'])) {
-    $errors['phone_num'] = 'Phone Number must be numeric, no dashes or spaces';
-} elseif(strlen($_POST['phone_num']) < 10) {
-    $errors['phone_num'] = 'Phone Number must include area code';
-}
-if($_POST['confirm_password'] !==$_POST['password']) {
-    $errors['confirm_password'] = 'Passwords do not match';
-}
-*/
 // saving errros into the $_SESSION array 
 if(!empty($errors)) {
     // add the $errors to the SESSION
