@@ -72,6 +72,17 @@ function label($field)
 
 /* Validation Functions */
 /**
+ * set the error messages
+ * @param string $field   
+ * @param output $message error message
+ */
+function setError($field, $message){
+    global $errors;
+    if(empty($errors[$field])) {   
+            $errors[$field] = $message;
+    }
+}
+/**
  * Validate required fields
  * @param  String  $field 
  * @param  string  $value [Post value]
@@ -79,10 +90,9 @@ function label($field)
  */
 function isRequired($field, $value)
 {
-    global $errors;
     if(empty($value)) {
         if(empty($errors[$field])){
-            $errors[$field] = label($field) . ' is a required field';
+            setError($field, label($field) . ' is a required field');
         }
     }
 }
@@ -94,11 +104,17 @@ function isRequired($field, $value)
  */
 function validEmail($field, $value)
 {
-    global $errors;
     if($value !== filter_var($value, FILTER_VALIDATE_EMAIL)){
         if(empty($errors[$field])){
-            $errors[$field] = label($field) . ' must be a valid email address';
+            setError($field, label($field) . ' must be a valid email address');
         }
     }
 }
-
+function isMinLength($field, $value)
+{
+    if($value !== mb_strlen($field) > 2){
+        if(empty($errors[$field])){
+            setError($field, label($field) . ' must have at least 2 characters');
+        }
+    }
+}

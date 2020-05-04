@@ -31,6 +31,9 @@ isRequired('confirm_password', $_POST['confirm_password']);
 
 validEmail('email', $_POST['email']);
 
+isMinLength('first_name', $_POST['first_name']);
+isMinLength('last_name', $_POST['last_name']);
+
 // saving errros into the $_SESSION array 
 if(!empty($errors)) {
     // add the $errors to the SESSION
