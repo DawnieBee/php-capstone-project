@@ -1,7 +1,13 @@
 <?php
+/**
+ * Dawn Baker
+ * Inter PHP
+ *Assignment 1
+ */
+/* Validator Class funtion */
 
 namespace Capstone;
- 
+
 class Validator
 {
     private $errors = [];  
@@ -18,33 +24,21 @@ class Validator
             $this->setError($field, $this->label($field) . " is a required field.");
             }
     }
+    
+   
+    
     /**
-     * Test for minimum string length
-     * @param  String $value 
-     * @param  String $field 
-     * @param  Integer $len   
-     * @return Void        
+     * Get erorrs array
+     * getters are public functions for returning/accessing private properties
+     * @return Array 
      */
-    public function minLength($value, $field, $len)
+    public function errors()
     {
-        if(strlen($value) < $len){
-            $this->setError($field, $this->label($field) . "  must have a minimum lenth of $len characters");
-        }
-    }
-    /**
-     * Test for maximum string length
-     * @param  String $value 
-     * @param  String $field 
-     * @param  Integer $len   
-     * @return Void        
-     */
-    public function maxLength($value, $field, $len)
-    {
-        if(strlen($value) > $len){
-            $this->setError($field, $this->label($field) . "  must have a maximum lenth of $len characters");
-        }
+        return $this->errors;  
     }
 
+    /* Private utility functions 
+    ---------------------------------------------------------*/
     /**
      * Set errors message function
      * @param mixed $field    value to test
@@ -73,6 +67,3 @@ class Validator
 
 
 }
-
-
-

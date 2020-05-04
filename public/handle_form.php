@@ -1,8 +1,8 @@
 <?php
 /**
  * Dawn Baker
- * Intro PHP
- *Assignment 2
+ * Inter PHP
+ *Assignment 1
  */
 /*
 * Handle Add User Form
@@ -13,16 +13,24 @@ require __DIR__ . '/../config.php';
 if($_SERVER['REQUEST_METHOD'] !== 'POST') {
     die('Unsupported request method.');
 }
+// Validate fields 
 
 $v = new Capstone\Validator();
 
-$errors = [];
-
 // required fields validation 
+$v->isRequired($_POST['first_name'], 'first_name');
+$v->isRequired($_POST['last_name'], 'last_name');
+$v->isRequired($_POST['email'], 'email');
+$v->isRequired($_POST['phone_num'], 'phone_num');
+$v->isRequired($_POST['address'], 'address');
+$v->isRequired($_POST['city'], 'city');
+$v->isRequired($_POST['prov'], 'prov');
+$v->isRequired($_POST['post_code'], 'post_code');
+$v->isRequired($_POST['country'], 'country');
+$v->isRequired($_POST['password'], 'password');
+$v->isRequired($_POST['confirm_password'], 'confirm_password');
 
-
-
-
+$errors = $v->errors();
 
 // saving errros into the $_SESSION array 
 if(!empty($errors)) {
@@ -33,6 +41,9 @@ if(!empty($errors)) {
     header("Location: register.php");
     die;
 }
+
+dd($_POST);
+die;
 
 // all entered info is validated, now to create the record in the database for users table
 

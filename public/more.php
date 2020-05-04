@@ -1,9 +1,9 @@
 <?php
 
-/*
- * Dawn Baker            
- * Intro PHP             
- * Assignment 2          
+/**
+ * Dawn Baker
+ * Inter PHP
+ *Assignment 1
  */
 
 $title = "Community Services";

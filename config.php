@@ -1,8 +1,8 @@
 <?php
-/*
-    Dawn Baker
-    Intro PHP
-    Assignment 2
+/**
+ * Dawn Baker
+ * Inter PHP
+ *Assignment 1
  */
 
 ini_set('display_errors', 1);

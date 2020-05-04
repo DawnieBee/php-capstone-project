@@ -1,8 +1,8 @@
 <?php
-/* 
- * Dawn Baker            
- * Intro PHP             
- * Assignment 2         
+/**
+ * Dawn Baker
+ * Inter PHP
+ *Assignment 1
  */
 
 /**
@@ -51,6 +51,21 @@ function old($field, $post)
 {
     if(!empty($post[$field])) {
         return $post[$field];
+    } else {
+        return '';
+    }
+}
+
+/**
+ * output to error below the field
+ * @param  String $field field name
+ * @param  Array $post The array to get the field value from
+ * @return String  The field value
+ */
+function error($field, $post) 
+{
+    if(!empty($post[$field])) {
+        return '<span class="error"><small>' . esc($post[$field]) . '</small></span>';
     } else {
         return '';
     }

@@ -1,8 +1,8 @@
 <!--  
-/* 
- * Dawn Baker            
- * Intro PHP             
- * Assignment 1          
+/**
+ * Dawn Baker
+ * Inter PHP
+ *Assignment 1
  */
 --> 
 <!--      this is is the footer content  -->

@@ -1,9 +1,9 @@
 <?php
 
-/* 
- * Dawn Baker            
- * Intro PHP             
- * Assignment 2          
+/**
+ * Dawn Baker
+ * Inter PHP
+ *Assignment 1
  */
 
 require __DIR__ . '/../config.php';
@@ -93,8 +93,9 @@ require __DIR__ . '/../config.php';
         margin: 10px 20px 5px 20px;
         line-height: 1.4em;
       }
-      .errors {
+      span.error {
         color: #f00;
+        font-weight: bold;
       }
       .required:before {
         content: "*";

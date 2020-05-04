@@ -1,9 +1,9 @@
 <?php
 
-/* 
- * Dawn Baker            
- * Intro PHP             
- * Assignment 2         
+/**
+ * Dawn Baker
+ * Inter PHP
+ *Assignment 1
  */
 
 $title = "Register With Us";
@@ -22,38 +22,41 @@ require __DIR__ . '/../includes/header.inc.php';
         <form id="form" name="form" method="post" action="handle_form.php" novalidate>  
           <fieldset> 
             <legend><?=$title2?></legend>  
-            <?php if(count($errors) > 0) : ?>
-                <div class="errors">
-                    <ul>
-                        <?php foreach($errors as $error) : ?>
-                            <li><?=$error?></li>
-                        <?php endforeach; ?>
-                    </ul>
-                </div>
-            <?php endif; ?>
+            
+            
             <p>Required fields &lpar; <strong style="color:#900;">&ast;</strong> &rpar;</p>
             <p><label class="required" for="first_name">First Name:</label>   
-              <input type="text" id="first_name" name="first_name" value="<?=old('first_name', $post)?>" /></p>
+              <input type="text" id="first_name" name="first_name" value="<?=old('first_name', $post)?>" />
+              <br /><?=error('first_name', $errors)?></p>
             <p><label class="required" for="last_name">Last Name:</label>
-              <input type="text" id="last_name" name="last_name" value="<?=old('last_name', $post)?>" /></p>
+              <input type="text" id="last_name" name="last_name" value="<?=old('last_name', $post)?>" />
+            <br /><?=error('last_name', $errors)?></p>
             <p><label class="required" for="email">Email:</label>
-              <input type="text" name="email" id="email" value="<?=old('email', $post)?>" /></p>
+              <input type="text" name="email" id="email" value="<?=old('email', $post)?>" />
+            <br /><?=error('email', $errors)?></p>
             <p><label class="required" for="phone_num">Phone Number</label>
-              <input type="text" name="phone_num" id="phone_num" value="<?=old('phone_num', $post)?>" /></p>
+              <input type="text" name="phone_num" id="phone_num" value="<?=old('phone_num', $post)?>" />
+            <br /><?=error('phone_num', $errors)?></p>
             <p><label class="required" for="address">Address:</label>
-              <input type="text" name="address" id="address" value="<?=old('address', $post)?>" /></p>
+              <input type="text" name="address" id="address" value="<?=old('address', $post)?>" />
+              <br /><?=error('address', $errors)?></p>
             <p><label class="required" for="city">City:</label>
-              <input type="text" name="city" id="city" value="<?=old('city', $post)?>" /></p>
+              <input type="text" name="city" id="city" value="<?=old('city', $post)?>" />
+              <br /><?=error('city', $errors)?></p>
             <p><label class="required" for="prov">Province:</label>
-              <input type="text" name="prov" id="prov" value="<?=old('prov', $post)?>" /></p>
+              <input type="text" name="prov" id="prov" value="<?=old('prov', $post)?>" />
+            <br /><?=error('prov', $errors)?></p>
             <p><label class="required" for="post_code">Postal Code:</label>
-              <input type="text" name="post_code" id="post_code" value="<?=old('post_code', $post)?>" /></p>
+              <input type="text" name="post_code" id="post_code" value="<?=old('post_code', $post)?>" />
+            <br /><?=error('post_code', $errors)?></p>
             <p><label class="required" for="country">Country:</label>
-              <input type="text" name="country" id="country" value="<?=old('country', $post)?>" /></p>
+              <input type="text" name="country" id="country" value="<?=old('country', $post)?>" />
+            <br /><?=error('country', $errors)?></p>
             <p><label class="required" for="password">Password:</label>
-              <input type="password" name="password" id="password" value="<?=old('password', $post)?>" /></p>
+              <input type="password" name="password" id="password" value="<?=old('password', $post)?>" />
+            <br /><?=error('password', $errors)?></p>
             <p><label class="required" for="confirm_password">Confirm Password:</label>
-              <input type="password" name="confirm_password" id="confirm_password" value="<?=old('confirm_password', $post)?>" /></p>
+              <input type="password" name="confirm_password" id="confirm_password" value="<?=old('confirm_password', $post)?>" /><br /><?=error('confirm_password', $errors)?></p>
             <p>Would you like more information on one of these areas? Please choose from
               the list below:<br/><br/>
               <label>Area
