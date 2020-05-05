@@ -65,8 +65,10 @@ $v->string($_POST['country'], 'country');
 $v->minLen($_POST['prov'], 'prov', 2);
 $v->maxLen($_POST['prov'], 'prov', 255);
 
-
+/*--- Password validation ---*/
 $v->isRequired($_POST['password'], 'password');
+$v->isPassword($_POST['password'], 'password');
+
 $v->isRequired($_POST['confirm_password'], 'confirm_password');
 
 

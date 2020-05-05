@@ -96,10 +96,10 @@ class Validator
         $pattern = '/^[a-zA-Z]\d[a-zA-Z]\d[a-zA-Z]\d$/';
         $test = preg_match($pattern, $value);
         if($test === 0) {
-            $this->setError($field, $this->label($value) . " is not a valid format.");
+            $this->setError($field, $this->label($field) . " is not a valid format.");
         }
     }
-    
+
     /**
      * Clean phone number validator 
      * @param  String  $value 
@@ -110,15 +110,23 @@ class Validator
     {
         $pattern = '/^[\(]?[\d]{3}[\)\s\-.]*[\d]{3}[\s\-\.]?[\d]{4}$/';
         $test = preg_match($pattern, $value);
-        if($test === 0){
-            $this->setError($field, $this->label($value) . " is not valid.");
-        } elseif(preg_match($pattern, $value) === 1){
+        if($test === 0) {
+            $this->setError($field, $this->label($field) . " requires 10 digits with area code.");
+        } elseif(preg_match($pattern, $value) === 1) {
             $pattern = '/[^0-9]/';
             $replace = '';
             $clean_num = preg_replace($pattern, $replace, $value);
         }
     }
 
+    public function isPassword($value, $field)
+    {
+        $pattern = '/(?=.*[\!\@\#\$\%\^\&\*]+)(?=.*[\d]+)(?=.*[A-Z]+).{8,}/';
+        $test = preg_match($pattern, $value);
+        if($test === 0) {
+            $this->setError($field, $this->label($field) . " must be a minimum 8 characters with at least 1 uppercase letter, a number, and a special character.");
+        }
+    }
 
     /**
      * Get erorrs array
