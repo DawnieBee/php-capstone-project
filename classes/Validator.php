@@ -10,6 +10,10 @@ namespace Capstone;
 
 class Validator
 {
+    /**
+     * Errors array 
+     * @var array
+     */
     private $errors = [];  
 
     /**
@@ -24,9 +28,58 @@ class Validator
             $this->setError($field, $this->label($field) . " is a required field.");
             }
     }
-    
-   
-    
+    /**
+     *  String Validator - no special characters or numbers besides a dash (-) or an apostrophe (')
+     * @param String $value 
+     * @param String $field 
+     */
+    public function String($value, $field)
+    {
+        $pattern = '/^[A-Za-z\s\-\']{1,31}$/';
+        $test = preg_match($pattern, $value);
+        if($test === 0){
+            $this->setError($field, $this->label($field) . " cannot contain numbers or special characters");
+        }
+    }
+    /**
+     * Minimum length 
+     * @param  String $value 
+     * @param  String $field 
+     * @param  Integer $len   
+     * @return Void        
+     */
+    public function minLen($value, $field, $len)
+    {
+        if(strlen($value) < $len){
+            $this->setError($field, $this->label($field) . " must be at least $len characters long.");
+        }
+    }
+    /**
+     * Maximum length  
+     * @param  String $value 
+     * @param  String $field 
+     * @param  Integer $len   
+     * @return Void        
+     */
+    public function maxLen($value, $field, $len)
+    {
+        if(strlen($value) > $len){
+            $this->setError($field, $this->label($field) . " cannot be more than $len characters long.");
+        }
+    }
+    /**
+     * Validate email   
+     * @param  String  $field    
+     * @param  String  $value 
+     * @return boolean          
+     */
+    public function isEmail($field, $value)
+    {
+        if($value !== filter_var($value, FILTER_VALIDATE_EMAIL)){
+            $this->setError($field, $this->label($value) . " is not a valid email address.");
+        }
+    }
+
     /**
      * Get erorrs array
      * getters are public functions for returning/accessing private properties
@@ -63,7 +116,5 @@ class Validator
         $label = ucwords($label);
         return $label;
     }
-
-
 
 }

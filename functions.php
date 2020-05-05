@@ -112,23 +112,7 @@ function isRequired($field, $value)
     }
 }
 
-/**
- * varchar 255 validation
- * @param  String  $field 
- * @param  String  $value 
- * @return boolean        
- */
-function isMinMaxLength($field, $value)
-{
-    if($value !== strlen($field, 'UTF-8') > 2){
-        if(empty($errors[$field])){
-            setError($field, label($field) . ' must have at least 2 characters');
-        } 
-        elseif($value !== strlen($field) < 255){
-            setError($field, label($field) . ' cannot be more than 255 characters');
-        }
-    }
-}
+
 /**
  * validate an email address
  * @param  String $field 

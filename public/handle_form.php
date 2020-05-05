@@ -17,11 +17,29 @@ if($_SERVER['REQUEST_METHOD'] !== 'POST') {
 
 $v = new Capstone\Validator();
 
-// required fields validation 
+//Field validations
+
+/*--- Name validation ---*/ 
+
 $v->isRequired($_POST['first_name'], 'first_name');
+$v->String($_POST['first_name'], 'first_name');
+$v->minLen($_POST['first_name'], 'first_name', 2);
+$v->maxLen($_POST['first_name'], 'first_name', 255);
+
 $v->isRequired($_POST['last_name'], 'last_name');
+$v->String($_POST['last_name'], 'last_name');
+$v->minLen($_POST['last_name'], 'last_name', 2);
+$v->maxLen($_POST['last_name'], 'last_name', 255);
+
+/*--- Email validation ---*/
+
 $v->isRequired($_POST['email'], 'email');
+
+/*--- Phone Number validation ---*/
+
 $v->isRequired($_POST['phone_num'], 'phone_num');
+
+/*--- Address validation ---*/
 $v->isRequired($_POST['address'], 'address');
 $v->isRequired($_POST['city'], 'city');
 $v->isRequired($_POST['prov'], 'prov');
@@ -30,7 +48,20 @@ $v->isRequired($_POST['country'], 'country');
 $v->isRequired($_POST['password'], 'password');
 $v->isRequired($_POST['confirm_password'], 'confirm_password');
 
+
+
+
+
+// email 
+$v->isEmail('email', $_POST['email']);
+
+// postal code 
+//$v->isPostal($_POST['post_code'], 'post_code');
+
 $errors = $v->errors();
+
+dd($v);
+die;
 
 // saving errros into the $_SESSION array 
 if(!empty($errors)) {
@@ -41,9 +72,6 @@ if(!empty($errors)) {
     header("Location: register.php");
     die;
 }
-
-dd($_POST);
-die;
 
 // all entered info is validated, now to create the record in the database for users table
 

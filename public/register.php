@@ -26,34 +26,32 @@ require __DIR__ . '/../includes/header.inc.php';
             
             <p>Required fields &lpar; <strong style="color:#900;">&ast;</strong> &rpar;</p>
             <p><label class="required" for="first_name">First Name:</label>   
-              <input type="text" id="first_name" name="first_name" value="<?=old('first_name', $post)?>" />
-              <br /><?=error('first_name', $errors)?></p>
+              <input type="text" id="first_name" name="first_name" value="<?=old('first_name', $post)?>" maxlength="255" /><br /><?=error('first_name', $errors)?></p>
             <p><label class="required" for="last_name">Last Name:</label>
-              <input type="text" id="last_name" name="last_name" value="<?=old('last_name', $post)?>" />
-            <br /><?=error('last_name', $errors)?></p>
+              <input type="text" id="last_name" name="last_name" value="<?=old('last_name', $post)?>" maxlength="255" /><br /><?=error('last_name', $errors)?></p>
             <p><label class="required" for="email">Email:</label>
-              <input type="text" name="email" id="email" value="<?=old('email', $post)?>" />
+              <input type="text" name="email" id="email" value="<?=old('email', $post)?>" maxlength="255" />
             <br /><?=error('email', $errors)?></p>
             <p><label class="required" for="phone_num">Phone Number</label>
-              <input type="text" name="phone_num" id="phone_num" value="<?=old('phone_num', $post)?>" />
+              <input type="text" name="phone_num" id="phone_num" value="<?=old('phone_num', $post)?>" maxlength="255" />
             <br /><?=error('phone_num', $errors)?></p>
             <p><label class="required" for="address">Address:</label>
-              <input type="text" name="address" id="address" value="<?=old('address', $post)?>" />
+              <input type="text" name="address" id="address" value="<?=old('address', $post)?>" maxlength="255" />
               <br /><?=error('address', $errors)?></p>
             <p><label class="required" for="city">City:</label>
-              <input type="text" name="city" id="city" value="<?=old('city', $post)?>" />
+              <input type="text" name="city" id="city" value="<?=old('city', $post)?>" maxlength="255" />
               <br /><?=error('city', $errors)?></p>
             <p><label class="required" for="prov">Province:</label>
-              <input type="text" name="prov" id="prov" value="<?=old('prov', $post)?>" />
+              <input type="text" name="prov" id="prov" value="<?=old('prov', $post)?>" maxlength="255" />
             <br /><?=error('prov', $errors)?></p>
             <p><label class="required" for="post_code">Postal Code:</label>
-              <input type="text" name="post_code" id="post_code" value="<?=old('post_code', $post)?>" />
+              <input type="text" name="post_code" id="post_code" value="<?=old('post_code', $post)?>" maxlength="6" />
             <br /><?=error('post_code', $errors)?></p>
             <p><label class="required" for="country">Country:</label>
-              <input type="text" name="country" id="country" value="<?=old('country', $post)?>" />
+              <input type="text" name="country" id="country" value="<?=old('country', $post)?>" maxlength="255" />
             <br /><?=error('country', $errors)?></p>
             <p><label class="required" for="password">Password:</label>
-              <input type="password" name="password" id="password" value="<?=old('password', $post)?>" />
+              <input type="password" name="password" id="password" value="<?=old('password', $post)?>" maxlength="255" />
             <br /><?=error('password', $errors)?></p>
             <p><label class="required" for="confirm_password">Confirm Password:</label>
               <input type="password" name="confirm_password" id="confirm_password" value="<?=old('confirm_password', $post)?>" /><br /><?=error('confirm_password', $errors)?></p>
