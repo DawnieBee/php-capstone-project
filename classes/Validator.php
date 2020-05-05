@@ -80,6 +80,14 @@ class Validator
         }
     }
 
+    public function isPostalCode($value, $field)
+    {
+        $pattern = '/^[a-zA-Z]\d[a-zA-Z]\d[a-zA-Z]\d$/';
+        $test = preg_match($pattern, $value);
+        if($test === 0) {
+            $this->setError($field, $this->label($value) . " is not a valid format.");
+        }
+    }
     /**
      * Get erorrs array
      * getters are public functions for returning/accessing private properties

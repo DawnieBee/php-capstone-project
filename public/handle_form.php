@@ -55,13 +55,15 @@ $v->string($_POST['prov'], 'prov');
 $v->minLen($_POST['prov'], 'prov', 2);
 $v->maxLen($_POST['prov'], 'prov', 255);
 
-
-
+/*--- Postal Code validation ---*/
 $v->isRequired($_POST['post_code'], 'post_code');
+$v->isPostalCode($_POST['post_code'], 'post_code');
 
 /*--- Country validation ---*/
 $v->isRequired($_POST['country'], 'country');
 $v->string($_POST['country'], 'country');
+$v->minLen($_POST['prov'], 'prov', 2);
+$v->maxLen($_POST['prov'], 'prov', 255);
 
 
 $v->isRequired($_POST['password'], 'password');
