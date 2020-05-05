@@ -33,7 +33,7 @@ class Validator
      * @param String $value 
      * @param String $field 
      */
-    public function String($value, $field)
+    public function string($value, $field)
     {
         $pattern = '/^[A-Za-z\s\-\']{1,31}$/';
         $test = preg_match($pattern, $value);

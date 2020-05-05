@@ -22,12 +22,12 @@ $v = new Capstone\Validator();
 /*--- Name validation ---*/ 
 
 $v->isRequired($_POST['first_name'], 'first_name');
-$v->String($_POST['first_name'], 'first_name');
+$v->string($_POST['first_name'], 'first_name');
 $v->minLen($_POST['first_name'], 'first_name', 2);
 $v->maxLen($_POST['first_name'], 'first_name', 255);
 
 $v->isRequired($_POST['last_name'], 'last_name');
-$v->String($_POST['last_name'], 'last_name');
+$v->string($_POST['last_name'], 'last_name');
 $v->minLen($_POST['last_name'], 'last_name', 2);
 $v->maxLen($_POST['last_name'], 'last_name', 255);
 
@@ -41,10 +41,29 @@ $v->isRequired($_POST['phone_num'], 'phone_num');
 
 /*--- Address validation ---*/
 $v->isRequired($_POST['address'], 'address');
+
+/*--- City validation ---*/
 $v->isRequired($_POST['city'], 'city');
+$v->string($_POST['city'], 'city');
+$v->minLen($_POST['city'], 'city', 2);
+$v->maxLen($_POST['city'], 'city', 255);
+
+
+/*--- Province validation ---*/
 $v->isRequired($_POST['prov'], 'prov');
+$v->string($_POST['prov'], 'prov');
+$v->minLen($_POST['prov'], 'prov', 2);
+$v->maxLen($_POST['prov'], 'prov', 255);
+
+
+
 $v->isRequired($_POST['post_code'], 'post_code');
+
+/*--- Country validation ---*/
 $v->isRequired($_POST['country'], 'country');
+$v->string($_POST['country'], 'country');
+
+
 $v->isRequired($_POST['password'], 'password');
 $v->isRequired($_POST['confirm_password'], 'confirm_password');
 
@@ -60,8 +79,8 @@ $v->isEmail('email', $_POST['email']);
 
 $errors = $v->errors();
 
-dd($v);
-die;
+// dd($v);
+// die;
 
 // saving errros into the $_SESSION array 
 if(!empty($errors)) {
