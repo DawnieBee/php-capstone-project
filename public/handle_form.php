@@ -32,12 +32,12 @@ $v->minLen($_POST['last_name'], 'last_name', 2);
 $v->maxLen($_POST['last_name'], 'last_name', 255);
 
 /*--- Email validation ---*/
-
 $v->isRequired($_POST['email'], 'email');
+$v->isEmail('email', $_POST['email']);
 
 /*--- Phone Number validation ---*/
-
 $v->isRequired($_POST['phone_num'], 'phone_num');
+$v->isPhoneNum($_POST['phone_num'], 'phone_num');
 
 /*--- Address validation ---*/
 $v->isRequired($_POST['address'], 'address');

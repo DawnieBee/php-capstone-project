@@ -28,11 +28,13 @@ class Validator
             $this->setError($field, $this->label($field) . " is a required field.");
             }
     }
-    /**
-     *  String Validator - no special characters or numbers besides a dash (-) or an apostrophe (')
-     * @param String $value 
-     * @param String $field 
-     */
+           
+     /**
+      * String Validator - no special characters or numbers besides a dash (-) or an apostrophe (')
+      * @param  String $value 
+      * @param  String $field 
+      * @return boolean        
+      */
     public function string($value, $field)
     {
         $pattern = '/^[A-Za-z\s\-\']{1,31}$/';
@@ -41,6 +43,7 @@ class Validator
             $this->setError($field, $this->label($field) . " cannot contain numbers or special characters");
         }
     }
+
     /**
      * Minimum length 
      * @param  String $value 
@@ -54,6 +57,7 @@ class Validator
             $this->setError($field, $this->label($field) . " must be at least $len characters long.");
         }
     }
+
     /**
      * Maximum length  
      * @param  String $value 
@@ -67,6 +71,7 @@ class Validator
             $this->setError($field, $this->label($field) . " cannot be more than $len characters long.");
         }
     }
+
     /**
      * Validate email   
      * @param  String  $field    
@@ -80,6 +85,12 @@ class Validator
         }
     }
 
+    /**
+     * Postal Code validator
+     * @param  string  $value only 6 digits Canadian format
+     * @param  string  $field 
+     * @return boolean        
+     */
     public function isPostalCode($value, $field)
     {
         $pattern = '/^[a-zA-Z]\d[a-zA-Z]\d[a-zA-Z]\d$/';
@@ -88,6 +99,27 @@ class Validator
             $this->setError($field, $this->label($value) . " is not a valid format.");
         }
     }
+    
+    /**
+     * Clean phone number validator 
+     * @param  String  $value 
+     * @param  String  $field 
+     * @return boolean        
+     */
+    public function isPhoneNum($value, $field)
+    {
+        $pattern = '/^[\(]?[\d]{3}[\)\s\-.]*[\d]{3}[\s\-\.]?[\d]{4}$/';
+        $test = preg_match($pattern, $value);
+        if($test === 0){
+            $this->setError($field, $this->label($value) . " is not valid.");
+        } elseif(preg_match($pattern, $value) === 1){
+            $pattern = '/[^0-9]/';
+            $replace = '';
+            $clean_num = preg_replace($pattern, $replace, $value);
+        }
+    }
+
+
     /**
      * Get erorrs array
      * getters are public functions for returning/accessing private properties
