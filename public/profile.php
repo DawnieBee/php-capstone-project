@@ -21,6 +21,7 @@ $query = 'SELECT *
             WHERE 
             user_id = :user_id';
 $stmt = $dbh->prepare($query);
+
 $params = array(
     ':user_id' => intval($_SESSION['user_id'])
 );

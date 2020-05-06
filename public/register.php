@@ -16,7 +16,7 @@ require __DIR__ . '/../includes/header.inc.php';
       <section>
         
         <p>To sign up, please fill in the form below:</p>
-
+        
         <div id="form_container" class="clearfix">
         
         <form id="form" name="form" method="post" action="handle_form.php" novalidate>  

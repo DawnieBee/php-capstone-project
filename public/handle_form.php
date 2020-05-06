@@ -70,12 +70,13 @@ $v->isRequired($_POST['password'], 'password');
 $v->isPassword($_POST['password'], 'password');
 
 $v->isRequired($_POST['confirm_password'], 'confirm_password');
-$v->confirm($_POST['confirm_password'], 'password', 'confirm_password');
+$v->confirm('confirm_password', $_POST['password'], $_POST['confirm_password']);
 
 $errors = $v->errors();
 
 // dd($v);
 // die;
+
 
 // saving errros into the $_SESSION array 
 if(!empty($errors)) {

@@ -143,7 +143,7 @@ class Validator
      */
     function confirm($field, $value1, $value2)
     {
-        if($_POST['password'] !== $_POST['confirmPassword']){
+        if($value1 !== $value2){
             $this->setError($field, $this->label($field) . " and Password do not match");
         }
     }
