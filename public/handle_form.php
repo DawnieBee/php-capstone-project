@@ -70,16 +70,7 @@ $v->isRequired($_POST['password'], 'password');
 $v->isPassword($_POST['password'], 'password');
 
 $v->isRequired($_POST['confirm_password'], 'confirm_password');
-
-
-
-
-
-// email 
-$v->isEmail('email', $_POST['email']);
-
-// postal code 
-//$v->isPostal($_POST['post_code'], 'post_code');
+$v->confirm($_POST['confirm_password'], 'password', 'confirm_password');
 
 $errors = $v->errors();
 

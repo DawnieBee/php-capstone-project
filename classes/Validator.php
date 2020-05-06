@@ -119,6 +119,12 @@ class Validator
         }
     }
 
+    /**
+     * Password strength
+     * @param  String  $value must have min 8 characters, uppercase, num, and spec char
+     * @param  String  $field 
+     * @return boolean        
+     */
     public function isPassword($value, $field)
     {
         $pattern = '/(?=.*[\!\@\#\$\%\^\&\*]+)(?=.*[\d]+)(?=.*[A-Z]+).{8,}/';
@@ -127,6 +133,21 @@ class Validator
             $this->setError($field, $this->label($field) . " must be a minimum 8 characters with at least 1 uppercase letter, a number, and a special character.");
         }
     }
+
+    /**
+     * confirm fields
+     * @param  String $field  
+     * @param  String $value1 
+     * @param  String $value2 
+     * @return boolean         
+     */
+    function confirm($field, $value1, $value2)
+    {
+        if($_POST['password'] !== $_POST['confirmPassword']){
+            $this->setError($field, $this->label($field) . " and Password do not match");
+        }
+    }
+
 
     /**
      * Get erorrs array
