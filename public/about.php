@@ -25,7 +25,7 @@ require __DIR__ . '/../includes/header.inc.php';
         
         <h2>Who We Are</h2>
         <p>
-          There are always newcomers to the city and the main question they will ask any Winnipeg native 
+          There are plenty of newcomers to the city and the main question they will ask any Winnipeg native 
           is <span style="font-style: italic">“where is a good place to live?”</span> We have collected information on a few Winnipeg neighborhoods,
           which was gathered by crowsourcing current and past residents in those neighborhoods.
         </p>
