@@ -2,7 +2,7 @@
 /**
  * Dawn Baker
  * Inter PHP
- *Assignment 1
+ *Assignment 2
  */
 /*
 * Handle Add User Form
@@ -69,6 +69,7 @@ $v->maxLen($_POST['prov'], 'prov', 255);
 $v->isRequired($_POST['password'], 'password');
 $v->isPassword($_POST['password'], 'password');
 
+/*--- Confirm Validation ---*/
 $v->isRequired($_POST['confirm_password'], 'confirm_password');
 $v->confirm('confirm_password', $_POST['password'], $_POST['confirm_password']);
 

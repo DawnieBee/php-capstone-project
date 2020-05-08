@@ -13,7 +13,7 @@ require __DIR__ . '/../includes/header.inc.php';
 
 
 if(empty($_SESSION['user_id'])) {
-    die('Please sign up or login');
+    die('You must be logged in to see this page.');
 }
 
 $query = 'SELECT *

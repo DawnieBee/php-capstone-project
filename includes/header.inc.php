@@ -7,6 +7,7 @@
  */
 
 require __DIR__ . '/../config.php';
+
 ?><!doctype html>
 
 <html lang="en">
@@ -87,7 +88,7 @@ require __DIR__ . '/../config.php';
     <!-- end more style -->
 
     <!-- style content for contact page -->
-    <?php if($title == "Register With Us") : ?>
+    <?php if($title == "Register With Us" || $title == "Login") : ?>
     <style>
       h2, h3, p{
         margin: 10px 20px 5px 20px;
@@ -111,7 +112,7 @@ require __DIR__ . '/../config.php';
         background-color: #333;
         color: #ff0;
         width: 130px;
-        text-align: left;
+        text-align: center;
         padding: 6px;
         border: 1px solid #333;
         border-radius: 15px;
@@ -151,6 +152,7 @@ require __DIR__ . '/../config.php';
       } 
     </style> 
     <?php endif; ?>
+   
     <?php if($title === "Registration Success!") : ?>
     <style> 
         .user_info{
