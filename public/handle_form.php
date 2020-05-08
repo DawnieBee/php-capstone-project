@@ -89,6 +89,8 @@ if(!empty($errors)) {
     die;
 }
 
+// encrypt the password before entering into user's table
+$encryptpass = password_hash($_POST['password'], PASSWORD_DEFAULT);
 // all entered info is validated, now to create the record in the database for users table
 
 // query used to insert into users table
@@ -108,7 +110,7 @@ $params = array(
     ':prov' => $_POST['prov'],
     ':post_code' => $_POST['post_code'],
     ':country' => $_POST['country'],
-    ':password' => $_POST['password']
+    ':password' => $encryptpass
 );
 // execute the query to database
 $stmt->execute($params);
@@ -123,7 +125,7 @@ dd($user_id);
  */
 if($user_id > 0) {
     $_SESSION['user_id'] = $user_id;
-    header('Location: profile.php');
+    header('Location: success.php');
         die;
 } else {
     die('Unable to create new user');

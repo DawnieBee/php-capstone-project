@@ -27,20 +27,30 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
             ':email' => $_POST['email']
         );
         $stmt->execute($params);
-        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
         // test if user credentials are valid 
-        if($result === false){
+        if($user === false){
             $errors['credentials'] = 'Sorry, input does not match our records.';
             $_SESSION['errors'] = $errors;
             $_SESSION['post'] = $post;
             header('Location: login.php');
             die;
         }
-        // dd($result);
-        // die;
-        // testing password match to file: 
-        if(is_password($_POST['password']))
+        
+        // now that user info matches database info, testing password match to file: 
+        if(is_password($_POST['password'], $user['password'])){
+            $_SESSION['user_id'] = $user['user_id'];
+            session_regenerate_id();
+            header('Location: user.php');
+            die;
+        } 
+        // if credentials dont match, send user back to login page with error : 
+        $errors['credentials'] = "Information entered does not match our records.";
+        $_SESSION['errors'] = $errors;
+        $_SESSION['post'] = $_POST;
+        header('Location: login.php');
+        die;
 
   }
 }
