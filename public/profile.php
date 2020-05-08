@@ -11,29 +11,29 @@ $title = "Registration Success!";
 
 require __DIR__ . '/../includes/header.inc.php';
 
+ if(empty($_SESSION['user_id'])) {
+     die('Please sign up or login');
+ }
+ 
+ $query = 'SELECT *
+             FROM users 
+             WHERE 
+             user_id = :user_id';
+ $stmt = $dbh->prepare($query);
 
-if(empty($_SESSION['user_id'])) {
-    die('You must be logged in to see this page.');
-}
+ $params = array(
+     ':user_id' => intval($_SESSION['user_id'])
+ );
+ 
+ $stmt->execute($params);
+ 
+ $result = $stmt->fetch(PDO::FETCH_ASSOC);
+ 
+ // // if no user with that user_id die with an error message 
+ // if($result === false) {
+ //     die('We could not find that user');
+ // }
 
-$query = 'SELECT *
-            FROM users 
-            WHERE 
-            user_id = :user_id';
-$stmt = $dbh->prepare($query);
-
-$params = array(
-    ':user_id' => intval($_SESSION['user_id'])
-);
-
-$stmt->execute($params);
-
-$result = $stmt->fetch(PDO::FETCH_ASSOC);
-
-// if no user with that user_id die with an error message 
-if($result === false) {
-    die('We could not find that user');
-}
  // otherwise load the page with the profile information
 
 

@@ -12,7 +12,7 @@ require __DIR__ . '/../config.php';
 // confirm form data is a POST request or die 
 if($_SERVER['REQUEST_METHOD'] !== 'POST') {
     die('Unsupported request method.');
-}
+} 
 // Validate fields 
 
 $v = new Capstone\Validator();

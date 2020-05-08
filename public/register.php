@@ -11,6 +11,7 @@ $title2 = "Register With Us!";
 
 require __DIR__ . '/../includes/header.inc.php';
 
+
 ?> 
     
       <section>
@@ -19,7 +20,7 @@ require __DIR__ . '/../includes/header.inc.php';
         
         <div id="form_container" class="clearfix">
         
-            <form id="form" name="form" method="post" action="register.php" novalidate>  
+            <form id="form" name="form" method="post" action="handle_form.php" novalidate>  
               <fieldset> 
                 <legend><?=$title2?></legend>  
                 

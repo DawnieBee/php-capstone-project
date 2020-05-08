@@ -13,6 +13,37 @@ $title2 = "Login here";
 
 require __DIR__ . '/../includes/header.inc.php';
 
+if($_SERVER['REQUEST_METHOD'] === 'POST'){
+    //after validation 
+    if(empty($errors)){
+        //query database for saved user info: 
+        $query = 'SELECT *
+                FROM 
+                users
+                WHERE
+                email = :email';
+        $stmt = $dbh->prepare($query);
+        $params = array(
+            ':email' => $_POST['email']
+        );
+        $stmt->execute($params);
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        // test if user credentials are valid 
+        if($result === false){
+            $errors['credentials'] = 'Sorry, input does not match our records.';
+            $_SESSION['errors'] = $errors;
+            $_SESSION['post'] = $post;
+            header('Location: login.php');
+            die;
+        }
+        // dd($result);
+        // die;
+        // testing password match to file: 
+        if(is_password($_POST['password']))
+
+  }
+}
 
 ?>
     <section>
