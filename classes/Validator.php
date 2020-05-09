@@ -185,5 +185,4 @@ class Validator
         $label = ucwords($label);
         return $label;
     }
-
 }
