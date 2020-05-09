@@ -7,9 +7,12 @@
 /**
  * registration success page
  */
+
+require __DIR__ . '/../config.php';
+
 $title = "Registration Success!";
 
-require __DIR__ . '/../includes/header.inc.php';
+
 
  if(empty($_SESSION['user_id'])) {
      die('Please sign up or login');
@@ -29,15 +32,14 @@ require __DIR__ . '/../includes/header.inc.php';
  
  $result = $stmt->fetch(PDO::FETCH_ASSOC);
  
- // // if no user with that user_id die with an error message 
- // if($result === false) {
- //     die('We could not find that user');
- // }
+ // if no user with that user_id die with an error message 
+ if($result === false) {
+     die('We could not find that user');
+ }
 
  // otherwise load the page with the profile information
 
-
-
+require __DIR__ . '/../includes/header.inc.php';
 ?>
     <h2>Thank you for registering with us!</h2>
 
