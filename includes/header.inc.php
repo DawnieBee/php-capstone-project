@@ -202,7 +202,7 @@
     <!-- login style -->
     <?php if ($title == "Login") : ?> 
     <style>
-        span.error {
+      span.error {
         color: #f00;
         font-weight: bold;
       }
