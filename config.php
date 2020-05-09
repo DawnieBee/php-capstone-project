@@ -57,3 +57,11 @@ $dbh = new PDO(DB_DSN, DB_USER, DB_PASS);
 $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 require 'functions.php';
+
+if(!empty($_GET['logout'])) {
+    unset($_SESSION['user_id']);
+    session_regenerate_id();
+    $errors['logout'] = 'You are now logged out';
+    $_SESSION['errors'] = $errors;
+    header('Location: 08_login.php');
+}
