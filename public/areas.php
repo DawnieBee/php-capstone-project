@@ -2,8 +2,9 @@
 /**
  * Dawn Baker
  * Inter PHP
- *Assignment 1
+ *Assignment 2
  */
+require __DIR__ . '/../config.php';
 
 $title = "Areas";
 
