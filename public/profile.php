@@ -70,7 +70,7 @@ require __DIR__ . '/../includes/header.inc.php';
         </table>
     </div>
 
-    <p><a href="login.php?logout">Logout</a></p>
+    
 <?php
 
 require __DIR__ . '/../includes/footer.inc.php'

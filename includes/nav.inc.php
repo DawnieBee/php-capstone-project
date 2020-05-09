@@ -14,7 +14,7 @@
             <?php if(!isset($_SESSION['user'])) : ?>      
             <!--  if not logged in show these  -->
                 <li class="curved_borders"><a <?=($title == "Profile") ? 'class="current"' : ''?> href="profile.php">Profile</a></li>
-                <li class="curved_borders"><a <?=($title == "Profile") ?> href="profile.php">Logout</a></li>
+                <li class="curved_borders"><a <?=($title == "Profile") ?> href="login.php?logout">Logout</a></li>
             <?php endif; ?>
             <?php if(isset($_SESSION['user'])) : ?>
             <!-- if logged in show these -->
