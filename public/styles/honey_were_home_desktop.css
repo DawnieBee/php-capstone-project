@@ -271,6 +271,28 @@ footer{
   content: "";
   clear: both;
 }
+/* flash messaging options */
+.flash {
+  width: 100%;
+  line-height: 50px;
+  padding: 0;
+  margin:0;
+  text-align: center;
+}
+.error {
+  color: #bf3d42;
+  background: #fae3e4;
+  font-weight: bold;
+  border: solid 1px #900;
+}
+.success {
+  color: #000;
+  border: 1px solid #013610;
+  background: #e3faea;
+  font-weight: bold;
+}
+/*end flash messaging*/
+
 
 @media screen (min-width: 768px) and (max-width: 960px){
   #wrapper{

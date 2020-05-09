@@ -245,11 +245,17 @@
             </picture>
           </div>
           <h1 class="title_text"><?=$title?></h1>
-          
+          <nav id="main_nav">
+              <?php require __DIR__ . '/nav.inc.php'; ?>
+          </nav>
         </div>
 
       </header> 
-      <nav id="main_nav">
-              <?php require __DIR__ . '/nav.inc.php'; ?>
-          </nav>
+      <div class="flash error">
+        <span>There was a problem loggin in.</span>  
+      </div>
+      <div class="flash success">
+        <span>You are logged in</span>
+      </div>
+      
 <!--      end of header container -->

@@ -75,8 +75,6 @@ $v->confirm('confirm_password', $_POST['password'], $_POST['confirm_password']);
 
 $errors = $v->errors();
 
-// dd($v);
-// die;
 
 
 // saving errros into the $_SESSION array 
@@ -91,6 +89,7 @@ if(!empty($errors)) {
 
 // encrypt the password before entering into user's table
 $encryptpass = password_hash($_POST['password'], PASSWORD_DEFAULT);
+
 // all entered info is validated, now to create the record in the database for users table
 
 // query used to insert into users table
@@ -130,3 +129,20 @@ if($user_id > 0) {
 } else {
     die('Unable to create new user');
 }
+// flash messaging 
+if(is_array($user_id)){
+    $flash = array(
+        'class' => 'success',
+        'message' => "You have successfully registered!"
+    );
+} else {
+    $flash = array(
+        'class' => 'error',
+        'message' => "Unable to create new user"
+    );
+}
+
+$_SESSION['flash'] = $flash;
+
+header('Location: ' . $_SERVER['HTTP_REFERER'] );
+die;
