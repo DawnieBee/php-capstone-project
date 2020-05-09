@@ -2,15 +2,16 @@
 
 $title = "Profile";
 
-require __DIR__ . '/../includes/header.inc.php';
+require __DIR__ . '/../config.php';
 
+// verify if there is a valid user logging in 
 if(empty($_SESSION['user_id'])) {
     $errors['credentials'] = 'You must be logged in to see that page.';
     $_SESSION['errors'] = $errors;
     header('Location: login.php');
     die;
 }
-
+// logged in user will get thier profile page and a message they are logged in 
 $query = 'SELECT * 
         FROM users 
         WHERE user_id = :user_id';
@@ -21,6 +22,7 @@ $params = array(
 $stmt->execute($params);
 $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
+require __DIR__ . '/../includes/header.inc.php';
 ?>
 
 
