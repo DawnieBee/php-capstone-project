@@ -4,14 +4,11 @@
  * Inter PHP
  *Assignment 2
  */
-/*
-* User log in form
- */
+
+require __DIR__ . '/../config.php';
 
 $title = "Login"; 
 $title2 = "Login here";
-
-require __DIR__ . '/../includes/header.inc.php';
 
 if($_SERVER['REQUEST_METHOD'] === 'POST'){
     //after validation 
@@ -30,8 +27,6 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
         $stmt->execute($params);
         $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
-        // dd($user);
-        // die;
         // test if user credentials are valid 
         if($user === false){
             $errors['credentials'] = 'Sorry, input does not match our records.';
@@ -58,6 +53,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
             die;
     }
 }
+require __DIR__ . '/../includes/header.inc.php';
 
 ?>
 
