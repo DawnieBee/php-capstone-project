@@ -113,19 +113,3 @@ function isRequired($field, $value)
 }
 
 
-
-/**
- * validate an email address
- * @param  String $field 
- * @param  String $value 
- * @return boolean        [description]
- */
-function validEmail($field, $value)
-{
-    if($value !== filter_var($value, FILTER_VALIDATE_EMAIL)){
-        if(empty($errors[$field])){
-            setError($field, label($field) . ' must be a valid email address');
-        }
-    }
-}
-
