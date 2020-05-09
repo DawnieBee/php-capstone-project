@@ -29,7 +29,7 @@ require __DIR__ . '/../config.php';
         }
 
     </style>
-    <?php if($title == "About Us") : ?>
+    <?php if($title === "About Us") : ?>
     <style>
       section{
         min-height: 450px;
@@ -53,7 +53,7 @@ require __DIR__ . '/../config.php';
     <?php endif; ?>  
     <!-- end about style -->
 
-    <?php if($title == "Areas") : ?>
+    <?php if($title === "Areas") : ?>
     <style>      
       h2{
         text-align: center;
@@ -74,7 +74,7 @@ require __DIR__ . '/../config.php';
     <?php endif; ?>
     <!-- end areas style -->
 
-    <?php if($title == "Community Services") : ?>
+    <?php if($title === "Community Services") : ?>
     <style>
       section{
         min-height: 450px;
@@ -86,9 +86,69 @@ require __DIR__ . '/../config.php';
     </style>
     <?php endif; ?>
     <!-- end more style -->
-
-    <!-- style content for contact page -->
-    <?php if($title == "Register With Us" || $title == "Login") : ?>
+    <!-- style content for login page  -->
+    <?php if($title === "Login") : ?>
+    <style>
+      h2, h3, p{
+        margin: 10px 20px 5px 20px;
+        line-height: 1.4em;
+      }
+      span.error {
+        color: #f00;
+        font-weight: bold;
+      }
+      .required:before {
+        content: "*";
+        padding-right:; 5px;
+        color: #900;
+        font-weight: 700;
+      }
+      #form_container{
+        position: relative;
+        padding: 20px;
+      }
+      form legend{
+        background-color: #333;
+        color: #ff0;
+        width: 130px;
+        text-align: center;
+        padding: 6px;
+        border: 1px solid #333;
+        border-radius: 15px;
+        box-shadow: 0 1px 1px rgba(0,0,0,.6);
+      }
+      form label{
+        clear: both;
+        width: 130px;
+        display: block;
+        float: left;
+      }
+      form fieldset{
+        width: 500px;
+        border: 1px solid #333;
+        margin-bottom: 20px;
+        font-size: 0.9em;
+        border-radius: 15px;
+      }
+      form input[type="email"],
+      form input[type="password"]{
+        border: 1px solid #000;
+        width: 200px;
+        background-color: #fff;
+        font-size: 1.1em;
+        -webkit-transition: all .3s ease-in-out;
+        transition: all .3s ease-in-out;
+        box-shadow: inset 1px 1px 2px rgba(0,0,0,.5);
+      }
+      form input:hover{
+        background-color: #ffb;
+        box-shadow: 0 0 6px #ccc;
+      } 
+    </style>
+    <?php endif; ?>
+    <!-- end style for login -->
+    <!-- style content for register page -->
+    <?php if($title === "Register With Us") : ?>
     <style>
       h2, h3, p{
         margin: 10px 20px 5px 20px;
