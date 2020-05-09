@@ -11,7 +11,7 @@
 $title = "Login"; 
 $title2 = "Login here";
 
-
+require __DIR__ . '/../includes/header.inc.php';
 
 if($_SERVER['REQUEST_METHOD'] === 'POST'){
     //after validation 
@@ -58,7 +58,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
             die;
     }
 }
-require __DIR__ . '/../includes/header.inc.php';
+
 ?>
 
     <section>
