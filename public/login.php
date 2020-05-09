@@ -53,6 +53,8 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
             die;
     }
 }
+
+
 require __DIR__ . '/../includes/header.inc.php';
 
 ?>

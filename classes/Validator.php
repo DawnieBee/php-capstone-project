@@ -141,14 +141,14 @@ class Validator
      * @param  String $value2 
      * @return boolean         
      */
-    function confirm($field, $value1, $value2)
+    public function confirm($field, $value1, $value2)
     {
         if($value1 !== $value2){
             $this->setError($field, $this->label($field) . " and Password do not match");
         }
     }
 
-
+    
     /**
      * Get erorrs array
      * getters are public functions for returning/accessing private properties

@@ -245,9 +245,11 @@
             </picture>
           </div>
           <h1 class="title_text"><?=$title?></h1>
-          <nav id="main_nav">
+          
+        </div>
+
+      </header> 
+      <nav id="main_nav">
               <?php require __DIR__ . '/nav.inc.php'; ?>
           </nav>
-        </div>
-      </header> 
 <!--      end of header container -->

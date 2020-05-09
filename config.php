@@ -63,5 +63,5 @@ if(!empty($_GET['logout'])) {
     session_regenerate_id();
     $errors['logout'] = 'You are now logged out';
     $_SESSION['errors'] = $errors;
-    header('Location: 08_login.php');
+    header('Location: login.php');
 }
