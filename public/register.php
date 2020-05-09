@@ -5,6 +5,7 @@
  * Inter PHP
  *Assignment 1
  */
+require __DIR__ . '/../config.php';
 
 $title = "Register With Us";
 $title2 = "Register With Us!";
