@@ -1,8 +1,8 @@
 <?php
 
-$title = "Profile";
-
 require __DIR__ . '/../config.php';
+
+$title = "Profile";
 
 // verify if there is a valid user logging in 
 if(empty($_SESSION['user_id'])) {
@@ -27,6 +27,7 @@ require __DIR__ . '/../includes/header.inc.php';
 
 
     <h2>Welcome back <?=esc($user['first_name'])?>! You have successfully logged in.</h2>
+
 
     <p>Here is your user information:</p>
     <div class="user_info">
