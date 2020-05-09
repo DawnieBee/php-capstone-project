@@ -11,7 +11,28 @@ $title = "Login";
 $title2 = "Login here";
 
 if($_SERVER['REQUEST_METHOD'] === 'POST'){
-    //after validation 
+    // validation 
+    
+    $v = new Capstone\Validator();
+
+    /*--- Email validation ---*/
+    $v->isRequired($_POST['email'], 'email');
+    $v->isEmail('email', $_POST['email']);
+    /*--- Password validation ---*/
+    $v->isRequired($_POST['password'], 'password');
+    $v->isPassword($_POST['password'], 'password');
+
+    $errors = $v->errors();
+    // saving errros into the $_SESSION array 
+    if(!empty($errors)) {
+        // add the $errors to the SESSION
+        $_SESSION['errors'] = $errors;
+        $_SESSION['post'] = $_POST;
+        // redirect back to contact page registration form
+        header("Location: login.php");
+        die;
+    }
+
     if(empty($errors)){
         //query database for saved user info: 
         $query = 'SELECT *
@@ -53,6 +74,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
             die;
     }
 }
+
 
 
 require __DIR__ . '/../includes/header.inc.php';

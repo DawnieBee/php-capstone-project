@@ -35,6 +35,7 @@ if(isset($_SESSION['post'])) {
     $post = [];
 }
 
+
 // Define DB connection parameters
 if(ENV === 'DEVELOPMENT') {
     define('DB_DSN', 'mysql:host=localhost;dbname=capstone');

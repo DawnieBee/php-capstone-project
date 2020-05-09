@@ -129,20 +129,4 @@ if($user_id > 0) {
 } else {
     die('Unable to create new user');
 }
-// flash messaging 
-if(is_array($user_id)){
-    $flash = array(
-        'class' => 'success',
-        'message' => "You have successfully registered!"
-    );
-} else {
-    $flash = array(
-        'class' => 'error',
-        'message' => "Unable to create new user"
-    );
-}
 
-$_SESSION['flash'] = $flash;
-
-header('Location: ' . $_SERVER['HTTP_REFERER'] );
-die;

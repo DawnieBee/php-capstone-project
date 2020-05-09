@@ -279,7 +279,7 @@ footer{
   margin:0;
   text-align: center;
 }
-.error {
+.flash_error {
   color: #bf3d42;
   background: #fae3e4;
   font-weight: bold;

@@ -199,6 +199,66 @@
         }
     </style>
     <?php endif; ?>
+    <!-- login style -->
+    <?php if ($title == "Login") : ?> 
+    <style>
+        span.error {
+        color: #f00;
+        font-weight: bold;
+      }
+      .required:before {
+        content: "*";
+        padding-right:; 5px;
+        color: #900;
+        font-weight: 700;
+      }
+      #form_container{
+        position: relative;
+        padding: 20px;
+      }
+      form legend{
+        background-color: #333;
+        color: #ff0;
+        width: 130px;
+        text-align: center;
+        padding: 6px;
+        border: 1px solid #333;
+        border-radius: 15px;
+        box-shadow: 0 1px 1px rgba(0,0,0,.6);
+      }
+      form label{
+        clear: both;
+        width: 130px;
+        display: block;
+        float: left;
+      }
+      form fieldset{
+        width: 500px;
+        border: 1px solid #333;
+        margin-bottom: 20px;
+        font-size: 0.9em;
+        border-radius: 15px;
+      }
+      form input[type="text"],
+      form input[type="password"]{
+        border: 1px solid #000;
+        width: 200px;
+        background-color: #fff;
+        font-size: 1.1em;
+        -webkit-transition: all .3s ease-in-out;
+        transition: all .3s ease-in-out;
+        box-shadow: inset 1px 1px 2px rgba(0,0,0,.5);
+      }
+      datalist{
+        float: left;
+        display: none;
+      }
+      form input:hover{
+        background-color: #ffb;
+        box-shadow: 0 0 6px #ccc;
+      } 
+      </style>
+    <?php endif; ?>
 
     <!-- end more style -->
     <!--[if ie 8]>
@@ -235,27 +295,22 @@
 <!--    wrapper contains all content -->
     <div id="wrapper" class="boxshadow">
 <!--    contains everything in the header -->
-      <header>
-        <div class="header_container">
-          <div id="logo">
-            <picture>
-              <source media="(min-width: 768px)" srcset="images/main_logo150x170.png" />
-                <source media="(min-width: 767px)" srcset="images/main_logo_half.png 1x, images/main_logo150x170.png 2x" />
-                <img src="images/main_logo150x170.png" width="150" height="170" alt="Honey I'm Home Logo" />  
-            </picture>
-          </div>
-          <h1 class="title_text"><?=$title?></h1>
-          <nav id="main_nav">
-              <?php require __DIR__ . '/nav.inc.php'; ?>
-          </nav>
-        </div>
+        <header>
+            <div class="header_container">
+                <div id="logo">
+                    <picture>
+                        <source media="(min-width: 768px)" srcset="images/main_logo150x170.png" />
+                        <source media="(min-width: 767px)" srcset="images/main_logo_half.png 1x, images/main_logo150x170.png 2x" />
+                        <img src="images/main_logo150x170.png" width="150" height="170" alt="Honey I'm Home Logo" />  
+                    </picture>
+                </div>
+                <h1 class="title_text"><?=$title?></h1>
+                <nav id="main_nav">
+                    <?php require __DIR__ . '/nav.inc.php'; ?>
+                </nav>
+            </div>
 
-      </header> 
-      <div class="flash error">
-        <span>There was a problem loggin in.</span>  
-      </div>
-      <div class="flash success">
-        <span>You are logged in</span>
-      </div>
+        </header> <!-- end header -->
+
+        
       
-<!--      end of header container -->
