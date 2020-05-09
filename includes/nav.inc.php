@@ -9,7 +9,15 @@
             <li class="curved_borders"><a <?=($title == "About Us") ? 'class="current"' : ''?> href="about.php">About</a></li>
             <li class="curved_borders"><a <?=($title == "Areas") ? 'class="current"' : ''?> href="areas.php">Areas</a></li>
             <li class="curved_borders"><a <?=($title == "Community Services") ? 'class="current"' : ''?> href="more.php">More</a></li>
-            <li class="curved_borders"><a <?=($title == "Register With Us") ? 'class="current"' : ''?> href="register.php">Sign Up</a></li>
-            <li class="curved_borders"><a <?=($title == "Login") ? 'class="current"' : ''?> href="login.php">Login</a></li>
-            <li class="curved_borders"><a <?=($title == "Profile") ? 'class="current"' : ''?> href="profile.php">Profile</a></li>
+            
+            <?php if(!empty($_SESSION['user_id'] = $user['user_id'])) : ?>
+            <!--  if not logged in show these  -->
+                <li class="curved_borders"><a <?=($title == "Profile") ? 'class="current"' : ''?> href="profile.php">Profile</a></li>
+                <li class="curved_borders"><a <?=($title == "Profile") ? 'class="current"' : ''?> href="profile.php">Logout</a></li>
+                
+            <?php else: ?>
+            <!-- if logged in show these -->
+                <li class="curved_borders"><a <?=($title == "Register With Us") ? 'class="current"' : ''?> href="register.php">Sign Up</a></li>
+                <li class="curved_borders"><a <?=($title == "Login") ? 'class="current"' : ''?> href="login.php">Login</a></li>
+            <?php endif; ?>
         </ul>
