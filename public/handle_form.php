@@ -118,7 +118,7 @@ $stmt->execute($params);
 // redirect to success page 
 
 $user_id = $dbh->lastInsertId();
-dd($user_id);
+
 /**
  * if successful insert of user, redirect to the profile page with the user_id in $_SESSION
  * or die.  give an error message if not successful 
