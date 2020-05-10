@@ -111,7 +111,10 @@ function isRequired($field, $value)
         }
     }
 }
-
+/**
+ * [isLoggedIn description]
+ * @return boolean [description]
+ */
 function isLoggedIn()
 {
     if(!empty($_SESSION['user_id'])) {
@@ -123,8 +126,11 @@ function isLoggedIn()
 
 function isLoggedOut()
 {
-    if(empty($_SESSION['user_id'])) {
-        
-        $_SESSION['user_id'] = [];
+    if(!empty($_GET['logout'])) {
+        unset($_SESSION['user_id']);
+        $errors['logout'] = 'You are now logged out';
+        session_destroy();
+        header('Location: login.php');
+        die;
     }
 }
