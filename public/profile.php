@@ -50,7 +50,7 @@ require __DIR__ . '/../includes/header.inc.php';
             </tr>
             <tr>
                 <th><strong>Phone Number</strong></th> 
-                <td><?=$user['phone_num']?></td>
+                <td><?=$user['phone_number']?></td>
             </tr>
             <tr>
                 <td><strong>Address</strong></td>
@@ -62,11 +62,11 @@ require __DIR__ . '/../includes/header.inc.php';
             </tr>
             <tr>
                 <td><strong>Province</strong></td>
-                <td><?=$user['prov']?></td>
+                <td><?=$user['province']?></td>
             </tr>
             <tr>
                 <td><strong>Postal Code</strong></td>
-                <td><?=$user['post_code']?></td>
+                <td><?=$user['postal_code']?></td>
             </tr>
                 <td><strong>Country</strong></td>
                 <td><?=$user['country']?></td>

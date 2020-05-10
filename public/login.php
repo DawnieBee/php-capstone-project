@@ -82,7 +82,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
             $flash = array(
                 'class' => 'flash_error',
                 'message' => 'Sorry, input does not match our credentials.'
-            );
+                );
 
             $_SESSION['flash'] = $flash;
 

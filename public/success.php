@@ -59,7 +59,7 @@ require __DIR__ . '/../includes/header.inc.php';
             </tr>
             <tr>
                 <th><strong>Phone Number</strong></th> 
-                <td><?=$result['phone_num']?></td>
+                <td><?=$result['phone_number']?></td>
             </tr>
             <tr>
                 <td><strong>Address</strong></td>
@@ -71,11 +71,11 @@ require __DIR__ . '/../includes/header.inc.php';
             </tr>
             <tr>
                 <td><strong>Province</strong></td>
-                <td><?=$result['prov']?></td>
+                <td><?=$result['province']?></td>
             </tr>
             <tr>
                 <td><strong>Postal Code</strong></td>
-                <td><?=$result['post_code']?></td>
+                <td><?=$result['postal_code']?></td>
             </tr>
                 <td><strong>Country</strong></td>
                 <td><?=$result['country']?></td>

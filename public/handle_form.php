@@ -36,8 +36,8 @@ $v->isRequired($_POST['email'], 'email');
 $v->isEmail('email', $_POST['email']);
 
 /*--- Phone Number validation ---*/
-$v->isRequired($_POST['phone_num'], 'phone_num');
-$v->isPhoneNum($_POST['phone_num'], 'phone_num');
+$v->isRequired($_POST['phone_number'], 'phone_number');
+$v->isPhoneNum($_POST['phone_number'], 'phone_number');
 
 /*--- Address validation ---*/
 $v->isRequired($_POST['address'], 'address');
@@ -50,20 +50,20 @@ $v->maxLen($_POST['city'], 'city', 255);
 
 
 /*--- Province validation ---*/
-$v->isRequired($_POST['prov'], 'prov');
-$v->string($_POST['prov'], 'prov');
-$v->minLen($_POST['prov'], 'prov', 2);
-$v->maxLen($_POST['prov'], 'prov', 255);
+$v->isRequired($_POST['province'], 'province');
+$v->string($_POST['province'], 'province');
+$v->minLen($_POST['province'], 'province', 2);
+$v->maxLen($_POST['province'], 'province', 255);
 
 /*--- Postal Code validation ---*/
-$v->isRequired($_POST['post_code'], 'post_code');
-$v->isPostalCode($_POST['post_code'], 'post_code');
+$v->isRequired($_POST['postal_code'], 'postal_code');
+$v->isPostalCode($_POST['postal_code'], 'postal_code');
 
 /*--- Country validation ---*/
 $v->isRequired($_POST['country'], 'country');
 $v->string($_POST['country'], 'country');
-$v->minLen($_POST['prov'], 'prov', 2);
-$v->maxLen($_POST['prov'], 'prov', 255);
+$v->minLen($_POST['country'], 'country', 2);
+$v->maxLen($_POST['country'], 'country', 255);
 
 /*--- Password validation ---*/
 $v->isRequired($_POST['password'], 'password');
@@ -94,20 +94,20 @@ $encryptpass = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
 // query used to insert into users table
 $query = 'INSERT INTO users
-            (first_name, last_name, email, phone_num, address, city, prov, post_code, country, password)
+            (first_name, last_name, email, phone_number, address, city, province, postal_code, country, password)
             VALUES 
-            (:first_name, :last_name, :email, :phone_num, :address, :city, :prov, :post_code, :country, :password)';
+            (:first_name, :last_name, :email, :phone_number, :address, :city, :province, :postal_code, :country, :password)';
 $stmt = $dbh->prepare($query);
 // binding the input to params 
 $params = array(
     ':first_name' => $_POST['first_name'],
     ':last_name' => $_POST['last_name'],
     ':email' => $_POST['email'],
-    ':phone_num' => $_POST['phone_num'],
+    ':phone_number' => $_POST['phone_number'],
     ':address' => $_POST['address'],
     ':city' => $_POST['city'],
-    ':prov' => $_POST['prov'],
-    ':post_code' => $_POST['post_code'],
+    ':province' => $_POST['province'],
+    ':postal_code' => $_POST['postal_code'],
     ':country' => $_POST['country'],
     ':password' => $encryptpass
 );

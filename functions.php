@@ -112,8 +112,8 @@ function isRequired($field, $value)
     }
 }
 /**
- * [isLoggedIn description]
- * @return boolean [description]
+ * isLogged in function
+ * @return boolean 
  */
 function isLoggedIn()
 {
@@ -123,18 +123,21 @@ function isLoggedIn()
         return false;
     }
 }
-
+/**
+ * [isLoggedOut description]
+ * @return boolean [description]
+ */
 function isLoggedOut()
 {
     if(!empty($_GET['logout'])) {
         unset($_SESSION['user_id']);
-        session_destroy();
+        session_regenerate_id();
         $flash = array(
-            'class' => 'success',
-            'message' => "You are now logged out."
-        );
+            'class' => 'flash_error',
+            'message' => 'You have successfully logged out'
+            );
         $_SESSION['flash'] = $flash;
-        header('Location: login.php');
+        header('Location: index.php');
         die;
-    }
+    } 
 }
