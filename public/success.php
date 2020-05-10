@@ -41,7 +41,6 @@ $title = "Registration Success!";
 
 require __DIR__ . '/../includes/header.inc.php';
 ?>
-    <h2>Thank you for registering with us!</h2>
 
     <p>You have entered the following information:</p>
     <div class="user_info">
