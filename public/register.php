@@ -34,8 +34,8 @@ require __DIR__ . '/../includes/header.inc.php';
                 <p><label class="required" for="email">Email:</label>
                   <input type="text" name="email" id="email" value="<?=old('email', $post)?>" maxlength="255" />
                 <br /><?=error('email', $errors)?></p>
-                <p><label class="required" for="phone_num">Phone Number</label>
-                  <input type="text" name="phone_num" id="phone_num" value="<?=old('phone_num', $post)?>" maxlength="255" />
+                <p><label class="required" for="phone_number">Phone Number</label>
+                  <input type="text" name="phone_number" id="phone_number" value="<?=old('phone_number', $post)?>" maxlength="255" />
                 <br /><?=error('phone_num', $errors)?></p>
                 <p><label class="required" for="address">Address:</label>
                   <input type="text" name="address" id="address" value="<?=old('address', $post)?>" maxlength="255" />
@@ -43,11 +43,11 @@ require __DIR__ . '/../includes/header.inc.php';
                 <p><label class="required" for="city">City:</label>
                   <input type="text" name="city" id="city" value="<?=old('city', $post)?>" maxlength="255" />
                   <br /><?=error('city', $errors)?></p>
-                <p><label class="required" for="prov">Province:</label>
-                  <input type="text" name="prov" id="prov" value="<?=old('prov', $post)?>" maxlength="255" />
+                <p><label class="required" for="province">Province:</label>
+                  <input type="text" name="province" id="province" value="<?=old('province', $post)?>" maxlength="255" />
                 <br /><?=error('prov', $errors)?></p>
-                <p><label class="required" for="post_code">Postal Code:</label>
-                  <input type="text" name="post_code" id="post_code" value="<?=old('post_code', $post)?>" maxlength="6" />
+                <p><label class="required" for="postal_code">Postal Code:</label>
+                  <input type="text" name="postal_code" id="postal_code" value="<?=old('postal_code', $post)?>" maxlength="6" />
                 <br /><?=error('post_code', $errors)?></p>
                 <p><label class="required" for="country">Country:</label>
                   <input type="text" name="country" id="country" value="<?=old('country', $post)?>" maxlength="255" />
