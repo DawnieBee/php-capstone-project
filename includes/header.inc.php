@@ -202,7 +202,7 @@
     <!-- login style -->
     <?php if ($title == "Login") : ?> 
     <style>
-      span.error {
+      .error {
         color: #f00;
         font-weight: bold;
       }
@@ -311,6 +311,9 @@
             </div>
 
         </header> <!-- end header -->
-
-        
+        <?php if(!empty($flash)) : ?>
+          <div class="flash <?=esc_attr($flash['class'])?>">
+          <span><?=esc($flash['message'])?></span>
+        </div>
+        <?php endif; ?>
       

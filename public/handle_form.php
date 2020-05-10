@@ -122,11 +122,25 @@ $user_id = $dbh->lastInsertId();
  * if successful insert of user, redirect to the profile page with the user_id in $_SESSION
  * or die.  give an error message if not successful 
  */
-if($user_id > 0) {
+if($user_id > 0 ){
     $_SESSION['user_id'] = $user_id;
-    header('Location: success.php');
-        die;
-} else {
-    die('Unable to create new user');
-}
 
+    $flash = array(
+    'class'=> 'success',
+    'message' => 'You have successfully signed up!'
+    );
+
+    $_SESSION['flash'] = $flash;
+
+    header("Location: success.php");
+    die;
+}else{
+    $flash = array(
+        'class' => 'flash_error',
+        'message' => 'There was a problem inserting the record'
+    );
+    $_SESSION['flash'] = $flash;
+
+    header('Location: register.php');
+    die;
+}
