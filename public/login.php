@@ -20,7 +20,6 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     $v->isEmail('email', $_POST['email']);
     /*--- Password validation ---*/
     $v->isRequired($_POST['password'], 'password');
-    $v->isPassword($_POST['password'], 'password');
 
     $errors = $v->errors();
     // saving errros into the $_SESSION array 
@@ -67,7 +66,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
        
         // if credentials dont match, send user back to login page with error : 
 
-            $errors['credentials'] = "Information entered does not match our records.";
+            $errors['credentials'] = "Sorry, input does not match our records..";
             $_SESSION['errors'] = $errors;
             $_SESSION['post'] = $_POST;
             header('Location: login.php');
