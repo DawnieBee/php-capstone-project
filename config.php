@@ -35,6 +35,15 @@ if(isset($_SESSION['post'])) {
     $post = [];
 }
 
+if (!empty($_SESSION['flash'])) {
+    $flash = $_SESSION['flash'];
+    $_SESSION['flash'] = [];
+} else {
+    $flash = [];
+}
+
+
+
 
 // Define DB connection parameters
 if(ENV === 'DEVELOPMENT') {
@@ -59,11 +68,4 @@ $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 require 'functions.php';
 
-if(!empty($_GET['logout'])) {
-    unset($_SESSION['user_id']);
-    session_regenerate_id();
-    $errors['logout'] = 'You are now logged out';
-    $_SESSION['errors'] = $errors;
-    header('Location: login.php');
-    die;
-}
+isLoggedOut();
