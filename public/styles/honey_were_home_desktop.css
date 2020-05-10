@@ -274,16 +274,18 @@ footer{
 /* flash messaging options */
 .flash {
   width: 100%;
-  line-height: 50px;
+  line-height: 40px;
   padding: 0;
   margin:0;
   text-align: center;
+  font-weight: bold;
+  margin-bottom: 20px;
 }
 .flash_error {
   color: #bf3d42;
   background: #fae3e4;
   font-weight: bold;
-  border: solid 1px #900;
+  border: 1px solid #900;
 }
 .success {
   color: #000;
