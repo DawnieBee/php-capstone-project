@@ -128,8 +128,12 @@ function isLoggedOut()
 {
     if(!empty($_GET['logout'])) {
         unset($_SESSION['user_id']);
-        $errors['logout'] = 'You are now logged out';
         session_destroy();
+        $flash = array(
+            'class' => 'success',
+            'message' => "You are now logged out."
+        );
+        $_SESSION['flash'] = $flash;
         header('Location: login.php');
         die;
     }

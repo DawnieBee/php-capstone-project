@@ -6,8 +6,12 @@ $title = "Profile";
 
 // verify if there is a valid user logging in 
 if(empty($_SESSION['user_id'])) {
-    $errors['credentials'] = 'You must be logged in to see that page.';
     $_SESSION['errors'] = $errors;
+    $flash = array(
+        'class' => 'flash_error',
+        'message' => "You must be logged in to see that page."
+    );
+    $_SESSION['flash'] = $flash;
     header('Location: login.php');
     die;
 }
