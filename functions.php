@@ -112,3 +112,19 @@ function isRequired($field, $value)
     }
 }
 
+function isLoggedIn()
+{
+    if(!empty($_SESSION['user_id'])) {
+        return true;
+    }else{
+        return false;
+    }
+}
+
+function isLoggedOut()
+{
+    if(empty($_SESSION['user_id'])) {
+        
+        $_SESSION['user_id'] = [];
+    }
+}

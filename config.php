@@ -65,4 +65,5 @@ if(!empty($_GET['logout'])) {
     $errors['logout'] = 'You are now logged out';
     $_SESSION['errors'] = $errors;
     header('Location: login.php');
+    die;
 }
