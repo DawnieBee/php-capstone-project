@@ -36,7 +36,7 @@ require __DIR__ . '/../includes/header.inc.php';
                 <br /><?=error('email', $errors)?></p>
                 <p><label class="required" for="phone_number">Phone Number</label>
                   <input type="text" name="phone_number" id="phone_number" value="<?=old('phone_number', $post)?>" maxlength="255" />
-                <br /><?=error('phone_num', $errors)?></p>
+                <br /><?=error('phone_number', $errors)?></p>
                 <p><label class="required" for="address">Address:</label>
                   <input type="text" name="address" id="address" value="<?=old('address', $post)?>" maxlength="255" />
                   <br /><?=error('address', $errors)?></p>
@@ -45,10 +45,10 @@ require __DIR__ . '/../includes/header.inc.php';
                   <br /><?=error('city', $errors)?></p>
                 <p><label class="required" for="province">Province:</label>
                   <input type="text" name="province" id="province" value="<?=old('province', $post)?>" maxlength="255" />
-                <br /><?=error('prov', $errors)?></p>
+                <br /><?=error('province', $errors)?></p>
                 <p><label class="required" for="postal_code">Postal Code:</label>
                   <input type="text" name="postal_code" id="postal_code" value="<?=old('postal_code', $post)?>" maxlength="6" />
-                <br /><?=error('post_code', $errors)?></p>
+                <br /><?=error('postal_code', $errors)?></p>
                 <p><label class="required" for="country">Country:</label>
                   <input type="text" name="country" id="country" value="<?=old('country', $post)?>" maxlength="255" />
                 <br /><?=error('country', $errors)?></p>
