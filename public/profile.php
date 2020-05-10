@@ -25,11 +25,11 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
 require __DIR__ . '/../includes/header.inc.php';
 ?>
 
+    
+    <h2><?=esc($user['first_name'])?>'s registration information.</h2> 
 
-    <h2>Welcome back <?=esc($user['first_name'])?>! You have successfully logged in.</h2>
 
-
-    <p>Here is your user information:</p>
+    
     <div class="user_info">
         <table>
             <tr>

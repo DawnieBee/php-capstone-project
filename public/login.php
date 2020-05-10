@@ -47,32 +47,52 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
         $stmt->execute($params);
         $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
+
         // test if user credentials are valid 
         if($user === false){
-            $errors['credentials'] = 'Sorry, input does not match our records.';
             $_SESSION['errors'] = $errors;
-            $_SESSION['post'] = $post;
-            header('Location: login.php');
-            die;
+            $_SESSION['post'] = $_POST;
+            $flash = array(
+                'class' => 'success',
+                'message' => 'Sorry, input does not match our credentials.'
+            );
+
+            $_SESSION['flash'] = $flash;
         }
 
         // now that user info matches database info, testing password match to file: 
         if(password_verify($_POST['password'], $user['password'])){
             $_SESSION['user_id'] = $user['user_id'];
             session_regenerate_id();
+            $flash = array(
+                'class' => 'success',
+                'message' => "Welcome back $user[first_name]! You have successfully logged in!"
+            );
+
+            $_SESSION['flash'] = $flash;
+
             header('Location: profile.php');
             die;
-        } 
-       
+        } else {
+
         // if credentials dont match, send user back to login page with error : 
 
-            $errors['credentials'] = "Sorry, input does not match our records..";
             $_SESSION['errors'] = $errors;
             $_SESSION['post'] = $_POST;
+            $flash = array(
+                'class' => 'success',
+                'message' => 'Sorry, input does not match our credentials.'
+            );
+
+            $_SESSION['flash'] = $flash;
+
             header('Location: login.php');
             die;
+        }
     }
+    
 }
+
 
 
 require __DIR__ . '/../includes/header.inc.php';
