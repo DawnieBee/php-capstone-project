@@ -112,8 +112,8 @@ function isRequired($field, $value)
     }
 }
 /**
- * isLogged in function
- * @return boolean 
+ * isLoggedIn checks to confirm user is logged in
+ * @return boolean
  */
 function isLoggedIn()
 {
@@ -124,8 +124,8 @@ function isLoggedIn()
     }
 }
 /**
- * [isLoggedOut description]
- * @return boolean [description]
+ * isLoggedOut  when user logs out clears session
+ * @return boolean  if true shows flash message
  */
 function isLoggedOut()
 {
