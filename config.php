@@ -8,6 +8,8 @@
 ini_set('display_errors', 1);
 ini_set('error_reporting', E_ALL);
 
+
+
 require __DIR__ . '/vendor/autoload.php';
 require __DIR__ . '/env.php';
 
@@ -43,8 +45,8 @@ if(!empty($_SESSION['flash'])) {
     $flash = [];
 }
 
-
-
+// 
+define('CLASSES', __DIR__ . '/classes');
 
 // Define DB connection parameters
 if(ENV === 'DEVELOPMENT') {
@@ -66,6 +68,10 @@ if(ENV === 'PRODUCTION') {
 $dbh = new PDO(DB_DSN, DB_USER, DB_PASS);
 // Must set PDO to show errors, or it will fail silently
 $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+require CLASSES . '/Model.php';
+
+Model::init($dbh);
 
 require 'functions.php';
 

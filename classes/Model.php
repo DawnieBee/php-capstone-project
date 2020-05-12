@@ -34,10 +34,13 @@ class Model
     public function one(int $id)
     {
         $query = "SELECT * FROM {$this->table} WHERE {$this->key} = :id";
+
         $stmt = static::$dbh->prepare($query);
+
         $params = array(
-            ':id' = $id
+            ':id' => $id
         );
+
         $stmt->execute($params);
         $result = $stmt->fetch(PDO::FETCH_ASSOC);
         return $result;
