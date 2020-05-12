@@ -18,7 +18,7 @@ class Model
      * Get all Records from table
      * @return Array 
      */
-    public function all()
+    final public function all()
     {
 
         $query = "SELECT * FROM {$this->table}";
@@ -31,7 +31,7 @@ class Model
      * @param  int    $id 
      * @return Array     
      */
-    public function one(int $id)
+    final public function one(int $id)
     {
         $query = "SELECT * FROM {$this->table} WHERE {$this->key} = :id";
 
