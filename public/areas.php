@@ -13,14 +13,16 @@ require __DIR__ . '/../includes/header.inc.php';
 $neighborhood1 = new Capstone\NeighborhoodModel("St James");
 
 $result = $neighborhood1->all();
+
 ?>
       <section>
        
         <div id="container" class="clearfix">
           
 
-          <h2>St James</h2>
+          
           <?php foreach($result as $row) : ?>
+            <h2><?=esc($row['name'])?></h2>
               <div id="stjames" class="box">
                 <img src="images/st_jameshex.png" alt="Portage Avenue St James Hotel"
                      width="320" height="207" />
