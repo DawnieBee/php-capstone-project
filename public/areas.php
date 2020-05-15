@@ -10,25 +10,29 @@ $title = "Areas";
 
 require __DIR__ . '/../includes/header.inc.php';
 
+$neighborhood1 = new Capstone\NeighborhoodModel("St James");
+
+$result = $neighborhood1->all();
 ?>
       <section>
        
         <div id="container" class="clearfix">
-          <?php foreach : ?>
+          
 
           <h2>St James</h2>
-          <div id="stjames" class="box">
-            <img src="images/st_jameshex.png" alt="Portage Avenue St James Hotel"
-                 width="320" height="207" />
-            <div class="show_me curved_borders boxshadow">
-              Nestled in the west end of the city, following the Assiniboine River.
-              It is considered the gateway to the West as it runs along Portage Ave which
-              is the &#35;1 Highway. 
-            </div>
-            <button class="areas_showmore">More</button>
-          </div>
-          
-        <?php endforeach; ?>
+          <?php foreach($result as $row) : ?>
+              <div id="stjames" class="box">
+                <img src="images/st_jameshex.png" alt="Portage Avenue St James Hotel"
+                     width="320" height="207" />
+                <div class="show_me curved_borders boxshadow">
+                  Nestled in the west end of the city, following the Assiniboine River.
+                  It is considered the gateway to the West as it runs along Portage Ave which
+                  is the &#35;1 Highway. 
+                </div>
+                <button class="areas_showmore">More</button>
+              </div>
+
+          <?php endforeach; ?>
          <!--  <h2>Elmwood</h2>
           <div id="elmwood" class="box curved_borders">
             <img src="images/elmwoodhex.png" alt="Welcome to Elmwood Sign" 

@@ -12,6 +12,3 @@ class NeighborhoodModel extends Model
 
 }
 
-$neighborhood1 = new Capstone\NeighborhoodModel("St James");
-
-function all();
