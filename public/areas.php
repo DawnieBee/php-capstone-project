@@ -14,6 +14,8 @@ require __DIR__ . '/../includes/header.inc.php';
       <section>
        
         <div id="container" class="clearfix">
+          <?php foreach : ?>
+
           <h2>St James</h2>
           <div id="stjames" class="box">
             <img src="images/st_jameshex.png" alt="Portage Avenue St James Hotel"
@@ -23,8 +25,10 @@ require __DIR__ . '/../includes/header.inc.php';
               It is considered the gateway to the West as it runs along Portage Ave which
               is the &#35;1 Highway. 
             </div>
-            <button class="areas_showmore">Show More</button>
+            <button class="areas_showmore">More</button>
           </div>
+          
+        <?php endforeach; ?>
          <!--  <h2>Elmwood</h2>
           <div id="elmwood" class="box curved_borders">
             <img src="images/elmwoodhex.png" alt="Welcome to Elmwood Sign" 
