@@ -24,7 +24,7 @@ $result = $neighborhood1->all();
           <?php foreach($result as $row) : ?>
             <h2><?=esc($row['name'])?></h2>
               <div id="stjames" class="box">
-                <img src="images/<?=esc_attr($row['img'])?>" alt="Portage Avenue St James Hotel"
+                <img src="images/<?=esc_attr($row['img'])?>" alt="<?=esc_attr($row['name'])?>"
                      width="320" height="207" />
                 <div class="show_me curved_borders boxshadow">
                   <?=esc($row['description'])?> 
