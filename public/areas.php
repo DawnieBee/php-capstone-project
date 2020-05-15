@@ -23,8 +23,9 @@ require __DIR__ . '/../includes/header.inc.php';
               It is considered the gateway to the West as it runs along Portage Ave which
               is the &#35;1 Highway. 
             </div>
+            <button class="areas_showmore">Show More</button>
           </div>
-          <h2>Elmwood</h2>
+         <!--  <h2>Elmwood</h2>
           <div id="elmwood" class="box curved_borders">
             <img src="images/elmwoodhex.png" alt="Welcome to Elmwood Sign" 
                  width="312" height="207" />
@@ -55,7 +56,7 @@ require __DIR__ . '/../includes/header.inc.php';
               on Tache is a prime spot for wedding photos.  Come find your &#39;joie de vivre&#39; 
               in historic St Boniface!
             </div>
-          </div>
+          </div> 
           <h2>Transcona</h2>
           <div id="transcona" class="box curved_borders">
             <img src="images/transconahex.png" alt="Transcona Sam Statue"
@@ -65,8 +66,8 @@ require __DIR__ . '/../includes/header.inc.php';
               great place to raise a family.  Every summer, Transcona hosts the Hi Neighbour Festival, 
               where residents gather at a family carnival set right on the main street!  Better love 
               flamingos if you want to live here!
-            </div>
-          </div>
+            </div> 
+          </div> -->
         </div>
         <p><a href="#">Back to Top</a></p>
       </section>
