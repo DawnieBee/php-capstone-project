@@ -61,6 +61,12 @@
         left: 20px;
         margin-bottom: 20px;
       }
+      .areas_showmore{
+        display: block;
+        position: relative;
+        left: 300px;
+
+      }
     </style>
     <?php endif; ?>
     <!-- end areas style -->

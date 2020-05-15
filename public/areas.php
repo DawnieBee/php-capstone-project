@@ -10,21 +10,30 @@ $title = "Areas";
 
 require __DIR__ . '/../includes/header.inc.php';
 
+$neighborhood1 = new Capstone\NeighborhoodModel("St James");
+
+$result = $neighborhood1->all();
+
 ?>
       <section>
        
         <div id="container" class="clearfix">
-          <h2>St James</h2>
-          <div id="stjames" class="box">
-            <img src="images/st_jameshex.png" alt="Portage Avenue St James Hotel"
-                 width="320" height="207" />
-            <div class="show_me curved_borders boxshadow">
-              Nestled in the west end of the city, following the Assiniboine River.
-              It is considered the gateway to the West as it runs along Portage Ave which
-              is the &#35;1 Highway. 
-            </div>
-          </div>
-          <h2>Elmwood</h2>
+          
+
+          
+          <?php foreach($result as $row) : ?>
+            <h2><?=esc($row['name'])?></h2>
+              <div id="stjames" class="box">
+                <img src="images/<?=esc_attr($row['img'])?>" alt="<?=esc_attr($row['name'])?>"
+                     width="320" height="207" />
+                <div class="show_me curved_borders boxshadow">
+                  <?=esc($row['description'])?> 
+                </div>
+                <button class="areas_showmore">More</button>
+              </div>
+
+          <?php endforeach; ?>
+         <!--  <h2>Elmwood</h2>
           <div id="elmwood" class="box curved_borders">
             <img src="images/elmwoodhex.png" alt="Welcome to Elmwood Sign" 
                  width="312" height="207" />
@@ -55,7 +64,7 @@ require __DIR__ . '/../includes/header.inc.php';
               on Tache is a prime spot for wedding photos.  Come find your &#39;joie de vivre&#39; 
               in historic St Boniface!
             </div>
-          </div>
+          </div> 
           <h2>Transcona</h2>
           <div id="transcona" class="box curved_borders">
             <img src="images/transconahex.png" alt="Transcona Sam Statue"
@@ -65,8 +74,8 @@ require __DIR__ . '/../includes/header.inc.php';
               great place to raise a family.  Every summer, Transcona hosts the Hi Neighbour Festival, 
               where residents gather at a family carnival set right on the main street!  Better love 
               flamingos if you want to live here!
-            </div>
-          </div>
+            </div> 
+          </div> -->
         </div>
         <p><a href="#">Back to Top</a></p>
       </section>

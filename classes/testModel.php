@@ -1,0 +1,3 @@
+<?php
+
+$neighborhood = new model();
