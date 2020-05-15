@@ -11,7 +11,7 @@ class Model
      * @param  PDO    $dbh 
      * @return [type]      
      */
-    static public function init(PDO $dbh)
+    static public function init(\PDO $dbh)
     {
         static::$dbh = $dbh;
     }
@@ -25,7 +25,7 @@ class Model
 
         $query = "SELECT * FROM {$this->table}";
         $stmt = static::$dbh->query($query);
-        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $result = $stmt->fetchAll(\PDO::FETCH_ASSOC);
         return $result;
     }
     /**
@@ -44,7 +44,7 @@ class Model
         );
 
         $stmt->execute($params);
-        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        $result = $stmt->fetch(\PDO::FETCH_ASSOC);
         return $result;
     }
 }
