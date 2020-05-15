@@ -1,5 +1,7 @@
 <?php
 
+namespace Capstone;
+
 class Model 
 {
     static protected $dbh;
