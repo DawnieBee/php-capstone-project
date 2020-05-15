@@ -24,12 +24,10 @@ $result = $neighborhood1->all();
           <?php foreach($result as $row) : ?>
             <h2><?=esc($row['name'])?></h2>
               <div id="stjames" class="box">
-                <img src="images/st_jameshex.png" alt="Portage Avenue St James Hotel"
+                <img src="images/<?=esc_attr($row['img'])?>" alt="Portage Avenue St James Hotel"
                      width="320" height="207" />
                 <div class="show_me curved_borders boxshadow">
-                  Nestled in the west end of the city, following the Assiniboine River.
-                  It is considered the gateway to the West as it runs along Portage Ave which
-                  is the &#35;1 Highway. 
+                  <?=esc($row['description'])?> 
                 </div>
                 <button class="areas_showmore">More</button>
               </div>
