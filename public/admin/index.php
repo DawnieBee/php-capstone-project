@@ -1,14 +1,5 @@
 <?php
 
-require __DIR__ . '/../../config.php';
-
-$query = "SELECT * FROM neighborhoods";
-
-$stmt = $dbh->query($query);
-
-$result = $stmt->fetchAll(\PDO::FETCH_ASSOC);
-
-
 ?><!DOCTYPE html>
 <html lang="en">
 
@@ -19,7 +10,7 @@ $result = $stmt->fetchAll(\PDO::FETCH_ASSOC);
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Neighborhoods | Admin</title>
+  <title>Dashboard | Admin</title>
 
   <!-- Bootstrap core CSS -->
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
@@ -33,7 +24,7 @@ $result = $stmt->fetchAll(\PDO::FETCH_ASSOC);
 <!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
     <div class="container">
-        <a class="navbar-brand" href="/admin">Neighborhoods Admin</a>
+        <a class="navbar-brand" href="/admin">Dashboard</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
         </button>
@@ -64,42 +55,6 @@ $result = $stmt->fetchAll(\PDO::FETCH_ASSOC);
             </ul>
         </div>
     </div>
-</nav>
-        <!-- end nav -->
-        
-        <!-- main content -->
-        <div class="container-fluid">
-            <h1>Honey We're Home Administration Page</h1>
-            <p>Select a neighborhood to update.</p>
-            <table class="table table-striped">
-                <thead>
-
-                    <tr>
-                        <th>ID</th>
-                        <th>Neighborhood</th>
-                        <th>Location</th>
-                        <th>Community Centres</th>
-                        <th>Description</th>
-                        <th>Actions</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php foreach($result as $row) : ?>
-                        <tr>
-                            <td><?=$row['hood_id']?></td>
-                            <td><?=$row['name']?></a></td>
-                            <td><?=$row['location']?></td>
-                            <td><?=$row['comm_centres']?></td>
-                            <td><?=$row['description']?></td>
-                            <td>
-                                <a class="btn btn-primary btn-sm" href="/admin/neighborhood_edit.php">edit</a>
-                                <a class="delete btn btn-danger btn-sm" data_id="" href="#">delete</a>
-                            </td>   
-                        </tr>
-                    <?php endforeach; ?>
-                    
-                </tbody>
-            </table>
-        </div>
-    </body>
-</html>
+</nav><!-- end nav -->
+<!-- main content -->
+<h1>This is the home page</h1>
