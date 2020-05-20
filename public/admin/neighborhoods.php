@@ -1,12 +1,19 @@
 <?php
 
+
+namespace Capstone;
+
 require __DIR__ . '/../../config.php';
+require CLASSES . '/NeighborhoodModel.php';
 
-$query = "SELECT * FROM neighborhoods";
+use \classes\NeighborhoodModel;
 
-$stmt = $dbh->query($query);
 
-$result = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+// $query = "SELECT * FROM neighborhoods";
+
+// $stmt = $dbh->query($query);
+
+// $result = $stmt->fetchAll(\PDO::FETCH_ASSOC);
 
 
 ?><!DOCTYPE html>
@@ -40,7 +47,7 @@ $result = $stmt->fetchAll(\PDO::FETCH_ASSOC);
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="/admin/index.php">Dashboard<span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="/admin/index.php">Home<span class="sr-only"></span></a>
                 </li>
 
                 <li class="nav-item">
@@ -69,8 +76,13 @@ $result = $stmt->fetchAll(\PDO::FETCH_ASSOC);
         
         <!-- main content -->
         <div class="container-fluid">
-            <h1>Honey We're Home Administration Page</h1>
-            <p>Select a neighborhood to update.</p>
+            <h1>Neighborhoods</h1>
+            <form class="form form-inline float-right" 
+                action="/admin/books.php" method="post">
+                <input type="hidden" name="csrf" value="d0e1e0212f262d496e48171c6681215c" />
+                <input type="text" name="s" placeholder="Search neighborhoods"/>
+                <button>Search</button>
+            </form></p>
             <table class="table table-striped">
                 <thead>
 
