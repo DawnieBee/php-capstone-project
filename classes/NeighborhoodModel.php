@@ -12,27 +12,50 @@ class NeighborhoodModel extends Model
 
         $query = "UPDATE neighborhoods
                 SET 
+                hood_id = :hood_id,
                 name = :name,
                 location = :location,
+                description = :description,
+                img = :img,
                 rating_scale = :rating_scale,
-                description = :description
+                police_station = :police_station,
+                fire_station = :fire_station,
+                library = :library,
+                pool = :pool,
+                prim_schools = :prim_schools,
+                sec_schools = :sec_schools,
+                churches = :churches,
+                playgrounds = :playgrounds,
+                comm_centres = :comm_centres,
+                house_price_min = :house_price_min,
+                house_price_max = :house_price_max
                 WHERE 
                 hood_id = :hood_id";
 
-        $stmt = $dbh->prepare($query);
+        $stmt = static::$dbh->prepare($query);
 
         $params = array(
+            ':hood_id'=> $_POST['hood_id'],
             ':name' => $_POST['name'],
             ':location' => $_POST['location'],
+            ':description' => $_POST['description'],
+            ':img'=> $_POST['img'],
             ':rating_scale' => $_POST['rating_scale'],
-            ':description' => $_POST['description']
-        );
+            ':police_station' => $_POST['police_station'],
+            ':fire_station' => $_POST['fire_station'],
+            ':library' => $_POST['library'],
+            ':pool' => $_POST['pool'],
+            ':prim_schools' => $_POST['prim_schools'],
+            ':sec_schools' => $_POST['sec_schools'],
+            ':churches' => $_POST['churches'],
+            ':playgrounds' => $_POST['playgrounds'],
+            ':comm_centres' => $_POST['comm_centres'],
+            ':house_price_min' => $_POST['house_price_min'],
+            ':house_price_max' => $_POST['house_price_max']
+            );
 
         $stmt->execute($params);
 
-        $result = $stmt->fetch(\PDO::FETCH_ASSOC);
-
-        return $result;
 
         header('Location: neighborhoods.php');
     }
