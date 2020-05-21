@@ -9,6 +9,7 @@ class NeighborhoodModel extends Model
 
     public function updateNeighborhood()
     {
+
         $query = "UPDATE neighborhoods
                 SET 
                 name = :name,
@@ -18,18 +19,22 @@ class NeighborhoodModel extends Model
                 WHERE 
                 hood_id = :hood_id";
 
-    $stmt = $dbh->prepare($query);
+        $stmt = $dbh->prepare($query);
 
-    $params = array(
-        ':name' => $_POST['name'],
-        ':location' => $_POST['location'],
-        ':rating_scale' => $_POST['rating_scale'],
-        ':description' => $_POST['description']
-    );
+        $params = array(
+            ':name' => $_POST['name'],
+            ':location' => $_POST['location'],
+            ':rating_scale' => $_POST['rating_scale'],
+            ':description' => $_POST['description']
+        );
 
-    $stmt->execute($params);
+        $stmt->execute($params);
 
-    header('Location: neighborhoods.php');
+        $result = $stmt->fetch(\PDO::FETCH_ASSOC);
+
+        return $result;
+
+        header('Location: neighborhoods.php');
     }
 
 }
