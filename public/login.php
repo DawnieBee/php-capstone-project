@@ -117,7 +117,7 @@ require __DIR__ . '/../includes/header.inc.php';
                     <?php endif; ?>
                     <p>Required fields &lpar; <strong style="color:#900;">&ast;</strong> &rpar;</p>
                     <p><label class="required" for="email">Email:</label>
-                          <input type="text" name="email" id="email" value="" />
+                          <input type="text" name="email" id="email" value="<?=old('email', $post)?>" />
                     <p><label class="required" for="password">Password:</label>
                           <input type="password" name="password" id="password" value=""  />
                 </fieldset><!-- end fieldset -->
