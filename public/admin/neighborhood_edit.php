@@ -7,9 +7,17 @@ use Capstone\NeighborhoodModel;
 
 $neighborhood = new NeighborhoodModel();
 
-$result = $neighborhood->one($_GET['hood_id']);
+if(!empty($post)){ 
 
+  $result = $post;
+} else {
 
+    if(empty($_GET['hood_id'])) {
+        die('Pick a neighborhood to edit');
+    }
+
+    $result = $neighborhood->one($_GET['hood_id']);
+}
 
 
 ?><!DOCTYPE html>
