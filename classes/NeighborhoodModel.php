@@ -57,7 +57,8 @@ class NeighborhoodModel extends Model
         $stmt->execute($params);
 
 
-        
+        header('Location: neighborhoods.php');
+        die;
     }
 
 }
