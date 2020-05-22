@@ -72,36 +72,40 @@ $result = $neighborhood->all();
         
     <!-- main content -->
     <div class="container">
-        <h1>Neighborhoods</h1>
-        
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Neighborhood</th>
-                    <th>Location</th>
-                    <th>Rating</th>
-                    <th>Description</th>
-                    <th>Actions</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php foreach($result as $row) : ?>
-                    <tr>
-                        <td><?=esc($row['hood_id'])?></td>
-                        <td><?=esc($row['name'])?></a></td>
-                        <td><?=esc($row['location'])?></td>
-                        <td><?=esc($row['rating_scale'])?></td>
-                        <td><?=esc($row['description'])?></td>
-                        <td>
-                            <a class="btn btn-primary btn-sm" href="neighborhood_edit.php?hood_id=<?=$row['hood_id']?>">edit</a>
-                            <a class="delete btn btn-danger btn-sm" data_id="" href="#">delete</a>
-                        </td>   
-                    </tr>
-                <?php endforeach; ?>
+        <div class="row">
+            <div class="col-lg-12">
+                <h1>Neighborhoods</h1>
                 
-            </tbody>
-        </table>
-    </div>
+                <table class="table table-striped">
+                    <tbody>
+                        <tr>
+                            <th>ID</th>
+                            <th>Neighborhood</th>
+                            <th>Location</th>
+                            <th>Rating</th>
+                            <th>Description</th>
+                            <th>Actions</th>
+                        </tr>
+                    
+                        <!-- get the table properties as a list in table -->
+                        <?php foreach($result as $row) : ?>
+                            <tr>
+                                <td><?=esc($row['hood_id'])?></td>
+                                <td><?=esc($row['name'])?></a></td>
+                                <td><?=esc($row['location'])?></td>
+                                <td><?=esc($row['rating_scale'])?></td>
+                                <td><?=esc($row['description'])?></td>
+                                <td>
+                                    <a class="btn btn-primary btn-sm" href="neighborhood_edit.php?hood_id=<?=$row['hood_id']?>">edit</a>
+                                    <a class="delete btn btn-danger btn-sm" data_id="" href="#">delete</a>
+                                </td>   
+                            </tr>
+                        <?php endforeach; ?>
+                        
+                    </tbody>
+                </table>
+            </div> <!-- end col -->
+        </div> <!-- end row -->
+    </div> <!-- end container -->
 </body>
 </html>
