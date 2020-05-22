@@ -53,7 +53,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
             $_SESSION['errors'] = $errors;
             $_SESSION['post'] = $_POST;
             $flash = array(
-                'class' => 'success',
+                'class' => 'flash_error',
                 'message' => 'Sorry, input does not match our credentials.'
             );
 
