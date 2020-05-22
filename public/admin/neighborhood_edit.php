@@ -16,8 +16,8 @@ if(!empty($post)){
     if(empty($_GET['hood_id'])) {
         die('Pick a neighborhood to edit');
     }
-
-    $result = $neighborhood->one($_GET['hood_id']);
+    // gets the hood id from the button click 'edit' from neighborhoods page
+    
 }
 
 
@@ -37,6 +37,9 @@ if(!empty($post)){
     <style>
         label{
             font-weight: 700;
+        }
+        .errors{
+            color: #900;
         }
     </style>
 </head>
@@ -78,17 +81,27 @@ if(!empty($post)){
         <div class="row">
             <div class="col-lg-12">
                 <h1>Update Neighborhoods</h1>
+
+                <?php if(count($errors) > 0) : ?>
+                    <div class="errors">
+                        <ul>
+                            <?php foreach($errors as $error) : ?>
+                            <li><?=$error?></li>
+                            <?php endforeach; ?>
+                        </ul>
+                    </div>
+                <?php endif; ?>
                 
                 <form action="neighborhood_update.php" method="post">
                     
                     <input type="hidden" name="hood_id" readonly value="<?=esc_attr(old('hood_id', $result))?>" />
                     <div class="form-group">
                         <p><label for="name">Neighborhood: </label><br />
-                            <input class="form-control" type="text" name="name" value="<?=esc_attr(old('name', $result))?>" /></p>
+                            <input class="form-control" type="text" name="name" value="<?=esc_attr(old('name', $result))?>" maxlength="255" /></p>
                     </div>
                     <div class="form-group">
                         <p><label for="location">location: </label><br />
-                            <input class="form-control" type="text" name="location" value="<?=esc_attr(old('location', $result))?>" /></p>
+                            <input class="form-control" type="text" name="location" value="<?=esc_attr(old('location', $result))?>" maxlength="45"/></p>
                     </div>
                     <div class="form-group">
                         <p><label for="description">Description: </label><br />
@@ -96,7 +109,7 @@ if(!empty($post)){
                     </div>
                     <div class="form-group">
                         <p><label for="img">Image: </label><br />
-                            <input class="form-control" type="text" name="img" value="<?=esc_attr(old('img', $result))?>" /></p>
+                            <input class="form-control" type="text" name="img" value="<?=esc_attr(old('img', $result))?>" maxlength="255" /></p>
                     </div>
                     <div class="form-group">
                         <p><label for="rating_scale">Rating: </label><br />
@@ -104,7 +117,7 @@ if(!empty($post)){
                     </div>
                     <div class="form-group">
                         <p><label for="police_station">Police Station: </label><br />
-                            <input class="form-control" type="text" name="police_station" value="<?=esc_attr(old('police_station', $result))?>" /></p>
+                            <input class="form-control" type="radio" name="police_station" value="<?=esc_attr(old('police_station', $result))?>" /></p>
                     </div>
                     <div class="form-group">
                         <p><label for="fire_station">Fire Station: </label><br />
@@ -136,7 +149,7 @@ if(!empty($post)){
                     </div>
                     <div class="form-group">
                         <p><label for="comm_centres">Community Centres: </label><br />
-                            <input class="form-control" type="text" name="comm_centres" value="<?=esc_attr(old('comm_centres', $result))?>" /></p>
+                            <input class="form-control" type="text" name="comm_centres" value="<?=esc_attr(old('comm_centres', $result))?>" maxlength="255" /></p>
                     </div>
                     <div class="form-group">
                         <p><label for="house_price_min">House Price Minimum: </label><br />
