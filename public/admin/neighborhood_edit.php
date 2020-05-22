@@ -7,18 +7,51 @@ use Capstone\NeighborhoodModel;
 
 $neighborhood = new NeighborhoodModel();
 
-// if errors in form submission, will come back here 
-if(!empty($post)){ 
+if(!empty($post)) {
 
+    // we have been redirect back here from 03_process_publisher.php
+    // See line 24 of config.php
     $result = $post;
+
 } else {
 
+    // Somebody has clicked a publisher from the publisher list
+    
     if(empty($_GET['hood_id'])) {
+        $flash = array(
+            'class' => 'flash_error',
+            'message' => 'Pick a neighborhood to edit.'
+            );
+
+            $_SESSION['flash'] = $flash;
+
+            header('Location: neighborhoods.php');
+            die;
+
         die('Pick a neighborhood to edit');
     }
-    // gets the hood id from the button click 'edit' from neighborhoods page
-    
+
+    // Create query to get publisher with publisher_id
+    $query = 'SELECT * FROM neighborhoods 
+            WHERE hood_id = :hood_id';
+
+    // Prepare the query
+    $stmt =  $dbh->prepare($query);
+
+    // Create params array
+    $params = array(
+        ':hood_id' => intval( $_GET['hood_id'] )
+    );
+
+    // Execute query
+    $stmt->execute($params);
+
+    // Fetch result
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
 }
+
+
 
 
 ?><!DOCTYPE html>
@@ -41,6 +74,28 @@ if(!empty($post)){
         .errors{
             color: #900;
         }
+        /* flash messaging options */
+        .flash {
+          width: 100%;
+          line-height: 40px;
+          font-weight: bold;
+          padding: 0;
+          margin:0;
+          text-align: center;
+        }
+        .flash_error {
+          color: #bf3d42;
+          background: #fae3e4;
+          font-weight: bold;
+          border: 1px solid #900;
+        }
+        .success {
+          color: #000;
+          border: 1px solid #013610;
+          background: #e3faea;
+          font-weight: bold;
+        }
+        /*end flash messaging*/
     </style>
 </head>
 
@@ -76,6 +131,11 @@ if(!empty($post)){
             </div>
         </div>
     </nav> <!-- end nav -->
+    <?php if(!empty($flash)) : ?>
+        <div class="flash <?=esc_attr($flash['class'])?>">
+            <span><?=esc($flash['message'])?></span>
+        </div>
+    <?php endif; ?>  
     <!-- main content -->
     <div class="container">
         <div class="row">
@@ -98,6 +158,7 @@ if(!empty($post)){
                     <div class="form-group">
                         <p><label for="name">Neighborhood: </label><br />
                             <input class="form-control" type="text" name="name" value="<?=esc_attr(old('name', $result))?>" maxlength="255" /></p>
+
                     </div>
                     <div class="form-group">
                         <p><label for="location">location: </label><br />
@@ -117,7 +178,7 @@ if(!empty($post)){
                     </div>
                     <div class="form-group">
                         <p><label for="police_station">Police Station: </label><br />
-                            <input class="form-control" type="radio" name="police_station" value="<?=esc_attr(old('police_station', $result))?>" /></p>
+                            <input class="form-control" type="text" name="police_station" value="<?=esc_attr(old('police_station', $result))?>" /></p>
                     </div>
                     <div class="form-group">
                         <p><label for="fire_station">Fire Station: </label><br />
