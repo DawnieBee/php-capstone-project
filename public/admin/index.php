@@ -1,21 +1,24 @@
 <?php
 
+require __DIR__ . '/../../config.php';
+
+
 ?><!DOCTYPE html>
 <html lang="en">
 
 <head>
 
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-  <title>Dashboard | Admin</title>
+    <title>Dashboard | Admin</title>
 
-  <!-- Bootstrap core CSS -->
-  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap core CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
 
-  <link href="/admin/css/style.css" type="text/css" rel="stylesheet" />
+    <link href="/admin/css/style.css" type="text/css" rel="stylesheet" />
 
 </head>
 
@@ -58,3 +61,12 @@
 </nav><!-- end nav -->
 <!-- main content -->
 <h1>This is the home page</h1>
+<div class="search">
+    <form action="/" method="get" autocomplete="off" novalidate>
+        <input type="text" id="s" name="s" maxlength="255" />&nbsp;
+        <input type="submit" value="search" />
+        <div>
+            <ul id="live_search"></ul>
+        </div>
+    </form>
+</div> <!-- end search -->

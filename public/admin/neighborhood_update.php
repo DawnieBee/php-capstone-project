@@ -71,29 +71,28 @@ if(!empty($errors)){
 
 $neighbhorhood = new NeighborhoodModel();
 
-$affected_rows = $neighbhorhood->updateNeighborhood($_POST);
 
+$affected_rows = $neighbhorhood->updateNeighborhood($_POST);
 
 /**
  * if successful insert of record into the database, redirect back to the list view page with a message
  * or die with an error message
  */
-
 if($affected_rows > 0){
 
     $flash = array(
         'class'=>'success',
         'message'=>'The record was updated'
     );
-    $_SESSION['flash'] = $flash;
-
+    $_SESSION['flash'] = $flash;   
     
 } else {
     $flash = array(
         'class' => 'flash_error',
-        'message' => 'The record was not updated'
+        'message' => 'No records were updated'
     );
     $_SESSION['flash'] = $flash;
+
 }
 
 header('Location: /admin/neighborhoods.php');
