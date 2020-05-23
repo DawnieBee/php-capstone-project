@@ -5,12 +5,10 @@ require CLASSES . '/NeighborhoodModel.php';
 
 use Capstone\NeighborhoodModel;
 
-
-
 if(!empty($post)) {
 
     // we have been redirect back here from neighborhood_update.php
-    // as post values from config.php
+    // as post values from line 32 in config.php
     $result = $post;
 
 } else {
@@ -28,57 +26,19 @@ if(!empty($post)) {
             header('Location: neighborhoods.php');
             die;
     }
-    
+    // instantiate new model 
     $neighborhood = new NeighborhoodModel();
 
     $result = $neighborhood->one($_GET['hood_id']);
 }
 
+$title = 'Neighborhood Update | Admin';
 
-?><!DOCTYPE html>
-<html lang="en">
-<head>
+$navbarbrand = 'Neighborhood Edit';
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+require __DIR__ . '/../../includes/admin_header.inc.php';
 
-    <title>Neighborhoods | Admin</title>
-
-  <!-- Bootstrap core CSS -->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        label{
-            font-weight: 700;
-        }
-        .errors{
-            color: #900;
-        }
-        /* flash messaging options */
-        .flash {
-          width: 100%;
-          line-height: 40px;
-          font-weight: bold;
-          padding: 0;
-          margin:0;
-          text-align: center;
-        }
-        .flash_error {
-          color: #bf3d42;
-          background: #fae3e4;
-          font-weight: bold;
-          border: 1px solid #900;
-        }
-        .success {
-          color: #000;
-          border: 1px solid #013610;
-          background: #e3faea;
-          font-weight: bold;
-        }
-        /*end flash messaging*/
-    </style>
-</head>
+?>
 
 <body>
     <!-- Navigation -->
@@ -117,11 +77,22 @@ if(!empty($post)) {
             <span><?=esc($flash['message'])?></span>
         </div>
     <?php endif; ?>  
+    <h1><?=$title?></h1>
+    <div class="search">
+        <form action="/" method="get" autocomplete="off" novalidate>
+            <input type="text" id="s" name="s" maxlength="255" />&nbsp;
+            <input type="submit" value="search" />
+            <div>
+                <ul id="live_search"></ul>
+            </div>
+        </form>
+    </div> <!-- end search -->
+
     <!-- main content -->
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <h1>Update Neighborhoods</h1>
+                <h2>Update Neighborhoods</h2>
 
                 <?php if(count($errors) > 0) : ?>
                     <div class="errors">

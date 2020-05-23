@@ -15,60 +15,27 @@ $neighborhood = new NeighborhoodModel();
 
 $result = $neighborhood->all();
 
-?><!DOCTYPE html>
-<html lang="en">
+$title = 'Neighborhoods | Admin';
 
-<head>
+$navbarbrand = 'Neighborhoods';
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+require __DIR__ . '/../../includes/admin_header.inc.php';
 
-    <title>Neighborhoods | Admin</title>
-
-    <!-- Bootstrap core CSS -->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
-
-    <style>
-    /* flash messaging options */
-    .flash {
-      width: 100%;
-      line-height: 40px;
-      font-weight: bold;
-      padding: 0;
-      margin:0;
-      text-align: center;
-    }
-    .flash_error {
-      color: #bf3d42;
-      background: #fae3e4;
-      font-weight: bold;
-      border: 1px solid #900;
-    }
-    .success {
-      color: #000;
-      border: 1px solid #013610;
-      background: #e3faea;
-      font-weight: bold;
-    }
-    /*end flash messaging*/
-    </style>
-</head>
+?>
 
 <body>
 
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
         <div class="container">
-            <a class="navbar-brand" href="/admin">Neighborhoods Admin</a>
+            <a class="navbar-brand" href="/admin"><?=$navbarbrand?></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="/admin/index.php">Home<span class="sr-only"></span></a>
+                        <a class="nav-link" href="/admin/index.php">Dashboard<span class="sr-only"></span></a>
                     </li>
 
                     <li class="nav-item">
@@ -93,11 +60,23 @@ $result = $neighborhood->all();
             </div>
         </div>
     </nav> <!-- end nav -->
+
     <?php if(!empty($flash)) : ?>
         <div class="flash <?=esc_attr($flash['class'])?>">
             <span><?=esc($flash['message'])?></span>
         </div>
-    <?php endif; ?>    
+    <?php endif; ?>  
+    <h1><?=$title?></h1>
+    <div class="search">
+        <form action="/" method="get" autocomplete="off" novalidate>
+            <input type="text" id="s" name="s" maxlength="255" />&nbsp;
+            <input type="submit" value="search" />
+            <div>
+                <ul id="live_search"></ul>
+            </div>
+        </form>
+    </div> <!-- end search -->
+
     <!-- main content -->
     <div class="container">
         <div class="row">
