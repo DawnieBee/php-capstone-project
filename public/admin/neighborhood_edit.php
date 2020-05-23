@@ -34,65 +34,26 @@ if(!empty($post)) {
 
 $title = 'Neighborhood Update | Admin';
 
-$navbarbrand = 'Neighborhood Edit';
+$subtitle = 'Neighborhood Edit';
 
 require __DIR__ . '/../../includes/admin_header.inc.php';
+
+require __DIR__ . '/../../includes/admin_nav.inc.php';
 
 ?>
 
 <body>
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
-        <div class="container">
-            <a class="navbar-brand" href="/admin">Neighborhoods Admin</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="/admin/index.php">Home<span class="sr-only"></span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="/admin/neighborhoods.php">Neighborhoods</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/admin/users.php">Users</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/admin/baskets.php">Baskets</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/admin/orders.php">Orders</a>
-                    </li>
-                    <li>
-                        <a class="nav-link red" href="/logout.php?logout=1">Logout</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav> <!-- end nav -->
-    <?php if(!empty($flash)) : ?>
-        <div class="flash <?=esc_attr($flash['class'])?>">
-            <span><?=esc($flash['message'])?></span>
-        </div>
-    <?php endif; ?>  
-    <h1><?=$title?></h1>
-    <div class="search">
-        <form action="/" method="get" autocomplete="off" novalidate>
-            <input type="text" id="s" name="s" maxlength="255" />&nbsp;
-            <input type="submit" value="search" />
-            <div>
-                <ul id="live_search"></ul>
-            </div>
-        </form>
-    </div> <!-- end search -->
-
-    <!-- main content -->
+   <!-- main content -->
     <div class="container">
+        <?php if(!empty($flash)) : ?>
+            <div class="flash <?=esc_attr($flash['class'])?>">
+                <span><?=esc($flash['message'])?></span>
+            </div>
+        <?php endif; ?>  
+        <h1><?=$subtitle?></h1>
+        
         <div class="row">
             <div class="col-lg-12">
-                <h2>Update Neighborhoods</h2>
 
                 <?php if(count($errors) > 0) : ?>
                     <div class="errors">

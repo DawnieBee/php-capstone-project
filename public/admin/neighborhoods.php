@@ -17,7 +17,7 @@ $result = $neighborhood->all();
 
 $title = 'Neighborhoods | Admin';
 
-$navbarbrand = 'Neighborhoods';
+$subtitle = 'Neighborhoods';
 
 require __DIR__ . '/../../includes/admin_header.inc.php';
 
@@ -26,15 +26,15 @@ require __DIR__ . '/../../includes/admin_nav.inc.php';
 ?>
 
 <body>
-
-    
+    <!-- main content -->
+    <div class="container">
 
     <?php if(!empty($flash)) : ?>
         <div class="flash <?=esc_attr($flash['class'])?>">
             <span><?=esc($flash['message'])?></span>
         </div>
     <?php endif; ?>  
-    <h1><?=$title?></h1>
+    
     <div class="search">
         <form action="/" method="get" autocomplete="off" novalidate>
             <input type="text" id="s" name="s" maxlength="255" />&nbsp;
@@ -44,12 +44,11 @@ require __DIR__ . '/../../includes/admin_nav.inc.php';
             </div>
         </form>
     </div> <!-- end search -->
-
-    <!-- main content -->
-    <div class="container">
+    <div class="clear"></div>
+    
+        <h1><?=$subtitle?></h1>
         <div class="row">
             <div class="col-lg-12">
-                <h1>Neighborhoods</h1>
                 
                 <table class="table table-striped">
                     <tbody>
