@@ -7,7 +7,7 @@ class NeighborhoodModel extends Model
     protected $table = 'neighborhoods';
     protected $key = 'hood_id';
 
-    public function updateNeighborhood()
+    public function updateNeighborhood(array $post)
     {
 
         $query = "UPDATE neighborhoods
@@ -56,10 +56,9 @@ class NeighborhoodModel extends Model
 
         $stmt->execute($params);
 
+        $result = $stmt->rowCount();
+        return $result;
 
-        header('Location: neighborhoods.php');
-        die;
     }
-
 }
 
