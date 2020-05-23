@@ -5,12 +5,12 @@ require CLASSES . '/NeighborhoodModel.php';
 
 use Capstone\NeighborhoodModel;
 
-$neighborhood = new NeighborhoodModel();
+
 
 if(!empty($post)) {
 
-    // we have been redirect back here from 03_process_publisher.php
-    // See line 24 of config.php
+    // we have been redirect back here from neighborhood_update.php
+    // as post values from config.php
     $result = $post;
 
 } else {
@@ -27,31 +27,12 @@ if(!empty($post)) {
 
             header('Location: neighborhoods.php');
             die;
-
-        die('Pick a neighborhood to edit');
     }
+    
+    $neighborhood = new NeighborhoodModel();
 
-    // Create query to get publisher with publisher_id
-    $query = 'SELECT * FROM neighborhoods 
-            WHERE hood_id = :hood_id';
-
-    // Prepare the query
-    $stmt =  $dbh->prepare($query);
-
-    // Create params array
-    $params = array(
-        ':hood_id' => intval( $_GET['hood_id'] )
-    );
-
-    // Execute query
-    $stmt->execute($params);
-
-    // Fetch result
-    $result = $stmt->fetch(PDO::FETCH_ASSOC);
-
+    $result = $neighborhood->one($_GET['hood_id']);
 }
-
-
 
 
 ?><!DOCTYPE html>

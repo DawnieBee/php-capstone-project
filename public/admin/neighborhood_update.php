@@ -10,12 +10,18 @@ require CLASSES . '/NeighborhoodModel.php';
 
 use Capstone\NeighborhoodModel;
 
-$neighbhorhood = new NeighborhoodModel();
-
 
 
 if('POST' !== $_SERVER['REQUEST_METHOD'] ){
-    die('Unsupported request method');
+    $flash = array(
+        'class' => 'flash_error',
+        'message' => 'Pick a neighborhood to edit.'
+        );
+
+        $_SESSION['flash'] = $flash;
+
+        header('Location: /admin/neighborhoods.php');
+        die;
 }
 
 
@@ -59,41 +65,42 @@ if(!empty($errors)){
     $_SESSION['errors'] = $errors;
     $_SESSION['post'] = $_POST;
     // redirect back to neighborhood_edit page
-    header('Location: neighborhood_edit.php');
-    die;
-}
-if(empty($errors)){
-    $result = $neighbhorhood->updateNeighborhood();
-
-    header('Location: neighborhoods.php');
+    header('Location: /admin/neighborhood_edit.php');
     die;
 }
 
-// 
+$neighbhorhood = new NeighborhoodModel();
 
-$update = $dbh->lastInsertId();
+$affected_rows = $neighbhorhood->updateNeighborhood($_POST);
 
-if($update > 0){
-    $_SESSION['hood_id'] = $update;
+
+/**
+ * if successful insert of record into the database, redirect back to the list view page with a message
+ * or die with an error message
+ */
+
+if($affected_rows > 0){
 
     $flash = array(
         'class'=>'success',
-        'message'=>'Update successful'
+        'message'=>'The record was updated'
     );
     $_SESSION['flash'] = $flash;
 
-    header('Location: neighborhoods.php');
-    die;
+    
 } else {
-        $flash = array(
-            'class' => 'flash_error',
-            'message' => 'There was a problem inserting the record'
-        );
-        $_SESSION['flash'] = $flash;
-
-        header('Location: neighborhood_edit.php');
-        die;
+    $flash = array(
+        'class' => 'flash_error',
+        'message' => 'The record was not updated'
+    );
+    $_SESSION['flash'] = $flash;
 }
+
+header('Location: /admin/neighborhoods.php');
+die;
+
+
+
 
 
 
