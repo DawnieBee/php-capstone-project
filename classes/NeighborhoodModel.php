@@ -60,5 +60,30 @@ class NeighborhoodModel extends Model
         return $result;
 
     }
+
+    function public getBySearch($searchterm)
+    {
+        $query = 'SELECT * FROM 
+                neighborhoods
+                WHERE 
+                neighborhoods.name LIKE :searchterm1
+                OR
+                neighborhoods.location LIKE :searchterm2
+                ORDER BY 
+                neighborhoods.location ASC';
+        
+        $stmt = static::$dbh->prepare($query);
+
+        $params = array(
+            ':searchterm1' => "%{$searchterm}%",
+            ':searchterm2' => "%{$searchterm}%",
+        );
+
+        $stmt->execute($params);
+
+        $result = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+
+        return $result;
+    }
 }
 
