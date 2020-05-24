@@ -15,6 +15,14 @@ $neighborhood = new NeighborhoodModel();
 
 $result = $neighborhood->all();
 
+// search functionality
+if(!empty($_GET['s'])) {
+    $title = "You searched for: " . $_GET['s'];
+    $neighborhood = getBySearch($_GET['s']);
+    die;
+}
+
+
 $title = 'Neighborhoods | Admin';
 
 $subtitle = 'Neighborhoods';
@@ -47,9 +55,16 @@ require __DIR__ . '/../../includes/admin_nav.inc.php';
     <div class="clear"></div>
     
         <h1><?=$subtitle?></h1>
+
+        <?php if(is_array($neighborhood) && count($neighborhood) == 0) : ?>
+
+            <h3>Sorry, no neighborhoods matched your search.</h3>
+
+        <?php endif; ?>
+
         <div class="row">
             <div class="col-lg-12">
-                
+               
                 <table class="table table-striped">
                     <tbody>
                         <tr>
@@ -60,21 +75,22 @@ require __DIR__ . '/../../includes/admin_nav.inc.php';
                             <th>Description</th>
                             <th>Actions</th>
                         </tr>
-                    
-                        <!-- get the table properties as a list in table -->
-                        <?php foreach($result as $row) : ?>
-                            <tr>
-                                <td><?=esc($row['hood_id'])?></td>
-                                <td><?=esc($row['name'])?></a></td>
-                                <td><?=esc($row['location'])?></td>
-                                <td><?=esc($row['rating_scale'])?></td>
-                                <td><?=esc($row['description'])?></td>
-                                <td>
-                                    <a class="btn btn-primary btn-sm" href="neighborhood_edit.php?hood_id=<?=$row['hood_id']?>">edit</a>
-                                    <a class="delete btn btn-danger btn-sm" data_id="" href="#">delete</a>
-                                </td>   
-                            </tr>
-                        <?php endforeach; ?>
+                        <?php if(is_array($neighborhood) && count($neighborhood) > 0) : ?> 
+                            <!-- get the table properties as a list in table -->
+                            <?php foreach($result as $row) : ?>
+                                <tr>
+                                    <td><?=esc($row['hood_id'])?></td>
+                                    <td><?=esc($row['name'])?></a></td>
+                                    <td><?=esc($row['location'])?></td>
+                                    <td><?=esc($row['rating_scale'])?></td>
+                                    <td><?=esc($row['description'])?></td>
+                                    <td>
+                                        <a class="btn btn-primary btn-sm" href="neighborhood_edit.php?hood_id=<?=$row['hood_id']?>">edit</a>
+                                        <a class="delete btn btn-danger btn-sm" data_id="" href="#">delete</a>
+                                    </td>   
+                                </tr>
+                            <?php endforeach; ?>
+                        <?php endif; ?>
                         
                     </tbody>
                 </table>
