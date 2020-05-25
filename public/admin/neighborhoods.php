@@ -15,13 +15,15 @@ $neighborhood = new NeighborhoodModel();
 
 $result = $neighborhood->all();
 
-// search functionality
-if(!empty($_GET['s'])) {
-    $title = "You searched for: " . $_GET['s'];
-    $neighborhood = getBySearch($_GET['s']);
-    die;
-}
 
+
+// search functionality
+if(!empty($_GET['s'])) {   
+    $result = $neighborhood->searchNeighborhood($_GET['s']);
+} else {
+    // retrieve all neighborhoods if no search
+    $result = $neighborhood->all();
+}
 
 $title = 'Neighborhoods | Admin';
 
@@ -44,8 +46,8 @@ require __DIR__ . '/../../includes/admin_nav.inc.php';
     <?php endif; ?>  
     
     <div class="search">
-        <form action="/" method="get" autocomplete="off" novalidate>
-            <input type="text" id="s" name="s" maxlength="255" />&nbsp;
+        <form action="neighborhoods.php" method="get" autocomplete="off" novalidate>
+            <input type="text" id="s" name="s" maxlength="255" placeholder="Search Neighborhoods" />&nbsp;
             <input type="submit" value="search" />
             <div>
                 <ul id="live_search"></ul>
@@ -56,15 +58,15 @@ require __DIR__ . '/../../includes/admin_nav.inc.php';
     
         <h1><?=$subtitle?></h1>
 
-        <?php if(is_array($neighborhood) && count($neighborhood) == 0) : ?>
+        <?php if(!empty($_GET['s'])) : ?>
 
-            <h3>Sorry, no neighborhoods matched your search.</h3>
+            <h3>You searched for: <?=$_GET['s']?></h3>
 
         <?php endif; ?>
 
         <div class="row">
             <div class="col-lg-12">
-               
+                
                 <table class="table table-striped">
                     <tbody>
                         <tr>
@@ -75,7 +77,7 @@ require __DIR__ . '/../../includes/admin_nav.inc.php';
                             <th>Description</th>
                             <th>Actions</th>
                         </tr>
-                        <?php if(is_array($neighborhood) && count($neighborhood) > 0) : ?> 
+                        
                             <!-- get the table properties as a list in table -->
                             <?php foreach($result as $row) : ?>
                                 <tr>
@@ -90,7 +92,6 @@ require __DIR__ . '/../../includes/admin_nav.inc.php';
                                     </td>   
                                 </tr>
                             <?php endforeach; ?>
-                        <?php endif; ?>
                         
                     </tbody>
                 </table>

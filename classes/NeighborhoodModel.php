@@ -61,7 +61,7 @@ class NeighborhoodModel extends Model
 
     }
 
-    function public getBySearch($searchterm)
+    public function SearchNeighborhood($searchterm)
     {
         $query = 'SELECT * FROM 
                 neighborhoods
@@ -69,14 +69,17 @@ class NeighborhoodModel extends Model
                 neighborhoods.name LIKE :searchterm1
                 OR
                 neighborhoods.location LIKE :searchterm2
+                OR
+                neighborhoods.description LIKE :searchterm3
                 ORDER BY 
-                neighborhoods.location ASC';
+                neighborhoods.name ASC';
         
         $stmt = static::$dbh->prepare($query);
 
         $params = array(
             ':searchterm1' => "%{$searchterm}%",
             ':searchterm2' => "%{$searchterm}%",
+            ':searchterm3' => "%{$searchterm}%"
         );
 
         $stmt->execute($params);
