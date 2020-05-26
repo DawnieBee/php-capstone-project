@@ -71,7 +71,18 @@ class Validator
             $this->setError($field, $this->label($field) . " cannot be more than $len characters long.");
         }
     }
-
+    /**
+     * verify the value entered is an integer
+     * @param  String  $value 
+     * @param  String  $field 
+     * @return boolean        
+     */
+    public function isNumber($value, $field)
+    {
+        if(!is_numeric($value)){
+            $this->setError($field, $this->label($value) . " is not an integer.");
+        }
+    }
     /**
      * Validate email   
      * @param  String  $field    
@@ -185,4 +196,6 @@ class Validator
         $label = ucwords($label);
         return $label;
     }
+
+
 }

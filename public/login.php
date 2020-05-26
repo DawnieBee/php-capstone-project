@@ -53,7 +53,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
             $_SESSION['errors'] = $errors;
             $_SESSION['post'] = $_POST;
             $flash = array(
-                'class' => 'success',
+                'class' => 'flash_error',
                 'message' => 'Sorry, input does not match our credentials.'
             );
 
@@ -117,7 +117,7 @@ require __DIR__ . '/../includes/header.inc.php';
                     <?php endif; ?>
                     <p>Required fields &lpar; <strong style="color:#900;">&ast;</strong> &rpar;</p>
                     <p><label class="required" for="email">Email:</label>
-                          <input type="text" name="email" id="email" value="" />
+                          <input type="text" name="email" id="email" value="<?=old('email', $post)?>" />
                     <p><label class="required" for="password">Password:</label>
                           <input type="password" name="password" id="password" value=""  />
                 </fieldset><!-- end fieldset -->

@@ -1,81 +1,101 @@
 <?php
+/**
+ * Dawn Baker
+ * OO_PHP 
+ * Assignment 2
+ */
+namespace Capstone; 
 
-namespace Capstone;
+require __DIR__ . '/../../config.php';
 
-$neighborhood = new Model();
+require CLASSES . '/NeighborhoodModel.php';
 
-?><!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    </head>
-    <body>
-        <nav class="navbar navbar-inverse .navbar-fixed-top">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <a class="navbar-brand" href="#">Administration</a>
-                </div>
-                <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">Dashboard</a></li>
-                    <li><a href="#">Neighborhoods</a></li>
-                    <li><a href="#">Users</a></li>
-                    <li><a href="#">Baskets</a></li>
-                </ul>
-                <!-- search field -->
-                <form class="navbar-form navbar-left" action="/action_page.php">
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Search">
-                        <div class="input-group-btn">
-                            <button class="btn btn-default" type="submit">
-                                <i class="glyphicon glyphicon-search"></i>
-                            </button>
-                        </div>
-                    </div>
-                </form>
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#"><span class="glyphicon glyphicon-user"></span>Login</a></li>
-                    <li><a href="#"><span class="glyphicon glyphicon-log-in"></span>Logout</a></li>
-                </ul>
-            </div>
-        </nav>
-        <!-- end nav -->
-        
-        <!-- main content -->
-        <div class="container-fluid">
-            <h1>Honey We're Home Administration Page</h1>
-            <p>This is some text.</p>
-            <table class="table table-striped">
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Neighborhood</th>
-                        <th>Location</th>
-                        <th>Description</th>
-                        <th>Rating</th>
-                        <th>Actions</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php foreach($neighborhood as $row) : ?>
-                        <tr>
-                            <td>1</td>
-                            <td>Old Kildonan</td>
-                            <td>North</td>
-                            <td>Lorem Ipsum</td>
-                            <td>null</td>
-                            <td>
-                                <a class="btn btn-primary btn-sm" href="">edit</a>
-                                <a class="delete btn btn-danger btn-sm" data_id="" href="#">delete</a>
-                            </td>   
-                        </tr>
-                    <?php endforeach; ?>
-                    
-                </tbody>
-            </table>
+
+$neighborhood = new NeighborhoodModel();
+
+$result = $neighborhood->all();
+
+
+
+// search functionality
+if(!empty($_GET['s'])) {   
+    $result = $neighborhood->searchNeighborhood($_GET['s']);
+} else {
+    // retrieve all neighborhoods if no search
+    $result = $neighborhood->all();
+}
+
+$title = 'Neighborhoods | Admin';
+
+$subtitle = 'Neighborhoods';
+
+require __DIR__ . '/../../includes/admin_header.inc.php';
+
+require __DIR__ . '/../../includes/admin_nav.inc.php';
+
+?>
+
+<body>
+    
+    <?php if(!empty($flash)) : ?>
+        <div class="flash <?=esc_attr($flash['class'])?>">
+            <span><?=esc($flash['message'])?></span>
         </div>
-    </body>
+    <?php endif; ?>  
+    <!-- main content -->
+    <div class="container">
+        <div class="search">
+            <form action="neighborhoods.php" method="get" autocomplete="off" novalidate>
+                <input type="text" id="s" name="s" maxlength="255" placeholder="Search Neighborhoods" />&nbsp;
+                <input type="submit" value="search" />
+                <div>
+                    <ul id="live_search"></ul>
+                </div>
+            </form>
+        </div> <!-- end search -->
+        <div class="clear"></div>
+        
+            <h1><?=$subtitle?></h1>
+
+            <?php if(!empty($_GET['s'])) : ?>
+
+                <h3>You searched for: <?=$_GET['s']?></h3>
+
+            <?php endif; ?>
+
+            <div class="row">
+                <div class="col-lg-12">
+                    
+                    <table class="table table-striped">
+                        <tbody>
+                            <tr>
+                                <th>ID</th>
+                                <th>Neighborhood</th>
+                                <th>Location</th>
+                                <th>Rating</th>
+                                <th>Description</th>
+                                <th>Actions</th>
+                            </tr>
+                            
+                                <!-- get the table properties as a list in table -->
+                                <?php foreach($result as $row) : ?>
+                                    <tr>
+                                        <td><?=esc($row['hood_id'])?></td>
+                                        <td><?=esc($row['name'])?></a></td>
+                                        <td><?=esc($row['location'])?></td>
+                                        <td><?=esc($row['rating_scale'])?></td>
+                                        <td><?=esc($row['description'])?></td>
+                                        <td>
+                                            <a class="btn btn-primary btn-sm" href="neighborhood_edit.php?hood_id=<?=$row['hood_id']?>">edit</a>
+                                            <a class="delete btn btn-danger btn-sm" data_id="" href="#">delete</a>
+                                        </td>   
+                                    </tr>
+                                <?php endforeach; ?>
+                            
+                        </tbody>
+                    </table>
+                </div> <!-- end col -->
+            </div> <!-- end row -->
+    </div> <!-- end container -->
+</body>
 </html>

@@ -69,6 +69,7 @@ $dbh = new PDO(DB_DSN, DB_USER, DB_PASS);
 // Must set PDO to show errors, or it will fail silently
 $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
+require CLASSES . '/Model.php';
 
 Capstone\Model::init($dbh);
 
