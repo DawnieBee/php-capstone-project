@@ -26,6 +26,10 @@
     .clear{
         clear: both;
     }
+    .error {
+        color: #f00;
+        font-weight: bold;
+      }
     /* flash messaging options */
     .flash {
         width: 100%;
