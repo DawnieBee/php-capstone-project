@@ -14,13 +14,13 @@ require __DIR__ . '/../../includes/admin_nav.inc.php';
 
 <body>
 
-<!-- main content -->
+    <?php if(!empty($flash)) : ?>
+        <div class="flash <?=esc_attr($flash['class'])?>">
+            <span><?=esc($flash['message'])?></span>
+        </div>
+    <?php endif; ?>  
+    <!-- main content -->
     <div class="container">
-        <?php if(!empty($flash)) : ?>
-            <div class="flash <?=esc_attr($flash['class'])?>">
-                <span><?=esc($flash['message'])?></span>
-            </div>
-        <?php endif; ?>  
         <h1><?=$subtitle?></h1>
         
         <h2><span>This page is under construction</span></h2>

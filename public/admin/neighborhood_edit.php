@@ -43,13 +43,14 @@ require __DIR__ . '/../../includes/admin_nav.inc.php';
 ?>
 
 <body>
-   <!-- main content -->
-    <div class="container">
-        <?php if(!empty($flash)) : ?>
+    <?php if(!empty($flash)) : ?>
             <div class="flash <?=esc_attr($flash['class'])?>">
                 <span><?=esc($flash['message'])?></span>
             </div>
-        <?php endif; ?>  
+    <?php endif; ?> 
+    <!-- main content -->
+    <div class="container">
+         
         <h1><?=$subtitle?></h1>
         
         <div class="row">
