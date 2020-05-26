@@ -27,6 +27,24 @@ if('POST' !== $_SERVER['REQUEST_METHOD'] ){
 
 // validation 
 $v = new Capstone\Validator();
+
+// all fields are required
+$v->isRequired($_POST['name'], 'name');
+$v->isRequired($_POST['location'], 'location');
+$v->isRequired($_POST['description'], 'description');
+$v->isRequired($_POST['img'], 'img');
+$v->isRequired($_POST['rating_scale'], 'rating_scale');
+$v->isRequired($_POST['police_station'], 'police_station');
+$v->isRequired($_POST['fire_station'], 'fire_station');
+$v->isRequired($_POST['library'], 'library');
+$v->isRequired($_POST['pool'], 'pool');
+$v->isRequired($_POST['prim_schools'], 'prim_schools');
+$v->isRequired($_POST['sec_schools'], 'sec_schools');
+$v->isRequired($_POST['churches'], 'churches');
+$v->isRequired($_POST['playgrounds'], 'playgrounds');
+$v->isRequired($_POST['comm_centres'], 'comm_centres');
+$v->isRequired($_POST['house_price_min'], 'house_price_min');
+$v->isRequired($_POST['house_price_max'], 'house_price_max');
 // neighborhood name validation 
 $v->string($_POST['name'], 'name');
 $v->minLen($_POST['name'], 'name', 2);
@@ -35,8 +53,6 @@ $v->maxLen($_POST['name'], 'name', 255);
 $v->string($_POST['location'], 'location');
 $v->minLen($_POST['location'], 'location', 2);
 $v->maxLen($_POST['location'], 'location', 45);
-// description validation
-$v->string($_POST['description'], 'description');
 // image validation 
 $v->minLen($_POST['img'], 'img', 2);
 $v->maxLen($_POST['img'], 'img', 255);

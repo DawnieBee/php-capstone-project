@@ -56,7 +56,7 @@ require __DIR__ . '/../../includes/admin_nav.inc.php';
             <div class="col-lg-12">
 
                 <?php if(count($errors) > 0) : ?>
-                    <div class="errors">
+                    <div class="error">
                         <ul>
                             <?php foreach($errors as $error) : ?>
                             <li><?=$error?></li>
