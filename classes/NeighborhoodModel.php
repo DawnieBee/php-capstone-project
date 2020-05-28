@@ -88,5 +88,21 @@ class NeighborhoodModel extends Model
 
         return $result;
     }
+
+    public function NeighborhoodOne($id)
+    {
+        $query = "SELECT * FROM neighborhoods WHERE hood_id = :id";
+
+        $stmt = static::$dbh->prepare($query);
+
+        $params = array(
+            ':id' => $id
+        );
+
+        $stmt->execute($params);
+        $result = $stmt->fetch(\PDO::FETCH_ASSOC);
+
+        return $result;
+    }
 }
 
