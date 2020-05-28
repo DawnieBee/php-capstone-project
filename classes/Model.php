@@ -45,6 +45,8 @@ class Model
 
         $stmt->execute($params);
         $result = $stmt->fetch(\PDO::FETCH_ASSOC);
+
         return $result;
+
     }
 }

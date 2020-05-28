@@ -29,7 +29,7 @@ $result = $neighborhood1->all();
                 <div class="show_me curved_borders boxshadow">
                   <?=esc($row['description'])?> 
                 </div>
-                <button class="areas_showmore">More</button>
+                <button class="areas_showmore"><a href="area_detail.php?hood_id=<?=$row['hood_id']?>">More</a></button>
               </div>
 
           <?php endforeach; ?>
