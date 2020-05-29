@@ -43,7 +43,7 @@ require __DIR__ . '/../../includes/admin_nav.inc.php';
         </div>
     <?php endif; ?>  
     <!-- main content -->
-    <!-- <p><button class="add_hood"><a href=""></a> Add Neighborhood</button></p> -->
+    
     <div class="container">
         <div class="search">
             <form action="neighborhoods.php" method="get" autocomplete="off" novalidate>
@@ -57,7 +57,9 @@ require __DIR__ . '/../../includes/admin_nav.inc.php';
         <div class="clear"></div>
         
             <h1><?=$subtitle?></h1>
-
+            <div class="add_hood">
+                <a class="btn btn-primary btn-sm" href="neighborhood_add.php">Add Neighborhood</a>
+            </div>
 
 
             <?php if(!empty($_GET['s'])) : ?>
