@@ -157,6 +157,42 @@ section{
 }
 /* end of areas page styling */
 
+/*area detail view */
+img.hood_img {
+  margin-top: 20px;
+  float: left;
+  clear: left;
+}
+#table_container {
+  margin: 20px;
+}
+table.area_detail{
+  border-spacing: 0px;
+  border-collapse: collapse;
+  width: 600px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+table.area_detail td, table.area_detail td:first-child td:first-child {
+  
+  padding: 3px;
+}
+table.area_detail th, table.area_detail tr:first-child th:first-child{
+  text-align: right;
+  font-weight: 700;
+  width: 200px;
+  padding-right: 20px;
+}
+ul{
+  margin-top: 5px;
+  margin-left: 200px;
+}
+#areas_more a{
+  text-decoration: none;
+    color: #000;
+}
+/*end area detail*/
+
 /*more page styling  */
 #table_container{
   margin: 20px;
@@ -183,6 +219,8 @@ table.areas th, table.areas tr:first-child th:first-child{
   text-align: left;
   font-weight: 700;
 }
+
+
 
 /*  this is the form styling  */
 #form_container{
@@ -265,6 +303,8 @@ footer{
   content: "";
   clear: both;
 }
+/*end footer*/
+
 /* flash messaging options */
 .flash {
   width: 100%;

@@ -35,7 +35,9 @@ if(!empty($post)) {
 }
 
 
-$title = "Neighborhood Detail";
+$title = "Area Detail";
+
+
 
 require __DIR__ . '/../includes/header.inc.php';
 
@@ -44,34 +46,76 @@ require __DIR__ . '/../includes/header.inc.php';
    <section>
        
        <div id="container" class="clearfix">
-            <h1><?=$title?></h1>
-          
-            <h3><?=$result['name']?></h3>
-
-
-           
-            <img src="images/<?=esc_attr($result['img'])?>" alt="<?=esc_attr($result['name'])?>" />
-
-            <ul>
+            
+            <img class="hood_img" src="images/<?=esc_attr($result['img'])?>" alt="<?=esc_attr($result['name'])?>" />
+            
+            <h2><?=$result['name']?></h2>
+            
+            <table class="area_detail">
+                <tr>
+                    <th>Name :</th>
+                    <td><?=esc($result['name'])?></td>
+                </tr>
+                <tr>
+                    <th>Location :</th>
+                    <td><?=esc($result['location'])?></td>
+                </tr>
+                <tr>
+                    <th>Rating :</th>
+                    <td><?=esc($result['rating_scale'])?></td>
+                </tr>
+                <tr>
+                    <th>Police Station :</th>
+                    <td><?=esc($result['police_station'])?></td>
+                </tr>
+                <tr>
+                    <th>Fire Station :</th>
+                    <td><?=esc($result['fire_station'])?></td>
+                </tr>
+                <tr>
+                    <th>Library :</th>
+                    <td><?=esc($result['library'])?></td>
+                </tr>
+                <tr>
+                    <th>Pool :</th>
+                    <td><?=esc($result['pool'])?></td>
+                </tr>
+                <tr>
+                    <th>Primary Schools :</th>
+                    <td><?=esc($result['prim_schools'])?></td>
+                </tr>
+                <tr>
+                    <th>Secondary Schools :</th>
+                    <td><?=esc($result['sec_schools'])?></td>
+                </tr>
+                <tr>
+                    <th>Churches :</th>
+                    <td><?=esc($result['churches'])?></td>
+                </tr>                   
+                <tr>
+                    <th>Playgrounds :</th>
+                    <td><?=esc($result['playgrounds'])?></td>
+                </tr>    
+                <tr>
+                    <th>Community Centres :</th>
+                    <td><?=esc($result['comm_centres'])?></td>
+                </tr>  
+                <tr>
+                    <th>Minimum House Prices :</th>
+                    <td><?=esc($result['house_price_min'])?></td>
+                </tr>
+                <tr>
+                    <th>Maximum House Prices :</th>
+                    <td><?=esc($result['house_price_max'])?></td>
+                </tr>
+                <tr>
+                    <th>Description :</th>
+                    <td><?=esc($result['description'])?></td>   
+                </tr>
                 
-                <li><strong>Name:</strong> <?=esc($result['name'])?></li>
-                <li><strong>Location:</strong><?=esc($result['location'])?></li>
-                <li><strong>Rating:</strong><?=esc($result['rating_scale'])?></li>
-                <li><strong>Police Station:</strong><?=esc($result['police_station'])?></li>
-                <li><strong>Fire Station:</strong><?=esc($result['fire_station'])?></li>
-                <li><strong>Library:</strong><?=esc($result['library'])?></li>
-                <li><strong>Pool:</strong><?=esc($result['pool'])?></li>
-                <li><strong>Primary Schools:</strong><?=esc($result['prim_schools'])?></li>
-                <li><strong>Secondary Schools:</strong><?=esc($result['sec_schools'])?></li>
-                <li><strong>Churches:</strong><?=esc($result['churches'])?></li>
-                <li><strong>Playgrounds:</strong><?=esc($result['playgrounds'])?></li>
-                <li><strong>Community Centres:</strong><?=esc($result['comm_centres'])?></li>
-                <li><strong>Minimum House Price:</strong><?=esc($result['house_price_min'])?></li>
-                <li><strong>Maximum House Price:</strong><?=esc($result['house_price_max'])?></li>
+            </table>
 
-                <li><strong>Description:</strong><?=esc($result['description'])?></li>
-
-            </ul>
+        <button id="dtl_back"><a href="areas.php">Back</a></button>
 
        </div>
    </section>

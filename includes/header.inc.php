@@ -71,6 +71,17 @@
     <?php endif; ?>
     <!-- end areas style -->
 
+    <?php if($title == "Area Detail") : ?>
+    <style>
+      h2{
+        margin-left: 30px;
+        margin-top: 65px;
+        float: left;
+        clear: left;
+      }
+    </style>
+    <?php endif; ?>
+
     <?php if($title == "Community Services") : ?>
     <style>
       section{
