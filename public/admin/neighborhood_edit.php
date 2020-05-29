@@ -80,7 +80,7 @@ require __DIR__ . '/../../includes/admin_nav.inc.php';
                     </div>
                     <div class="form-group">
                         <p><label for="description">Description: </label><br />
-                            <input class="form-control" type="text" name="description" value="<?=esc_attr(old('description', $result))?>" /></p>
+                            <textarea class="form-control" type="text" name="description" value="<?=esc_attr(old('description', $result))?>" /></textarea></p>
                     </div>
                     <div class="form-group">
                         <p><label for="img">Image: </label><br />
