@@ -49,6 +49,7 @@
       h2{
         text-align: center;
       } 
+
       /* main container for the boxes */
       #container{
         margin-top: 20px;
@@ -65,7 +66,9 @@
         display: block;
         position: relative;
         left: 300px;
-
+      }
+      .item_head{
+        text-align: center;
       }
     </style>
     <?php endif; ?>
