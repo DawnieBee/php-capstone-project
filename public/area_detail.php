@@ -115,7 +115,7 @@ require __DIR__ . '/../includes/header.inc.php';
                 
             </table>
 
-        <button id="dtl_back"><a href="areas.php">Back</a></button>
+        <button id="details_back"><a href="areas.php">Back</a></button>
 
        </div>
    </section>
