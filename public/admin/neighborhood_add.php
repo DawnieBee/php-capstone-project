@@ -5,6 +5,8 @@ require CLASSES . '/NeighborhoodModel.php';
 
 use Capstone\NeighborhoodModel;
 
+
+
 $title = 'Neighborhood Add | Admin';
 
 $subtitle = 'Add a Record';
