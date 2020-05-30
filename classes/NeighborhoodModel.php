@@ -88,6 +88,7 @@ class NeighborhoodModel extends Model
 
         return $result;
     }
+    
 
     public function NeighborhoodOne($id)
     {
@@ -103,6 +104,41 @@ class NeighborhoodModel extends Model
         $result = $stmt->fetch(\PDO::FETCH_ASSOC);
 
         return $result;
+    }
+
+    public function add(array $post)
+    {
+
+        $query = "INSERT INTO neighborhoods
+                (name, location, description, img, rating_scale, police_station, fire_station, library, pool, prim_schools, sec_schools, churches, playgrounds, comm_centres, house_price_min, house_price_max)
+                VALUES
+                (:name, :location, :description, :img, :rating_scale, :police_station, :fire_station, :library, :pool, :prim_schools, :sec_schools, :churches, :playgrounds, :comm_centres, :house_price_min, :house_price_max)";
+
+        $stmt = static::$dbh->prepare($query);
+
+        $params = array(
+            ':name' => $_POST['name'],
+            ':location' => $_POST['location'],
+            ':description' => $_POST['description'],
+            ':img'=> $_POST['img'],
+            ':rating_scale' => $_POST['rating_scale'],
+            ':police_station' => $_POST['police_station'],
+            ':fire_station' => $_POST['fire_station'],
+            ':library' => $_POST['library'],
+            ':pool' => $_POST['pool'],
+            ':prim_schools' => $_POST['prim_schools'],
+            ':sec_schools' => $_POST['sec_schools'],
+            ':churches' => $_POST['churches'],
+            ':playgrounds' => $_POST['playgrounds'],
+            ':comm_centres' => $_POST['comm_centres'],
+            ':house_price_min' => $_POST['house_price_min'],
+            ':house_price_max' => $_POST['house_price_max']
+            );
+        
+        $stmt->execute($params);
+
+        return static::$dbh->lastInsertId();
+
     }
 }
 
