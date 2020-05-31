@@ -16,6 +16,37 @@ body{
   border-radius: 0 0 15px 15px;
   height: auto;
 }
+div.util {
+  height: 30px;
+}
+
+div.util ul {
+  padding: 0;
+  margin: 0;
+  display: inline-block;
+  float: right;
+  margin-right: 30px;
+}
+
+.util ul li {
+  display: inline-block;
+  margin-left: 20px;
+  line-height: 30px;
+}
+
+.util ul li a:link,
+.util ul li a:visited {
+  font-size: 12px;
+  text-decoration: none;
+  color: #444;
+}
+
+.util ul li a:hover,
+.util ul li a:active {
+  font-size: 12px;
+  text-decoration: underline;
+  color: #999;
+}
 
 .curved_borders{
   border-radius: 15px;
@@ -25,10 +56,10 @@ body{
 }
 /*    header container styling  */
 
-header{
+.header_container{
   position: relative;
   max-width: 960px;
-  height: 180px;
+  height: 190px;
   background-color: #eee;
 }
 #logo{
@@ -46,8 +77,8 @@ header{
   font-size: 4em;
   float: right;
   position: absolute;
-  top: 20px;
-  right: 20px;
+  top: 30px;
+  right: 30px;
   color: #ff0;
   text-shadow: 1px 2px 2px #000;
   z-index: 1;
@@ -56,7 +87,7 @@ header{
 #main_nav{
   display: inline-block;
   position: absolute;
-  top: 0;
+  top: 20px;
   float: right;
   right: 20px;
   z-index: 1;
@@ -120,7 +151,7 @@ section{
   z-index: 1;
   text-shadow: 2px 2px 5px #000;
   left: 20px;
-  top: 205px;
+  top: 235px;
   padding: 5px;
   position: absolute;
 }
@@ -335,7 +366,41 @@ footer{
   font-weight: bold;
 }
 /*end flash messaging*/
+/* basket */
+div.basket {
+  display: inline-block;
+  padding: 0px 5px;
+  margin: 4px;
+  background: #fff;
+  color: #900;
+  font-size: 60%;
+  float: right;
+  position: absolute;
+  right: 20px;
+}
 
+div.basket a:link, div.basket a:visited {
+  color: #900;
+}
+
+span.num_items {
+  display: inline-block;
+  background: #900;
+  color: #fff;
+  padding: 5px;
+  border-radius: 10px;
+  margin-left: 10px;
+}
+/* basket of hoods */
+table.basketofhoods{
+  border-collapse: collapse;
+}
+table.basketofhoods td,
+table.basketofhoods th {
+  text-align: left;
+  padding: 10px;
+  border: 1px solid #cfcfcf;
+}
 
 @media screen (min-width: 768px) and (max-width: 960px){
   #wrapper{
