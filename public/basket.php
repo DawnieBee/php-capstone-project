@@ -58,5 +58,5 @@ $_SESSION['flash'] = $flash;
 $_SESSION['basket'][$neighborhood['hood_id']] = $item;
 
 // send user back where he started 
-header('Location: ' . $_SERVER['HTTP_REFERRER']);
+header('Location: ' . $_SERVER['HTTP_REFERER']);
 die; 
