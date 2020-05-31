@@ -3,7 +3,7 @@
  * Dawn Baker 
  * Capstone project
  */
-require __DIR__ . '/../../config.php';
+require __DIR__ . '/../config.php';
 require CLASSES . '/NeighborhoodModel.php';
 
 // is there a hood_id? if not die and continue
@@ -18,6 +18,9 @@ $model = new NeighborhoodModel();
 
 // hood_id is chosen
 $neighborhood = $model->one($_POST['hood_id']);
+
+dd($neighborhood);
+die;
 
 // item array for basket
 // hood_id
@@ -37,12 +40,12 @@ $item = array(
 );
 
 // success message if neighborhood retrieved from database or error message flash
-if(is_array($neighborhood){
+if(is_array($neighborhood)){
 
     $flash = array(
         'class'=>'success',
         'message'=>'The item has been added to your basket.'
-    ); 
+    );
     
 } else {
     $flash = array(
@@ -54,7 +57,7 @@ if(is_array($neighborhood){
 $_SESSION['flash'] = $flash; 
 
 // add item to basket 
-$_SESSION['basket'] = $item;
+$_SESSION['basket'][$neighborhood['hood_id']] = $item;
 
 // send user back where he started 
 header('Location: ' . $_SERVER['HTTP_REFERRER']);

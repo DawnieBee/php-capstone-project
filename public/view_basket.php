@@ -41,6 +41,7 @@ require __DIR__ . '/../includes/header.inc.php';
                 <td><?=esc($_SESSION['basket']['rating_scale'])?></td>
                 <td><?=esc($_SESSION['basket']['house_price_min'])?></td>
                 <td><?=esc($_SESSION['basket']['house_price_max'])?></td>
+                <td><?php echo esc($_SESSION['cardt']) ?></td>
             </tr>
             <tr>
                 <td><?=number_format($total)?></td>

@@ -373,7 +373,7 @@ div.basket {
   margin: 4px;
   background: #fff;
   color: #900;
-  font-size: 60%;
+  font-size: 70%;
   float: right;
   position: absolute;
   right: 20px;
@@ -381,6 +381,8 @@ div.basket {
 
 div.basket a:link, div.basket a:visited {
   color: #900;
+  font-weight: bold;
+  padding-right: 20px;
 }
 
 span.num_items {
@@ -391,6 +393,19 @@ span.num_items {
   border-radius: 10px;
   margin-left: 10px;
 }
+.basket .count{
+  display: block;
+  line-height: 20px;
+  padding: 0 8px;
+  background: #990000;
+  color: #ffffff;
+  border-radius: 15px;
+  font-weight: bold;
+  position: absolute;
+  right: 5px;
+  top: 5px;
+}
+
 /* basket of hoods */
 table.basketofhoods{
   border-collapse: collapse;
