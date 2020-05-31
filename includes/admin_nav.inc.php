@@ -25,7 +25,7 @@
                 </li>
 
                 <li>
-                    <a class="nav-link red" href="/logout.php?logout=1">Logout</a>
+                    <a class="nav-link red" href="/login.php?logout=1">Logout</a>
                 </li>
 
 

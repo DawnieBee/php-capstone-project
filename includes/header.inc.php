@@ -314,8 +314,22 @@
     <![endif] -->
 <!--    wrapper contains all content -->
     <div id="wrapper" class="boxshadow">
+
 <!--    contains everything in the header -->
         <header>
+            <div class="util">
+                <ul>
+                <?php if(isLoggedIn()) : ?>      
+                <!--  if logged in show these  -->
+                    <li class="curved_borders"><a <?=($title == "Profile") ? 'class="current"' : ''?> href="profile.php">Profile</a></li>
+                    <li class="curved_borders"><a <?=($title == "Profile") ?> href="login.php?logout=1">Logout</a></li>
+                <?php else: ?>
+                    <!-- if not logged in show these -->
+                    <li class="curved_borders"><a <?=($title == "Register With Us") ? 'class="current"' : ''?> href="register.php">Sign Up</a></li>
+                    <li class="curved_borders"><a <?=($title == "Login") ? 'class="current"' : ''?> href="login.php">Login</a></li>
+                <?php endif; ?>
+                </ul>
+            </div>
             <div class="header_container">
                 <div id="logo">
                     <picture>
@@ -328,8 +342,13 @@
                 <nav id="main_nav">
                     <?php require __DIR__ . '/nav.inc.php'; ?>
                 </nav>
+                <div class="basket">
+                    <a href="/view_basket.php">view basket</a>
+                    <span class="num_items">1</span>
+                    <a>your basket is empty</a> 
+                </div>
             </div>
-
+            
         </header> <!-- end header -->
         <?php if(!empty($flash)) : ?>
           <div class="flash <?=esc_attr($flash['class'])?>">
