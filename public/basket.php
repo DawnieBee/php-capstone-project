@@ -19,8 +19,6 @@ $model = new NeighborhoodModel();
 // hood_id is chosen
 $neighborhood = $model->one($_POST['hood_id']);
 
-dd($neighborhood);
-die;
 
 // item array for basket
 // hood_id

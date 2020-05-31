@@ -343,8 +343,9 @@
                     <?php require __DIR__ . '/nav.inc.php'; ?>
                 </nav>
                 <div class="basket">
-                    <a href="/view_basket.php">view basket</a>
-                    <span class="num_items">1</span>
+                  
+                    <a href="view_basket.php">view basket</a>
+                    <span class="num_items"></span>
                     <a>your basket is empty</a> 
                 </div>
             </div>
