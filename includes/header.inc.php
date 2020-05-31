@@ -343,10 +343,17 @@
                     <?php require __DIR__ . '/nav.inc.php'; ?>
                 </nav>
                 <div class="basket">
-                  
+
+                <?php if(count($_SESSION['basket']) > 0) : ?>
+
                     <a href="view_basket.php">view basket</a>
-                    <span class="num_items"></span>
+                    <span class="num_items">1</span>
+
+                    <?php else : ?>
+
                     <a>your basket is empty</a> 
+
+                <?php endif; ?>
                 </div>
             </div>
             

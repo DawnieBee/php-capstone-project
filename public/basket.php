@@ -4,13 +4,14 @@
  * Capstone project
  */
 require __DIR__ . '/../config.php';
-require CLASSES . '/NeighborhoodModel.php';
+
 
 // is there a hood_id? if not die and continue
 if(empty($_POST['hood_id'])) {
     die('Error connecting to page');
 }
 
+require CLASSES . '/NeighborhoodModel.php';
 
 use Capstone\NeighborhoodModel;
 
@@ -25,20 +26,15 @@ $neighborhood = $model->one($_POST['hood_id']);
 // name
 // location
 // rating
-// house price min
-// house price max
-
 $item = array(
     'hood_id' => $neighborhood['hood_id'],
     'name' => $neighborhood['name'],
     'location' => $neighborhood['location'],
-    'rating_scale' => $neighborhood['rating_scale'],
-    'house_price_min' => $neighborhood['house_price_min'],
-    'house_price_max' => $neighborhood['house_price_max'],
+    'rating_scale' => $neighborhood['rating_scale']
 );
 
 // success message if neighborhood retrieved from database or error message flash
-if(is_array($neighborhood)){
+if(is_array($neighborhood)){ 
 
     $flash = array(
         'class'=>'success',
@@ -55,7 +51,8 @@ if(is_array($neighborhood)){
 $_SESSION['flash'] = $flash; 
 
 // add item to basket 
-$_SESSION['basket'][$neighborhood['hood_id']] = $item;
+$_SESSION['basket'] = $item;
+
 
 // send user back where he started 
 header('Location: ' . $_SERVER['HTTP_REFERER']);
