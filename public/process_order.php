@@ -3,10 +3,8 @@
 $title = "Process Order"
 require __DIR__ . '/../config.php';
 
-
 if('POST' != $_SERVER['REQUEST_METHOD']) {
     die('Illegal access');
-
 }
 
 // insert order into database
@@ -40,6 +38,9 @@ use Capstone\BasketModel;
 $model = new BasketModel();
 
 $basket_id = $model->add($array);
+
+dd($basket_id);
+die;
 
 if( $basket_id == 0 ){
     $flash = array(
