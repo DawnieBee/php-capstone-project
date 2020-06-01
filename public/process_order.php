@@ -3,14 +3,14 @@
 $title = "Process Order"
 require __DIR__ . '/../config.php';
 
+require CLASSESS . '/UserModel.php';
+require CLASSES . '/BasketModel.php';
+
 if('POST' != $_SERVER['REQUEST_METHOD']) {
     die('Illegal access');
 }
 
 // insert order into database
-
-require CLASSESS . '/UserModel.php';
-
 use Capstone\UserModel;
 
 $model = new UserModel();
@@ -31,16 +31,11 @@ $array = array (
 
 );
 
-require CLASSES . '/BasketModel.php';
-
 use Capstone\BasketModel;
 
 $model = new BasketModel();
 
 $basket_id = $model->add($array);
-
-dd($basket_id);
-die;
 
 if( $basket_id == 0 ){
     $flash = array(
