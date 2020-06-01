@@ -344,16 +344,16 @@
                 </nav>
                 <div class="basket">
 
-                <?php if(count($_SESSION['basket']) > 0) : ?>
+                    <?php if(isset($_SESSION['basket']) && count($_SESSION['basket']) > 0) : ?>
 
-                    <a href="view_basket.php">view basket</a>
-                    <span class="num_items">1</span>
-    
+                        <a href="/view_basket.php">view basket</a>
+                        <span class="num_items"><?=esc(count($_SESSION['basket']))?></span>
+        
                     <?php else : ?>
 
-                    <a>your basket is empty</a> 
+                        <a>your basket is empty</a> 
 
-                <?php endif; ?>
+                    <?php endif; ?>
                 </div>
             </div>
             
