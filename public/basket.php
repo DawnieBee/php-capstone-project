@@ -33,14 +33,14 @@ $item = array(
     'rating_scale' => $neighborhood['rating_scale']
 );
 
+
 // success message if neighborhood retrieved from database or error message flash
 if(is_array($neighborhood)){ 
 
     $flash = array(
         'class'=>'success',
         'message'=>'The item has been added to your basket.'
-    );
-    
+    );  
 } else {
     $flash = array(
         'class' => 'flash_error',
@@ -52,7 +52,6 @@ $_SESSION['flash'] = $flash;
 
 // add item to basket 
 $_SESSION['basket'] = $item;
-
 
 // send user back where he started 
 header('Location: ' . $_SERVER['HTTP_REFERER']);

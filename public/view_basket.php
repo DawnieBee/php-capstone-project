@@ -2,8 +2,7 @@
 
 require __DIR__ . '/../config.php';
 
-
-$title = "Your Basket";
+$title = "View Basket";
 
 // verify if there are hoods in the basket 
 if(count($_SESSION['basket']) == 0) {
@@ -19,10 +18,7 @@ if(count($_SESSION['basket']) == 0) {
 require __DIR__ . '/../includes/header.inc.php';
 ?>
 
-    
     <h2>Your basket of hoods</h2> 
-    
-
     
     <div>
         <table class="basketofhoods">
@@ -32,12 +28,14 @@ require __DIR__ . '/../includes/header.inc.php';
                 <th><strong>Location</strong></th>
                 <th><strong>Rating</strong></th>
             </tr>
+            
             <tr>
                 <td><?=esc($_SESSION['basket']['hood_id'])?></td>
                 <td><?=esc($_SESSION['basket']['name'])?></td>
                 <td><?=esc($_SESSION['basket']['location'])?></td>
-                <td><?=esc($_SESSION['basket']['rating_scale'])?></td>
+                <td><?=esc($_SESSION['basket']['rating_scale'])?></td>  
             </tr>
+            
             <tr>
                 <td></td>
                 <td colspan="2">
