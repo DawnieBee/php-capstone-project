@@ -39,10 +39,10 @@ require __DIR__ . '/../includes/header.inc.php';
             <tr>
                 <td></td>
                 <td colspan="2">
-                    <a href="areas.php" class="btn">Continue Browsing</a>
+                    <button><a href="areas.php" class="btn">Continue Browsing</a></button>
                 </td>
                 <td colspan="2">
-                    <a href="checkout.php">Fill Order</a>
+                    <button><a href="checkout.php">Fill Order</a></button>
                 </td>
             </tr>
 

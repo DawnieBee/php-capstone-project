@@ -31,10 +31,6 @@ require __DIR__ . '/../includes/header.inc.php';
 ?>
 
     
-    <h2>Your basket of hoods</h2> 
-    
-
-    
     <div>
         <table class="basketofhoods">
             <tr>
@@ -51,7 +47,7 @@ require __DIR__ . '/../includes/header.inc.php';
 
         </table>
         <form action="process_order.php" method="post"></form>
-        <p><button type="submit">Confirm Order</button></p>
+        <p><button type="submit">Confirm</button></p>
     </div>
 
     
