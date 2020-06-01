@@ -348,7 +348,7 @@
 
                     <a href="view_basket.php">view basket</a>
                     <span class="num_items">1</span>
-
+    
                     <?php else : ?>
 
                     <a>your basket is empty</a> 
