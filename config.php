@@ -1,8 +1,8 @@
 <?php
 /**
  * Dawn Baker
- * Inter PHP
- *Assignment 1
+ * Capstone project
+ * config file handles db, autoloader, session, errors the like
  */
 
 ini_set('display_errors', 1);

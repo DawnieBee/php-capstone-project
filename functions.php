@@ -1,8 +1,8 @@
 <?php
 /**
  * Dawn Baker
- * Inter PHP
- *Assignment 1
+ * Capstone project
+ * main functions file
  */
 
 /**
@@ -141,7 +141,10 @@ function isLoggedOut()
         die;
     } 
 }
-
+/**
+ * confirms a user is authorized on site
+ * @return bool 
+ */
 function auth()
 {
     if(isset($_SESSION['user_id']) && $_SESSION['user_id'] > 0){
