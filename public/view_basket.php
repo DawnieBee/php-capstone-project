@@ -28,21 +28,21 @@ require __DIR__ . '/../includes/header.inc.php';
                 <th><strong>Location</strong></th>
                 <th><strong>Rating</strong></th>
             </tr>
-            
+            <?php foreach($_SESSION['basket'] as $hood) : ?>
             <tr>
-                <td><?=esc($_SESSION['basket']['hood_id'])?></td>
-                <td><?=esc($_SESSION['basket']['name'])?></td>
-                <td><?=esc($_SESSION['basket']['location'])?></td>
-                <td><?=esc($_SESSION['basket']['rating_scale'])?></td>  
+                <td><?=esc($hood['hood_id'])?></td>
+                <td><?=esc($hood['name'])?></td>
+                <td><?=esc($hood['location'])?></td>
+                <td><?=esc($hood['rating_scale'])?></td>  
             </tr>
-            
+            <?php endforeach; ?>
             <tr>
                 <td></td>
                 <td colspan="2">
                     <button><a href="areas.php" class="btn">Continue Browsing</a></button>
                 </td>
                 <td colspan="2">
-                    <button><a href="checkout.php">Fill Order</a></button>
+                    <button><a href="checkout.php">Fill Basket</a></button>
                 </td>
             </tr>
 

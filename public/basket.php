@@ -51,7 +51,7 @@ if(is_array($neighborhood)){
 $_SESSION['flash'] = $flash; 
 
 // add item to basket 
-$_SESSION['basket'] = $item;
+$_SESSION['basket'][ $neighborhood['hood_id'] ] = $item;
 
 // send user back where he started 
 header('Location: ' . $_SERVER['HTTP_REFERER']);

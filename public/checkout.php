@@ -2,7 +2,6 @@
 
 require __DIR__ . '/../config.php';
 
-
 $title = "Your Basket";
 
 // verify if there are hoods in the basket 
@@ -29,7 +28,6 @@ if(!auth()) {
 
 require __DIR__ . '/../includes/header.inc.php';
 ?>
-
     
     <div>
         <table class="basketofhoods">
@@ -39,15 +37,19 @@ require __DIR__ . '/../includes/header.inc.php';
                 <th><strong>Location</strong></th>
                 <th><strong>Rating</strong></th>
             </tr>
+            <?php foreach ($_SESSION['basket'] as $hood) :?>
             <tr>
-                <td><?=esc($_SESSION['basket']['hood_id'])?></td>
-                <td><?=esc($_SESSION['basket']['name'])?></td>
-                <td><?=esc($_SESSION['basket']['location'])?></td>
-                <td><?=esc($_SESSION['basket']['rating_scale'])?></td>  
+                <td><?=esc($hood['hood_id'])?></td>
+                <td><?=esc($hood['name'])?></td>
+                <td><?=esc($hood['location'])?></td>
+                <td><?=esc($hood['rating_scale'])?></td>  
+            </tr>
+            <?php endforeach; ?>
 
         </table>
-        <form action="process_order.php" method="post"></form>
-        <p><button type="submit">Confirm</button></p>
+        <form action="process_order.php" method="post">
+        <button type="submit"><a>Confirm</a></button>
+        </form>
     </div>
 
     

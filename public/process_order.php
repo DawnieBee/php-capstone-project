@@ -1,46 +1,56 @@
 <?php
 
-$title = "Process Order"
+
+$title = "Process Order";
 require __DIR__ . '/../config.php';
 
-require CLASSESS . '/UserModel.php';
-require CLASSES . '/BasketModel.php';
-
-if('POST' != $_SERVER['REQUEST_METHOD']) {
-    die('Illegal access');
-}
-
-// insert order into database
 use Capstone\UserModel;
-
-$model = new UserModel();
-
-$user = $model->one($_SESSION['user_id']);
-
-$neighborhood = $_SESSION['cart'];
-
-$array = array (
-    'user_id' => $user['user_id'],
-    'hood_id' => $neighborhood['hood_id'],
-    'first_name' => $user['first_name'],
-    'last_name' => $user['last_name'],
-    'email' => $user['email'],
-    'name' => $neighborhood['name'],
-    'location' => $neighborhood['location'],
-    'rating_scale' => $neighborhood['rating_scale']
-
-);
-
 use Capstone\BasketModel;
 
-$model = new BasketModel();
+require CLASSES . '/UserModel.php';
 
-$basket_id = $model->add($array);
 
-if( $basket_id == 0 ){
+if($_SERVER['REQUEST_METHOD'] !== 'POST') {
+    die('Illegal access');
+}
+try{
+    $dbh->beginTransaction();
+
+    // insert order into database
+    
+
+    $model = new UserModel();
+
+    $user = $model->one($_SESSION['user_id']);
+
+    $neighborhood = $_SESSION['basket'];
+
+    $array = array (
+        'user_id' => $user['user_id'],
+        'first_name' => $user['first_name'],
+        'last_name' => $user['last_name'],
+        'email' => $user['email']
+    );
+
+    require CLASSES . '/BasketModel.php';
+
+    
+
+    $model = new BasketModel();
+    // dd($model);
+    // die;
+    $basket_id = $model->add($array);
+
+    $model->addBasketItems($_SESSION['basket'], $basket_id);
+
+    $dbh->commit();
+
+} catch(Exception $e) {
+
+    $dbh->rollBack();
     $flash = array(
         'class' => 'flash_error',
-        'message' => "There was a problem adding your order."
+        'message' => "There was a problem adding your basket."
     );
     $_SESSION['flash'] = $flash;
     header('Location: checkout.php');
@@ -48,7 +58,7 @@ if( $basket_id == 0 ){
 }
 
 // all is good to insert 
-
+$_SESSION['basket'] = [];
 
 $_SESSION['basket_id'] = $basket_id;
 
