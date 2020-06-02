@@ -1,8 +1,8 @@
 <?php
 /**
- * Dawn Baker
- * OO_PHP 
- * Assignment 2
+ * handleform to add new neighborhood into database
+ * June 1, 2020
+ * by Dawn Baker
  */
 
 require __DIR__ . '/../../config.php';

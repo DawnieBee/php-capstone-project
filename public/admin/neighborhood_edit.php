@@ -1,5 +1,10 @@
 <?php
-
+/**
+ * Edit a Neigborhood page for Admin site
+ * presents all fields to allow update
+ * June 1, 2020
+ * by Dawn Baker
+ */
 require __DIR__ . '/../../config.php';
 require CLASSES . '/NeighborhoodModel.php';
 

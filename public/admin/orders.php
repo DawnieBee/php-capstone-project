@@ -1,5 +1,9 @@
 <?php
-
+/**
+ * Show a list of orders for Admin site
+ * June 1, 2020
+ * by Dawn Baker
+ */
 require __DIR__ . '/../../config.php';
 
 $title = 'Orders | Admin';

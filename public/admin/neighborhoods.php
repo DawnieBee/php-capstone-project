@@ -1,8 +1,8 @@
 <?php
 /**
- * Dawn Baker
- * OO_PHP 
- * Assignment 2
+ * Show a list view of Neigborhoods for Admin site with the option to create, edit or delete and search by name, 
+ * June 1, 2020
+ * by Dawn Baker
  */
 namespace Capstone; 
 

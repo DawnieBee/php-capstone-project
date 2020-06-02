@@ -1,5 +1,9 @@
 <?php
-
+/**
+ * Show a dashboard overview of activities for Admin site
+ * June 1, 2020
+ * by Dawn Baker
+ */
 require __DIR__ . '/../../config.php';
 
 $title = 'Dashboard | Admin';

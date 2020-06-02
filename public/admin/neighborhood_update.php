@@ -1,8 +1,9 @@
 <?php
 /**
- * Dawn Baker
- * OO_PHP 
- * Assignment 2
+ * functions to edit a neighborhood for Admin site
+ * basically the handle form for neighborhood edit
+ * June 1, 2020
+ * by Dawn Baker
  */
 
 require __DIR__ . '/../../config.php';

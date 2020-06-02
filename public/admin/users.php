@@ -1,5 +1,9 @@
 <?php
-
+/**
+ * Show a list of users for Admin site
+ * June 1, 2020
+ * by Dawn Baker
+ */
 require __DIR__ . '/../../config.php';
 
 $title = 'Users | Admin';

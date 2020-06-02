@@ -1,5 +1,9 @@
 <?php
-
+/**
+ * Add a Neighborhood page for Admin site
+ * June 1, 2020
+ * by Dawn Baker
+ */
 require __DIR__ . '/../../config.php';
 require CLASSES . '/NeighborhoodModel.php';
 
