@@ -10,6 +10,7 @@ require __DIR__ . '/../../config.php';
 
 require CLASSES . '/NeighborhoodModel.php';
 
+use Capstone\NeighborhoodModel;
 
 $neighborhood = new NeighborhoodModel();
 
@@ -86,7 +87,7 @@ require __DIR__ . '/../../includes/admin_nav.inc.php';
                                 <?php foreach($result as $row) : ?>
                                     <tr>
                                         <td><?=esc($row['hood_id'])?></td>
-                                        <td><?=esc($row['name'])?></a></td>
+                                        <td><?=esc($row['name'])?></td>
                                         <td><?=esc($row['location'])?></td>
                                         <td><?=esc($row['rating_scale'])?></td>
                                         <td><?=esc($row['description'])?></td>
@@ -101,6 +102,6 @@ require __DIR__ . '/../../includes/admin_nav.inc.php';
                     </table>
                 </div> <!-- end col -->
             </div> <!-- end row -->
-    </div> <!-- end container -->
+        </div> <!-- end container -->
 </body>
 </html>
