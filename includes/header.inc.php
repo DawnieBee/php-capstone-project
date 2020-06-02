@@ -1,4 +1,10 @@
-<!doctype html>
+<?php
+/**
+ * header for Main site
+ * June 1, 2020
+ * by Dawn Baker
+ */
+?><!DOCTYPE html>
 
 <html lang="en">
 <head>

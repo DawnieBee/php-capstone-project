@@ -1,8 +1,10 @@
-<!--
- * Dawn Baker
- * Inter PHP
- *Assignment 1
- -->
+<?php
+/**
+ * Nav for Main site
+ * June 1, 2020
+ * by Dawn Baker
+ */
+?>
 
         <ul>
             <!-- breadcrumbs, active state based on title of the page -->

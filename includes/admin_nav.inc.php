@@ -1,4 +1,10 @@
-<!-- Navigation -->
+<?php
+/**
+ * nav menu for Admin site
+ * June 1, 2020
+ * by Dawn Baker
+ */
+?><!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
     <div class="container">
         <a class="navbar-brand" href="/admin">Neighborhood Admin</a>

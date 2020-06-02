@@ -1,10 +1,10 @@
-<!--  
+<?php
 /**
- * Dawn Baker
- * Inter PHP
- *Assignment 1
+ * Footer for Main site
+ * June 1, 2020
+ * by Dawn Baker
  */
---> 
+?>
 <!--      this is is the footer content  -->
       <footer>
         <div class="footer_nav">
