@@ -26,9 +26,6 @@
                 <li class="nav-item">
                     <a class="nav-link" <?=($title == 'Baskets | Admin')?> href="/admin/baskets.php">Baskets</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" <?=($title == 'Orders | Admin')?> href="/admin/orders.php">Orders</a>
-                </li>
 
                 <li>
                     <a class="nav-link red" href="/login.php?logout=1">Logout</a>

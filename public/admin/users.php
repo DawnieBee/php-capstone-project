@@ -10,6 +10,7 @@ require __DIR__ . '/../../config.php';
 
 require CLASSES . '/NeighborhoodModel.php';
 
+use Capstone\UserModel;
 
 $user = new UserModel();
 
