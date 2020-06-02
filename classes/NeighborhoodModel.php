@@ -163,5 +163,23 @@ class NeighborhoodModel extends Model
         return static::$dbh->lastInsertId();
 
     }
+
+    public function minPrice()
+        {
+            $query = "SELECT MIN(house_price_min) FROM neighborhoods";
+            $stmt =  static::$dbh->query($query);
+            $price = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+            return $price;
+        }
+
+    public function maxPrice()
+        {
+            $query = "SELECT MAX(house_price_max) FROM neighborhoods";
+            $stmt =  static::$dbh->query($query);
+            $price = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+            return $price;
+        }
+
+    
 }
 
