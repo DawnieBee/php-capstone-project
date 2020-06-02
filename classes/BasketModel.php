@@ -1,4 +1,10 @@
 <?php
+/**
+ * Basket Model
+ * functions to create and add to baskets for users
+ * June 1, 2020
+ * by Dawn Baker
+ */
 
 namespace Capstone;
 
@@ -7,6 +13,10 @@ class BasketModel extends Model
     protected $table = 'baskets';
     protected $key = 'basket_id';
 
+    /**
+     * function to create a basket for a user
+     * @param  $array prepares a query to add data to baskets table
+     */
     public function add($array)
     {
         $query = "INSERT INTO baskets
@@ -28,6 +38,11 @@ class BasketModel extends Model
             return static::$dbh->lastInsertId();
     }
 
+    /**
+     * function to add multiple items to a basket for user
+     * @param  $items     
+     * @param  $basket_id 
+     */
     public function addBasketItems($items, $basket_id)
     {
         $query = "INSERT INTO baskets_neighborhoods
@@ -52,6 +67,11 @@ class BasketModel extends Model
 
     }
 
+    /**
+     * function query to retrieve the basket_id to present bookmarked areas to user
+     * @param  $basket_id user's basket id
+     * @return result            
+     */
     public function getBasketItems($basket_id)
     {
         $query = "SELECT * FROM baskets_neighborhoods

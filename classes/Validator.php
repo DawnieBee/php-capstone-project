@@ -1,8 +1,9 @@
 <?php
 /**
- * Dawn Baker
- * Inter PHP
- *Assignment 1
+ * Validator Model
+ * generic functions to validate user input on forms 
+ * June 1, 2020
+ * by Dawn Baker
  */
 /* Validator Class funtion */
 

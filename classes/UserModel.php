@@ -1,5 +1,11 @@
 <?php
-
+/**
+ * User Model
+ * functions specific to the User pages... 
+ * validates user by email
+ * June 1, 2020
+ * by Dawn Baker
+ */
 namespace Capstone;
 
 class UserModel extends Model
@@ -7,6 +13,11 @@ class UserModel extends Model
     protected $table = 'users';
     protected $key = 'user_id';
 
+    /**
+     * function to get user from db by email
+     * @param  database info $email 
+     * @return array        
+     */
     public function byEmail($email) 
     {
         // query for user by email

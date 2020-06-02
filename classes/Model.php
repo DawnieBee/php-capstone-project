@@ -1,4 +1,11 @@
 <?php
+/**
+ * Model
+ * generic functions to retrieve information from the database
+ * and to initiate the $dbh
+ * June 1, 2020
+ * by Dawn Baker
+ */
 
 namespace Capstone;
 
@@ -8,8 +15,8 @@ class Model
     
     /**
      * function to initialize pdo dbh
-     * @param  PDO    $dbh 
-     * @return [type]      
+     * @param  PDO    $dbh any type of PDO is accepted
+     * @return whatever     
      */
     static public function init(\PDO $dbh)
     {

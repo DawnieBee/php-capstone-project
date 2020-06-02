@@ -1,5 +1,10 @@
 <?php
-
+/**
+ * Neighborhood Model
+ * functions specific to the Neighborhood pages... 
+ * June 1, 2020
+ * by Dawn Baker
+ */
 namespace Capstone;
 
 class NeighborhoodModel extends Model
@@ -7,6 +12,11 @@ class NeighborhoodModel extends Model
     protected $table = 'neighborhoods';
     protected $key = 'hood_id';
 
+    /**
+     * function for admin users to update neighborhood information on the Areas page
+     * @param  array  $post accepts data from admin user input
+     * @return array  result of the POST data
+     */
     public function updateNeighborhood(array $post)
     {
 
@@ -61,6 +71,11 @@ class NeighborhoodModel extends Model
 
     }
 
+    /**
+     * function to search the db for neighborhoods
+     * @param  $searchterm 3 different search options to give results
+     * @return matching searches
+     */
     public function SearchNeighborhood($searchterm)
     {
         $query = 'SELECT * FROM 
@@ -89,7 +104,11 @@ class NeighborhoodModel extends Model
         return $result;
     }
     
-
+    /**
+     * function to resturn the result of one neighborhood
+     * @param  $id neighborhood id
+     * @return  Array one neighborhood
+     */
     public function NeighborhoodOne($id)
     {
         $query = "SELECT * FROM neighborhoods WHERE hood_id = :id";
@@ -106,6 +125,10 @@ class NeighborhoodModel extends Model
         return $result;
     }
 
+    /**
+     * function to add a neighborhood to the database based on admin input
+     * @param array $post all required fields must be entered and validate to be inserted into db
+     */
     public function add(array $post)
     {
 
