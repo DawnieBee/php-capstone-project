@@ -93,7 +93,10 @@ require __DIR__ . '/../../includes/admin_nav.inc.php';
                                         <td><?=esc($row['description'])?></td>
                                         <td>
                                             <a class="btn btn-primary btn-sm" href="neighborhood_edit.php?hood_id=<?=$row['hood_id']?>">edit</a>
-                                            <a class="delete btn btn-danger btn-sm" data_id="" href="#">delete</a>
+                                            <form action="delete.php" method="post">
+                                                <input type="hidden" hood_id="<?=esc_attr(old('hood_id', $post))?>" />
+                                                <button class="delete btn btn-danger btn-sm" type="submit">Delete</button>
+                                            </form>
                                         </td>   
                                     </tr>
                                 <?php endforeach; ?>
