@@ -34,27 +34,21 @@ require __DIR__ . '/../../includes/admin_nav.inc.php';
         </div>
     <?php endif; ?>  
     <!-- main content -->
-
     <div class="container">
         <div class="search">
-            <form action="neighborhoods.php" method="get" autocomplete="off" novalidate>
-                <input type="text" id="s" name="s" maxlength="255" placeholder="Search Neighborhoods" />&nbsp;
+            <form action="baskets.php" method="get" autocomplete="off" novalidate>
+                <input type="text" id="s" name="s" maxlength="255" placeholder="Search Baskets" />&nbsp;
                 <input type="submit" value="search" />
                 <div>
                     <ul id="live_search"></ul>
                 </div>
             </form>
         </div> <!-- end search -->
-        <div class="clear"></div>
-
+    </div>
+    <div class="clear"></div>    
     <div class="container">
         <h1><?=$subtitle?></h1>
 
-        <?php if(!empty($_GET['s'])) : ?>
-
-            <h3>You searched for: <?=$_GET['s']?></h3>
-
-        <?php endif; ?>
         <div class="row">
             <div class="col-lg-12">
                 
