@@ -30,7 +30,7 @@ require __DIR__ . '/../includes/header.inc.php';
 ?>
 
     
-    <h2><?=esc($user['first_name'])?>'s registration information.</h2> 
+    <h2><?=esc($user['first_name'])?>'s Profile Page.</h2> 
 
 
     

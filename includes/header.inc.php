@@ -17,266 +17,265 @@
             padding: 5px;
             font-weight: bold;
         }
-
     </style>
 
     <?php if($title == "About Us") : ?>
     <style>
-      section{
-        min-height: 450px;
-        width: 100%;
-      }
-      address{
-        padding-top: 3px;
-        padding-bottom: 3px;
-        padding-left: 40px;
-        margin: 0 auto;
-      }
-      section h1, h2, h3, p{
-        margin: 10px 20px 5px 20px;
-        line-height: 1.4em;
-      }
-      .floated{
-        float: right;
-        margin: 30px 20px 15px 20px;
-      }
+        section{
+            min-height: 450px;
+            width: 100%;
+        }
+        address{
+            padding-top: 3px;
+            padding-bottom: 3px;
+            padding-left: 40px;
+            margin: 0 auto;
+        }
+        section h1, h2, h3, p{
+            margin: 10px 20px 5px 20px;
+            line-height: 1.4em;
+        }
+        .floated{
+            float: right;
+            margin: 30px 20px 15px 20px;
+        }
     </style>
     <?php endif; ?>  
     <!-- end about style -->
 
     <?php if($title == "Areas") : ?>
     <style>      
-      h2{
-        text-align: center;
-      } 
+        h2{
+            text-align: center;
+        } 
 
-      /* main container for the boxes */
-      #container{
-        margin-top: 20px;
-        margin-bottom: 30px;
-      }
-      .box{
-        display: block;
-        position: relative;
-        width: 600px;
-        left: 20px;
-        margin-bottom: 20px;
-      }
-      .areas_showmore{
-        display: block;
-        position: relative;
-        left: 300px;
-      }
-      .item_head{
-        text-align: center;
-      }
+        /* main container for the boxes */
+        #container{
+            margin-top: 20px;
+            margin-bottom: 30px;
+        }
+        .box{
+            display: block;
+            position: relative;
+            width: 600px;
+            left: 20px;
+            margin-bottom: 20px;
+        }
+        .areas_showmore{
+            display: block;
+            position: relative;
+            left: 300px;
+        }
+        .item_head{
+            text-align: center;
+        }
     </style>
     <?php endif; ?>
     <!-- end areas style -->
 
     <?php if($title == "Area Detail") : ?>
     <style>
-      h2{
-        margin-left: 30px;
-        margin-top: 65px;
-        float: left;
-        clear: left;
-      }
+        h2{
+            margin-left: 30px;
+            margin-top: 65px;
+            float: left;
+            clear: left;
+        }
     </style>
     <?php endif; ?>
 
     <?php if($title == "Community Services") : ?>
     <style>
-      section{
-        min-height: 450px;
-      }
-      h2, h3, p{
-        padding: 20px;
-        margin: 0 auto;
-      }
+        section{
+            min-height: 450px;
+        }
+        h2, h3, p{
+            padding: 20px;
+            margin: 0 auto;
+        }
     </style>
     <?php endif; ?>
     <!-- end more style -->
 
     <?php if($title == "Register With Us") : ?>
     <style>
-      h2, h3, p{
-        margin: 10px 20px 5px 20px;
-        line-height: 1.4em;
-      }
-      span.error {
-        color: #f00;
-        font-weight: bold;
-      }
-      .required:before {
-        content: "*";
-        padding-right:; 5px;
-        color: #900;
-        font-weight: 700;
-      }
-      #form_container{
-        position: relative;
-        padding: 20px;
-      }
-      form legend{
-        background-color: #333;
-        color: #ff0;
-        width: 130px;
-        text-align: center;
-        padding: 6px;
-        border: 1px solid #333;
-        border-radius: 15px;
-        box-shadow: 0 1px 1px rgba(0,0,0,.6);
-      }
-      form label{
-        clear: both;
-        width: 130px;
-        display: block;
-        float: left;
-      }
-      form fieldset{
-        width: 500px;
-        border: 1px solid #333;
-        margin-bottom: 20px;
-        font-size: 0.9em;
-        border-radius: 15px;
-      }
-      form input[type="text"],
-      form input[type="email"],
-      form input[type="tel"]{
-        border: 1px solid #000;
-        width: 200px;
-        background-color: #fff;
-        font-size: 1.1em;
-        -webkit-transition: all .3s ease-in-out;
-        transition: all .3s ease-in-out;
-        box-shadow: inset 1px 1px 2px rgba(0,0,0,.5);
-      }
-      datalist{
-        float: left;
-        display: none;
-      }
-      form input:hover{
-        background-color: #ffb;
-        box-shadow: 0 0 6px #ccc;
-      } 
+        h2, h3, p{
+            margin: 10px 20px 5px 20px;
+            line-height: 1.4em;
+        }
+        span.error {
+            color: #f00;
+            font-weight: bold;
+        }
+        .required:before {
+            content: "*";
+            padding-right:; 5px;
+            color: #900;
+            font-weight: 700;
+        }
+        #form_container{
+            position: relative;
+            padding: 20px;
+        }
+        form legend{
+            background-color: #333;
+            color: #ff0;
+            width: 130px;
+            text-align: center;
+            padding: 6px;
+            border: 1px solid #333;
+            border-radius: 15px;
+            box-shadow: 0 1px 1px rgba(0,0,0,.6);
+        }
+        form label{
+            clear: both;
+            width: 130px;
+            display: block;
+            float: left;
+        }
+        form fieldset{
+            width: 500px;
+            border: 1px solid #333;
+            margin-bottom: 20px;
+            font-size: 0.9em;
+            border-radius: 15px;
+        }
+        form input[type="text"],
+        form input[type="email"],
+        form input[type="tel"]{
+            border: 1px solid #000;
+            width: 200px;
+            background-color: #fff;
+            font-size: 1.1em;
+            -webkit-transition: all .3s ease-in-out;
+            transition: all .3s ease-in-out;
+            box-shadow: inset 1px 1px 2px rgba(0,0,0,.5);
+        }
+        datalist{
+            float: left;
+            display: none;
+        }
+        form input:hover{
+            background-color: #ffb;
+            box-shadow: 0 0 6px #ccc;
+        } 
     </style> 
     <?php endif; ?>
    
     <?php if($title == "Registration Success!") : ?>
     <style> 
         .user_info{
-          margin-bottom: 20px;
+            margin-bottom: 20px;
         }   
         h2, p{
-          padding: 20px;
-          margin: 0 auto;
+            padding: 20px;
+            margin: 0 auto;
         }
         table{
-          border: 2px solid #bababb;
-          border-spacing: 0px;
-          border-collapse: collapse;
-          width: 500px;
-          margin: 0 auto;
+            border: 2px solid #bababb;
+            border-spacing: 0px;
+            border-collapse: collapse;
+            width: 500px;
+            margin: 0 auto;
         }
         table td, table th{
           /*border: 1px solid #bababb;*/
-          padding: 10px;
+            padding: 10px;
         }
         table th, table tr:first-child th:first-child{
-          text-align: left;
-          font-weight: 700;
-          padding: 3px;
-          width: 150px;
+            text-align: left;
+            font-weight: 700;
+            padding: 3px;
+            width: 150px;
         }
     </style>
     <?php endif; ?>
     <?php if($title == "Profile") : ?>
     <style> 
         .user_info{
-          margin-bottom: 20px;
+            margin-bottom: 20px;
         }   
         h2, p{
-          padding: 20px;
-          margin: 0 auto;
+            padding: 20px;
+            margin: 0 auto;
         }
         table{
-          border: 2px solid #bababb;
-          border-spacing: 0px;
-          border-collapse: collapse;
-          width: 500px;
-          margin: 0 auto;
+            border: 2px solid #bababb;
+            border-spacing: 0px;
+            border-collapse: collapse;
+            width: 500px;
+            margin: 0 auto;
         }
         table td, table th{
-          border: 1px solid #bababb;
-          padding: 10px;
+            border: 1px solid #bababb;
+            padding: 10px;
         }
         table th, table tr:first-child th:first-child{
-          text-align: left;
-          font-weight: 700;
-          padding: 3px;
-          width: 150px;
+            text-align: left;
+            font-weight: 700;
+            padding: 3px;
+            width: 150px;
         }
     </style>
     <?php endif; ?>
     <!-- login style -->
     <?php if ($title == "Login") : ?> 
     <style>
-      .error {
-        color: #f00;
-        font-weight: bold;
-      }
-      .required:before {
-        content: "*";
-        padding-right:; 5px;
-        color: #900;
-        font-weight: 700;
-      }
-      #form_container{
-        position: relative;
-        padding: 20px;
-      }
-      form legend{
-        background-color: #333;
-        color: #ff0;
-        width: 130px;
-        text-align: center;
-        padding: 6px;
-        border: 1px solid #333;
-        border-radius: 15px;
-        box-shadow: 0 1px 1px rgba(0,0,0,.6);
-      }
-      form label{
-        clear: both;
-        width: 130px;
-        display: block;
-        float: left;
-      }
-      form fieldset{
-        width: 500px;
-        border: 1px solid #333;
-        margin-bottom: 20px;
-        font-size: 0.9em;
-        border-radius: 15px;
-      }
-      form input[type="text"],
-      form input[type="password"]{
-        border: 1px solid #000;
-        width: 200px;
-        background-color: #fff;
-        font-size: 1.1em;
-        -webkit-transition: all .3s ease-in-out;
-        transition: all .3s ease-in-out;
-        box-shadow: inset 1px 1px 2px rgba(0,0,0,.5);
-      }
-      datalist{
-        float: left;
-        display: none;
-      }
-      form input:hover{
-        background-color: #ffb;
-        box-shadow: 0 0 6px #ccc;
-      } 
+        .error {
+            color: #f00;
+            font-weight: bold;
+        }
+        .required:before {
+            content: "*";
+            padding-right:; 5px;
+            color: #900;
+            font-weight: 700;
+        }
+        #form_container{
+            position: relative;
+            padding: 20px;
+        }
+        form legend{
+            background-color: #333;
+            color: #ff0;
+            width: 130px;
+            text-align: center;
+            padding: 6px;
+            border: 1px solid #333;
+            border-radius: 15px;
+            box-shadow: 0 1px 1px rgba(0,0,0,.6);
+        }
+        form label{
+            clear: both;
+            width: 130px;
+            display: block;
+            float: left;
+        }
+        form fieldset{
+            width: 500px;
+            border: 1px solid #333;
+            margin-bottom: 20px;
+            font-size: 0.9em;
+            border-radius: 15px;
+        }
+        form input[type="text"],
+        form input[type="password"]{
+            border: 1px solid #000;
+            width: 200px;
+            background-color: #fff;
+            font-size: 1.1em;
+            -webkit-transition: all .3s ease-in-out;
+            transition: all .3s ease-in-out;
+            box-shadow: inset 1px 1px 2px rgba(0,0,0,.5);
+        }
+        datalist{
+            float: left;
+            display: none;
+        }
+        form input:hover{
+            background-color: #ffb;
+            box-shadow: 0 0 6px #ccc;
+        } 
       </style>
     <?php endif; ?>
 
