@@ -48,6 +48,7 @@ require __DIR__ . '/../includes/header.inc.php';
 
         </table>
         <form action="process_order.php" method="post">
+            <input type="hidden" name="csrf" value="<?=csrfToken()?>" />
         <button type="submit"><a>Confirm</a></button>
         </form>
     </div>
