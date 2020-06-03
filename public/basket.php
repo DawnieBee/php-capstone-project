@@ -1,11 +1,13 @@
 <?php
 /**
+ * processing page for customer to add to basket
  * Dawn Baker 
+ * June 3 2020 
  * Capstone project
  */
 require __DIR__ . '/../config.php';
 
-
+//coming here from the area_detail page 
 // is there a hood_id? if not die and continue
 if(empty($_POST['hood_id'])) {
     die('Error connecting to page');
