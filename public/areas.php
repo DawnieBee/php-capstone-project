@@ -23,7 +23,7 @@ require __DIR__ . '/../includes/header.inc.php';
 ?>
 <section>
   
-  <div id="container" class="clearfix">
+  	<div id="container" class="clearfix">
 
         <div class="search">
             <form action="areas.php" method="get" autocomplete="off" novalidate>
@@ -38,27 +38,25 @@ require __DIR__ . '/../includes/header.inc.php';
 
     
     <?php foreach($result as $row) : ?>
-      <h2><?=esc($row['name'])?></h2>
-      <p class="item_head"><strong>Location: </strong><?=esc(ucwords($row['location']))?></p>
-      <div class="stjames box">
-        <img src="images/<?=esc_attr($row['img'])?>" alt="<?=esc_attr($row['name'])?>"
-        width="320" height="207" />
-        <div class="show_me curved_borders boxshadow">
-          <?=esc($row['description'])?> 
-        </div>
+      	<h2><?=esc($row['name'])?></h2>
+      	<p class="item_head"><strong>Location: </strong><?=esc(ucwords($row['location']))?></p>
+      	<div class="stjames box">
+        	<img src="images/<?=esc_attr($row['img'])?>" alt="<?=esc_attr($row['name'])?>" width="320" height="207" />
+        	<div class="show_me curved_borders boxshadow">
+          		<?=esc($row['description'])?> 
+        	</div>
         
-      </div>
+      	</div>
 
-      <p class="areas_more"><a href="area_detail.php?hood_id=<?=$row['hood_id']?>">See More</a></p>
-      
-      
-     
-
+      	<p class="areas_more">
+      		<a href="area_detail.php?hood_id=<?=$row['hood_id']?>">See More</a>
+      	</p>
     <?php endforeach; ?>
-  </div>
-  <form action="#top">
-    <button class="to_top" type="submit">Back to Top</button>
-  </form>
+
+  	</div>
+  	<form action="#top">
+    	<button class="to_top" type="submit">Back to Top</button>
+  	</form>
 </section>
 <?php
 
