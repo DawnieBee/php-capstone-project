@@ -198,16 +198,19 @@ class NeighborhoodModel extends Model
         return $price;
     }
 
-    final public function delete(int $id)
+    public function delete(int $id)
     {
         $query = "UPDATE neighborhoods 
                     SET deleted = 1
                     WHERE hood_id = :hood_id";
-        $stmt = static::$dbh->query($query);
+        $stmt = static::$dbh->prepare($query);
         $params = array(
-                    ':hood_id' => $id
+            ':hood_id' => $id
         );
-        return $stmt->execute($params);
+
+        $result = $stmt->execute($params);
+
+        return $result;
         
     }
 }
