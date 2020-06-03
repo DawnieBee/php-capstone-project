@@ -120,7 +120,6 @@ require __DIR__ . '/../includes/header.inc.php';
                 </tr>
                 
             </table>
-
         <button id="details_back"><a href="areas.php">Back</a></button>
 
        </div>
