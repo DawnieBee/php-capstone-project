@@ -8,8 +8,6 @@
 ini_set('display_errors', 1);
 ini_set('error_reporting', E_ALL);
 
-
-
 require __DIR__ . '/vendor/autoload.php';
 require __DIR__ . '/env.php';
 
@@ -18,6 +16,8 @@ require __DIR__ . '/env.php';
 // page has loaded this config file
 
 session_start();
+
+createCsrfToken();
 
 // Form submission 
 // If there are errors, get them out an assign them to a simple variable named errors,
@@ -74,5 +74,11 @@ require CLASSES . '/Model.php';
 Capstone\Model::init($dbh);
 
 require 'functions.php';
+
+if('POST' === $_SERVER['REQUEST_METHOD']) {
+    if(empty($_POST['csrf']) || $_POST['csrf'] !== $_SESSION['csrf']) {
+        die('Fatal error! CSRF token mismatch!');
+    }
+}
 
 isLoggedOut();
