@@ -106,6 +106,7 @@ require __DIR__ . '/../../includes/admin_nav.inc.php';
                                 <td>
                                     <a class="btn btn-primary btn-sm" href="neighborhood_edit.php?hood_id=<?=$row['hood_id']?>">edit</a>
                                     <form action="delete.php" method="post">
+                                        <input type="hidden" name="csrf" value="<?=csrfToken()?>" />
                                         <input type="hidden" name="hood_id" value="<?=esc_attr($row['hood_id'])?>" />
                                         <button onclick="return (confirm('Are you sure you want to delete?'))" class="delete btn btn-danger btn-sm" type="submit">Delete</button>
                                     </form>
