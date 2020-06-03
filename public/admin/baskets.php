@@ -12,6 +12,19 @@ require CLASSES . '/NeighborhoodModel.php';
 
 use Capstone\BasketModel;
 
+//confirm user is Admin
+if(!isAdmin()){
+    $flash = array(
+        'class' => 'flash_error',
+        'message' => 'Sorry, You must be an Admin user to access this page.'
+        );
+
+    $_SESSION['flash'] = $flash;
+
+    header('Location: /login.php');
+    die;
+}
+
 $basket = new BasketModel();
 
 $result = $basket->all();
