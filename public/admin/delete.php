@@ -5,7 +5,6 @@
  * June 2, 2020
  * by Dawn Baker
  */
-Namespace Capstone;
 
 require __DIR__ . '/../../config.php';
 
@@ -26,15 +25,26 @@ if('POST' !== $_SERVER['REQUEST_METHOD'] ){
         die;
 }
 
-// if a post request begin transaction 
+$v = new Capstone\Validator();
+// confirming the post data is an int 
+$v->isNumber($_POST['hood_id'], 'hood_id');
+
+
+$errors = $v->errors();
+
+// save errors into session array 
+if(!empty($errors)){
+    //add errors to the session
+    $_SESSION['errors'] = $errors;
+    $_SESSION['post'] = $_POST;
+    // redirect back to neighborhood_edit page
+    header('Location: /admin/neighborhood_edit.php');
+    die;
+}
 
 $model = new NeighborhoodModel();
-dd($model);
 
 $del = $model->delete($_POST['hood_id']);
-
-dd($_POST);
-die;
 
 /**
  * if successful deletion of record redirect back to the list view page with a message 
