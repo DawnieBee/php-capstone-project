@@ -56,6 +56,7 @@ require __DIR__ . '/../../includes/admin_nav.inc.php';
                 <?php endif; ?>
                 
                 <form action="add_handle_form.php" method="post">
+                    <input type="hidden" name="csrf" value="<?=csrfToken()?>" />
                     
                     <input type="hidden" name="hood_id" readonly value="" />
                     <div class="form-group">
