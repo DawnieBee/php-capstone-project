@@ -21,7 +21,8 @@ require __DIR__ . '/../includes/header.inc.php';
         
         <div id="form_container" class="clearfix">
         
-            <form id="form" name="form" method="post" action="handle_form.php" novalidate>  
+            <form id="form" name="form" method="post" action="handle_form.php" novalidate>
+              <input type="hidden" name="csrf" value="<?=csrfToken()?>" />  
               <fieldset> 
                 <legend><?=$title2?></legend>  
                 
