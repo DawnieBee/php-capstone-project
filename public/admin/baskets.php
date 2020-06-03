@@ -50,7 +50,6 @@ require __DIR__ . '/../../includes/admin_nav.inc.php';
     <div class="container">
         <div class="search">
             <form action="baskets.php" method="get" autocomplete="off" novalidate>
-                <input type="hidden" name="csrf" value="<?=csrfToken()?>" />
                 <input type="text" id="s" name="s" maxlength="255" placeholder="Search Baskets" />&nbsp;
                 <input type="submit" value="search" />
                 <div>
