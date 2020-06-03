@@ -7,7 +7,7 @@
 ?><!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
     <div class="container">
-        <a class="navbar-brand" href="/admin">Neighborhood Admin</a>
+        <a class="navbar-brand" href="/admin">Neighborhood Admin</a> &nbsp;&nbsp; <a class="nav-link home" href="/index.php">Honey...We're Home</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
         </button>
@@ -28,7 +28,7 @@
                 </li>
 
                 <li>
-                    <a class="nav-link red" href="/login.php?logout=1">Logout</a>
+                    <a class="nav-link " href="/login.php?logout=1">Logout</a>
                 </li>
 
 
