@@ -17,7 +17,7 @@ require __DIR__ . '/env.php';
 
 session_start();
 
-createCsrfToken();
+
 
 // Form submission 
 // If there are errors, get them out an assign them to a simple variable named errors,
@@ -74,6 +74,8 @@ require CLASSES . '/Model.php';
 Capstone\Model::init($dbh);
 
 require 'functions.php';
+
+createCsrfToken();
 
 if('POST' === $_SERVER['REQUEST_METHOD']) {
     if(empty($_POST['csrf']) || $_POST['csrf'] !== $_SESSION['csrf']) {
