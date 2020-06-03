@@ -131,6 +131,7 @@ function isLoggedOut()
 {
     if(!empty($_GET['logout'])) {
         unset($_SESSION['user_id']);
+        unset($_SESSION['isAdmin']);
         session_regenerate_id();
         $flash = array(
             'class' => 'flash_error',
@@ -147,7 +148,7 @@ function isLoggedOut()
  */
 function isAdmin()
 {
-    if(isset($_SESSION['user_id']) && $_SESSION['user_id'] > 0){
+    if(isset($_SESSION['user_id']) && $_SESSION['user_id'] > 0 && isset($_SESSION['isAdmin'])){
         return true;
     }
     return false;
