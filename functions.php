@@ -145,7 +145,7 @@ function isLoggedOut()
  * confirms a user is authorized on site
  * @return bool 
  */
-function auth()
+function isAdmin()
 {
     if(isset($_SESSION['user_id']) && $_SESSION['user_id'] > 0){
         return true;
