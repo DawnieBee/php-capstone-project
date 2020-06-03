@@ -21,7 +21,9 @@ class UserModel extends Model
     public function byEmail($email) 
     {
         // query for user by email
-        $query = "SELECT * FROM {$this->table} WHERE email = :email";
+        $query = "SELECT * FROM {$this->table} 
+                    WHERE email = :email
+                    AND deleted = 0";
 
         $stmt = static::$dbh->prepare($query);
 

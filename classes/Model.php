@@ -30,7 +30,8 @@ class Model
     final public function all()
     {
 
-        $query = "SELECT * FROM {$this->table}";
+        $query = "SELECT * FROM {$this->table} 
+                    WHERE deleted = 0";
         $stmt = static::$dbh->query($query);
         $result = $stmt->fetchAll(\PDO::FETCH_ASSOC);
         return $result;
@@ -42,7 +43,9 @@ class Model
      */
     final public function one(int $id)
     {
-        $query = "SELECT * FROM {$this->table} WHERE {$this->key} = :id";
+        $query = "SELECT * FROM {$this->table} 
+                    WHERE {$this->key} = :id
+                    AND deleted = 0";
 
         $stmt = static::$dbh->prepare($query);
 

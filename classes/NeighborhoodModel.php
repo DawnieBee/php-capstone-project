@@ -40,7 +40,9 @@ class NeighborhoodModel extends Model
                 house_price_min = :house_price_min,
                 house_price_max = :house_price_max
                 WHERE 
-                hood_id = :hood_id";
+                hood_id = :hood_id
+                AND 
+                deleted = 0";
 
         $stmt = static::$dbh->prepare($query);
 
@@ -86,6 +88,8 @@ class NeighborhoodModel extends Model
                 neighborhoods.location LIKE :searchterm2
                 OR
                 neighborhoods.description LIKE :searchterm3
+                AND 
+                deleted = 0
                 ORDER BY 
                 neighborhoods.name ASC';
         
@@ -111,7 +115,9 @@ class NeighborhoodModel extends Model
      */
     public function NeighborhoodOne($id)
     {
-        $query = "SELECT * FROM neighborhoods WHERE hood_id = :id";
+        $query = "SELECT * FROM neighborhoods 
+                    WHERE hood_id = :id
+                    AND deleted = 0";
 
         $stmt = static::$dbh->prepare($query);
 
@@ -164,22 +170,45 @@ class NeighborhoodModel extends Model
 
     }
 
+    /**
+     * function to display MIN aggregate to show the minimum house price of all neighborhoods
+     * @return decimal min house price
+     */
     public function minPrice()
-        {
-            $query = "SELECT MIN(house_price_min) FROM neighborhoods";
-            $stmt =  static::$dbh->query($query);
-            $price = $stmt->fetchAll(\PDO::FETCH_ASSOC);
-            return $price;
-        }
+    {
+        $query = "SELECT MIN(house_price_min) 
+                    FROM neighborhoods 
+                    WHERE deleted = 0";
+        $stmt =  static::$dbh->query($query);
+        $price = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+        return $price;
+    }
 
+    /**
+     * function to display MAX aggregate to show the minimum house price of all neighborhoods
+     * @return decimal max house price
+     */
     public function maxPrice()
-        {
-            $query = "SELECT MAX(house_price_max) FROM neighborhoods";
-            $stmt =  static::$dbh->query($query);
-            $price = $stmt->fetchAll(\PDO::FETCH_ASSOC);
-            return $price;
-        }
+    {
+        $query = "SELECT MAX(house_price_max) 
+                    FROM neighborhoods
+                    WHERE deleted = 0";
+        $stmt =  static::$dbh->query($query);
+        $price = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+        return $price;
+    }
 
-    
+    final public function delete(int $id)
+    {
+        $query = "UPDATE neighborhoods 
+                    SET deleted = 1
+                    WHERE hood_id = :hood_id";
+        $stmt = static::$dbh->query($query);
+        $params = array(
+                    ':hood_id' => $id
+        );
+        return $stmt->execute($params);
+        
+    }
 }
 
