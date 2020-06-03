@@ -165,7 +165,9 @@ require __DIR__ . '/../includes/header.inc.php';
                        title="Use accesskey c" />
               </p>
           </form>
-          <p><a href="#">Back to Top</a></p>
+          <form action="#top">
+            <button class="to_top" type="submit">Back to Top</button>
+          </form>
         </div>
         
       <!-- this is the community events portion-->
@@ -179,7 +181,9 @@ require __DIR__ . '/../includes/header.inc.php';
             French Immersion schools will have bussing service for elementary grade children 
             who live in the catchment area but are too far away to walk.  Junior high and high
             school stuents are expected to take Winnipeg Transit.</p>
-          <p><a href="#">Back to Top</a></p>
+          <form action="#top">
+            <button class="to_top" type="submit">Back to Top</button>
+          </form>
         </div>
         
       </section>

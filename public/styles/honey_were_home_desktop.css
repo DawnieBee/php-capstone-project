@@ -434,10 +434,12 @@ span.num_items {
     right: 5px;
     top: 5px;
 }
-
+/*checkout page*/
 /* basket of hoods */
 table.basketofhoods{
     border-collapse: collapse;
+    margin-top: 10px;
+    margin-left: 20px;
 }
 table.basketofhoods td,
 table.basketofhoods th {
@@ -445,6 +447,13 @@ table.basketofhoods th {
     padding: 10px;
     border: 1px solid #cfcfcf;
 }
+/*checkout button */
+.confirm {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 20px;
+}
+
 
 @media screen (min-width: 768px) and (max-width: 960px){
     #wrapper{
@@ -458,12 +467,4 @@ table.basketofhoods th {
     -moz-border-end-width: 100%;
     }
 	
-    #logo picture img {
-	
-    }
-    #hero_container .hero img {
-    
-    }
-
-
 }

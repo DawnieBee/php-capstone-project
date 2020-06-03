@@ -36,6 +36,7 @@ require __DIR__ . '/../includes/header.inc.php';
     
 <div>
     <table class="basketofhoods">
+        
         <tr>
             <th><strong>ID</strong></th>
             <th><strong>Neighborhood</strong></th>
@@ -52,10 +53,12 @@ require __DIR__ . '/../includes/header.inc.php';
         <?php endforeach; ?>
 
     </table>
+
     <form action="process_order.php" method="post">
         <input type="hidden" name="csrf" value="<?=csrfToken()?>" />
-    <button type="submit"><a>Confirm</a></button>
+        <button class="confirm" type="submit">Confirm</button>
     </form>
+
 </div>
 
     

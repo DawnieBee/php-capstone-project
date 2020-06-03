@@ -92,7 +92,9 @@ require __DIR__ . '/../includes/header.inc.php';
                 <input type="reset" value="Clear Form" accesskey="c" title="Use accesskey c" />&nbsp;
               </p>
               </form>
-              <p><a href="#">Back to Top</a></p>
+            <form action="#top">
+              <button class="to_top" type="submit">Back to Top</button>
+            </form>
         </div>  <!-- end form container -->
       </section>
       
