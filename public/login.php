@@ -107,6 +107,7 @@ require __DIR__ . '/../includes/header.inc.php';
                 
         <div id="form_container" class="clearfix">
             <form id="form" name="form" method="post" action="login.php" novalidate>
+                <input type="hidden" name="csrf" value="<?=csrfToken()?>" />
                     
                 <fieldset>
                     <legend><?=$title2?></legend>

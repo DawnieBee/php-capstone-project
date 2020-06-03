@@ -116,6 +116,7 @@ require __DIR__ . '/../../includes/admin_nav.inc.php';
                 </table>
             </div> <!-- end col -->
         </div> <!-- end row -->
+        <button class="btn btn-sm"><a href="#">Back to Top</a></button>
     </div> <!-- end container -->
 </body>
 </html>
