@@ -87,6 +87,7 @@ require __DIR__ . '/../../includes/admin_nav.inc.php';
                 <?php endif; ?>
                 
                 <form action="neighborhood_update.php" method="post">
+                    <input type="hidden" name="csrf" value="<?=csrfToken()?>" />
                     
                     <input type="hidden" name="hood_id" readonly value="<?=esc_attr(old('hood_id', $result))?>" />
                     <div class="form-group">
