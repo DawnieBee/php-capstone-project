@@ -8,8 +8,6 @@ require __DIR__ . '/../config.php';
 
 $title = "Areas";
 
-require __DIR__ . '/../includes/header.inc.php';
-
 $neighborhood = new Capstone\NeighborhoodModel();
 
 $result = $neighborhood->all();
@@ -21,7 +19,7 @@ if(!empty($_GET['s'])) {
     // retrieve all neighborhoods if no search
     $result = $neighborhood->all();
 }
-
+require __DIR__ . '/../includes/header.inc.php';
 ?>
 <section>
   
@@ -42,7 +40,7 @@ if(!empty($_GET['s'])) {
     <?php foreach($result as $row) : ?>
       <h2><?=esc($row['name'])?></h2>
       <p class="item_head"><strong>Location: </strong><?=esc(ucwords($row['location']))?></p>
-      <div id="stjames" class="box">
+      <div class="stjames box">
         <img src="images/<?=esc_attr($row['img'])?>" alt="<?=esc_attr($row['name'])?>"
         width="320" height="207" />
         <div class="show_me curved_borders boxshadow">
@@ -50,11 +48,17 @@ if(!empty($_GET['s'])) {
         </div>
         
       </div>
-      <button id="areas_more"><a href="area_detail.php?hood_id=<?=$row['hood_id']?>">More</a></button>
+
+      <p class="areas_more"><a href="area_detail.php?hood_id=<?=$row['hood_id']?>">See More</a></p>
+      
+      
+     
 
     <?php endforeach; ?>
   </div>
-  <p><a href="#">Back to Top</a></p>
+  <form action="#top">
+    <button class="to_top" type="submit">Back to Top</button>
+  </form>
 </section>
 <?php
 
