@@ -54,7 +54,11 @@ div.util ul {
 .boxshadow{
     box-shadow: 0 1px 3px 4px #bababb;
 }
+.to_top {
+    margin-left: 10px;
+    margin-bottom: 10px;
 
+}
 /*    header container styling  */
 
 .header_container{
@@ -173,7 +177,7 @@ position: absolute;
 /*end of home page styling */
 
 /* areas page styling */
-#stjames{
+.stjames{
     margin-left: -36px;
 }
 .show_me{
@@ -188,10 +192,16 @@ position: absolute;
     display: block;
     padding: 20px;
 }
-button#areas_more{
-    margin-left: 10em;
+.areas_more{
+    border: 1px solid #222;
+    border-radius: 3px;
+    background: #efefef;
+    width: 80px;
+    padding: 2px;
+    margin-left: 10px;
+    text-align: center;
 }
-#areas_more a{
+.areas_more a{
     text-decoration: none;
     color: #000;
 }
@@ -232,7 +242,7 @@ table.area_detail{
 }
 table.area_detail td, table.area_detail td:first-child td:first-child {
   
-    padding: 3px;
+    padding: 6px;
 }
 table.area_detail th, table.area_detail tr:first-child th:first-child{
     text-align: right;
@@ -240,11 +250,11 @@ table.area_detail th, table.area_detail tr:first-child th:first-child{
     width: 200px;
     padding-right: 20px;
 }
-#details_back a {
+.details_back a {
     text-decoration: none;
     color: #000;
 }
-button#details_back{
+button.details_back{
     margin-left: 30px;
     margin-bottom: 20px;
 }
