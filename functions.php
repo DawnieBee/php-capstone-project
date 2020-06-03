@@ -153,3 +153,27 @@ function isAdmin()
     }
     return false;
 }
+
+/**
+ * function to create CSRF token on site
+ * @return string encrypted csrf token
+ */
+function createCsrfToken()
+{
+    if(empty($_SESSION['csrf'])){
+        $_SESSION['csrf'] = md5(uniqid() . time());
+    }
+}
+
+/**
+ * this will set the token on the session
+ * @return string 
+ */
+function csrfToken()
+{
+    if(!empty($_SESSION['csrf'])) {
+        return $_SESSION['csrf'];
+    } 
+    createCsrfToken();
+    return $_SESSION['csrf'];
+}
