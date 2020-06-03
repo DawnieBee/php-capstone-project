@@ -43,17 +43,17 @@ require __DIR__ . '/../includes/header.inc.php';
 
 ?>
 
-   <section>
+<section>
        
-        <div id="container" class="clearfix">
-                <div class="search">
-                    <form action="areas.php" method="get" autocomplete="off" novalidate>
-                    <input type="text" id="s" name="s" maxlength="255" placeholder="Search Areas" />&nbsp;
-                    <input type="submit" value="search" />
-                    <div>
-                        <ul id="live_search"></ul>
-                    </div>
-                </form>
+    <div id="container" class="clearfix">
+        <div class="search">
+            <form action="areas.php" method="get" autocomplete="off" novalidate>
+                <input type="text" id="s" name="s" maxlength="255" placeholder="Search Areas" />&nbsp;
+                <input type="submit" value="search" />
+                <div>
+                    <ul id="live_search"></ul>
+                </div>
+            </form>
         </div> <!-- end search -->
         <div class="clear"></div>
             
@@ -123,18 +123,24 @@ require __DIR__ . '/../includes/header.inc.php';
                     <td><?=esc($result['description'])?></td>   
                 </tr>
                 <tr>
-                    <th><form action="basket.php?hood_id<?=esc_attr($result['hood_id'])?>" method="post">
-                        <input type="hidden" name="csrf" value="<?=csrfToken()?>" />
-                        <input type="hidden" name="hood_id" value="<?=esc_attr($result['hood_id'])?>" />
-                        <button type="submit">Add to Basket</button>
-                    </form></th>
-                </tr>
-                
+                    <th></th>
+                    <td>
+                        <form action="basket.php?hood_id<?=esc_attr($result['hood_id'])?>" method="post">
+                            <input type="hidden" name="csrf" value="<?=csrfToken()?>" />
+                            <input type="hidden" name="hood_id" value="<?=esc_attr($result['hood_id'])?>" />
+                            <button type="submit">Add to Basket</button>
+                        </form>
+                    </td>
+                </tr>      
             </table>
-        <button id="details_back"><a href="areas.php">Back</a></button>
 
-        </div>
-    </section>
+        <form action="areas.php">
+            <button class="details_back" type="submit">Back</button>
+        </form>
+
+    </div>
+
+</section>
 
 <?php
 require __DIR__ . '/../includes/footer.inc.php';
