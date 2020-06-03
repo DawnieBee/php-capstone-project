@@ -114,6 +114,7 @@ require __DIR__ . '/../includes/header.inc.php';
                 </tr>
                 <tr>
                     <th><form action="basket.php?hood_id<?=esc_attr($result['hood_id'])?>" method="post">
+                        <input type="hidden" name="csrf" value="<?=csrfToken()?>" />
                         <input type="hidden" name="hood_id" value="<?=esc_attr($result['hood_id'])?>" />
                         <button type="submit">Add to Basket</button>
                     </form></th>
