@@ -37,15 +37,25 @@ if(!empty($post)) {
 
 $title = "Area Detail";
 
-
-
 require __DIR__ . '/../includes/header.inc.php';
+
+
 
 ?>
 
    <section>
        
-       <div id="container" class="clearfix">
+        <div id="container" class="clearfix">
+                <div class="search">
+                    <form action="areas.php" method="get" autocomplete="off" novalidate>
+                    <input type="text" id="s" name="s" maxlength="255" placeholder="Search Areas" />&nbsp;
+                    <input type="submit" value="search" />
+                    <div>
+                        <ul id="live_search"></ul>
+                    </div>
+                </form>
+        </div> <!-- end search -->
+        <div class="clear"></div>
             
             <img class="hood_img" src="images/<?=esc_attr($result['img'])?>" alt="<?=esc_attr($result['name'])?>" />
             
@@ -123,10 +133,10 @@ require __DIR__ . '/../includes/header.inc.php';
             </table>
         <button id="details_back"><a href="areas.php">Back</a></button>
 
-       </div>
-   </section>
+        </div>
+    </section>
 
-   <?php
-   require __DIR__ . '/../includes/footer.inc.php';
+<?php
+require __DIR__ . '/../includes/footer.inc.php';
 
-   ?>
+?>

@@ -54,6 +54,7 @@ div.util ul {
 .boxshadow{
     box-shadow: 0 1px 3px 4px #bababb;
 }
+
 /*    header container styling  */
 
 .header_container{
@@ -194,6 +195,23 @@ button#areas_more{
     text-decoration: none;
     color: #000;
 }
+/*search button */
+div.search {
+    float: right;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.search form {
+    float: left;
+}
+.search form input[type="submit"]{
+    margin-left: 1em;
+    margin-right: 1em;
+}
+.clear{
+    clear: both;
+} 
+/* end search */
 /* end of areas page styling */
 
 /*area detail view */

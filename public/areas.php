@@ -10,15 +10,33 @@ $title = "Areas";
 
 require __DIR__ . '/../includes/header.inc.php';
 
-$neighborhood1 = new Capstone\NeighborhoodModel("St James");
+$neighborhood = new Capstone\NeighborhoodModel();
 
-$result = $neighborhood1->all();
+$result = $neighborhood->all();
+
+// search functionality
+if(!empty($_GET['s'])) {   
+    $result = $neighborhood->searchNeighborhood($_GET['s']);
+} else {
+    // retrieve all neighborhoods if no search
+    $result = $neighborhood->all();
+}
 
 ?>
 <section>
- 
+  
   <div id="container" class="clearfix">
-    
+
+        <div class="search">
+            <form action="areas.php" method="get" autocomplete="off" novalidate>
+                <input type="text" id="s" name="s" maxlength="255" placeholder="Search Areas" />&nbsp;
+                <input type="submit" value="search" />
+                <div>
+                    <ul id="live_search"></ul>
+                </div>
+            </form>
+        </div> <!-- end search -->
+        <div class="clear"></div>
 
     
     <?php foreach($result as $row) : ?>
