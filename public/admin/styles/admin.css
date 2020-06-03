@@ -3,6 +3,11 @@
  * June 1, 2020
  * by Dawn Baker
  */
+
+.nav-link.home {
+    color: #e85154;
+
+}
 /* Dashboard */
 table#dashboard {
     width: 100%;

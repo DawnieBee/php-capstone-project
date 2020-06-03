@@ -5,6 +5,8 @@
  * June 1, 2020
  * by Dawn Baker
  */
+Namespace Capstone;
+
 require __DIR__ . '/../../config.php';
 require CLASSES . '/NeighborhoodModel.php';
 

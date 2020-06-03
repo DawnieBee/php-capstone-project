@@ -57,54 +57,52 @@ require __DIR__ . '/../../includes/admin_nav.inc.php';
         </div> <!-- end search -->
         <div class="clear"></div>
         
-            <h1><?=$subtitle?></h1>
-            <div class="add_hood">
-                <a class="btn btn-primary btn-sm" href="neighborhood_add.php">Add Neighborhood</a>
-            </div>
+        <h1><?=$subtitle?></h1>
+        <div class="add_hood">
+            <a class="btn btn-primary btn-sm" href="neighborhood_add.php">Add Neighborhood</a>
+        </div>
 
 
-            <?php if(!empty($_GET['s'])) : ?>
+        <?php if(!empty($_GET['s'])) : ?>
 
-                <h3>You searched for: <?=$_GET['s']?></h3>
+            <h3>You searched for: <?=$_GET['s']?></h3>
 
-            <?php endif; ?>
+        <?php endif; ?>
 
-            <div class="row">
-                <div class="col-lg-12">
-                    
-                    <table class="table table-striped">
-                        <tbody>
+        <div class="row">
+            <div class="col-lg-12">
+                
+                <table class="table table-striped">
+                    <tbody>
+                        <tr>
+                            <th>ID</th>
+                            <th>Neighborhood</th>
+                            <th>Location</th>
+                            <th>Rating</th>
+                            <th>Description</th>
+                            <th>Actions</th>
+                        </tr>
+                        <!-- get the table properties as a list in table -->
+                        <?php foreach($result as $row) : ?>
                             <tr>
-                                <th>ID</th>
-                                <th>Neighborhood</th>
-                                <th>Location</th>
-                                <th>Rating</th>
-                                <th>Description</th>
-                                <th>Actions</th>
+                                <td><?=esc($row['hood_id'])?></td>
+                                <td><?=esc($row['name'])?></td>
+                                <td><?=esc($row['location'])?></td>
+                                <td><?=esc($row['rating_scale'])?></td>
+                                <td><?=esc($row['description'])?></td>
+                                <td>
+                                    <a class="btn btn-primary btn-sm" href="neighborhood_edit.php?hood_id=<?=$row['hood_id']?>">edit</a>
+                                    <form action="delete.php" method="post">
+                                        <input type="hidden" hood_id="<?=esc_attr(old('hood_id', $post))?>" />
+                                        <button class="delete btn btn-danger btn-sm" type="submit">Delete</button>
+                                    </form>
+                                </td>   
                             </tr>
-                            
-                                <!-- get the table properties as a list in table -->
-                                <?php foreach($result as $row) : ?>
-                                    <tr>
-                                        <td><?=esc($row['hood_id'])?></td>
-                                        <td><?=esc($row['name'])?></td>
-                                        <td><?=esc($row['location'])?></td>
-                                        <td><?=esc($row['rating_scale'])?></td>
-                                        <td><?=esc($row['description'])?></td>
-                                        <td>
-                                            <a class="btn btn-primary btn-sm" href="neighborhood_edit.php?hood_id=<?=$row['hood_id']?>">edit</a>
-                                            <form action="delete.php" method="post">
-                                                <input type="hidden" hood_id="<?=esc_attr(old('hood_id', $post))?>" />
-                                                <button class="delete btn btn-danger btn-sm" type="submit">Delete</button>
-                                            </form>
-                                        </td>   
-                                    </tr>
-                                <?php endforeach; ?>
-                            
-                        </tbody>
-                    </table>
-                </div> <!-- end col -->
-            </div> <!-- end row -->
-        </div> <!-- end container -->
+                        <?php endforeach; ?>                        
+                    </tbody>
+                </table>
+            </div> <!-- end col -->
+        </div> <!-- end row -->
+    </div> <!-- end container -->
 </body>
 </html>
