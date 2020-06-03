@@ -1,5 +1,10 @@
 <?php
-
+/**
+ * after you have chosen to add to basket this is the link to fill basket
+ * Dawn Baker 
+ * June 3 2020 
+ * Capstone project
+ */
 require __DIR__ . '/../config.php';
 
 $title = "Your Basket";
@@ -29,29 +34,29 @@ if(!auth()) {
 require __DIR__ . '/../includes/header.inc.php';
 ?>
     
-    <div>
-        <table class="basketofhoods">
-            <tr>
-                <th><strong>ID</strong></th>
-                <th><strong>Neighborhood</strong></th>
-                <th><strong>Location</strong></th>
-                <th><strong>Rating</strong></th>
-            </tr>
-            <?php foreach ($_SESSION['basket'] as $hood) :?>
-            <tr>
-                <td><?=esc($hood['hood_id'])?></td>
-                <td><?=esc($hood['name'])?></td>
-                <td><?=esc($hood['location'])?></td>
-                <td><?=esc($hood['rating_scale'])?></td>  
-            </tr>
-            <?php endforeach; ?>
+<div>
+    <table class="basketofhoods">
+        <tr>
+            <th><strong>ID</strong></th>
+            <th><strong>Neighborhood</strong></th>
+            <th><strong>Location</strong></th>
+            <th><strong>Rating</strong></th>
+        </tr>
+        <?php foreach ($_SESSION['basket'] as $hood) :?>
+        <tr>
+            <td><?=esc($hood['hood_id'])?></td>
+            <td><?=esc($hood['name'])?></td>
+            <td><?=esc($hood['location'])?></td>
+            <td><?=esc($hood['rating_scale'])?></td>  
+        </tr>
+        <?php endforeach; ?>
 
-        </table>
-        <form action="process_order.php" method="post">
-            <input type="hidden" name="csrf" value="<?=csrfToken()?>" />
-        <button type="submit"><a>Confirm</a></button>
-        </form>
-    </div>
+    </table>
+    <form action="process_order.php" method="post">
+        <input type="hidden" name="csrf" value="<?=csrfToken()?>" />
+    <button type="submit"><a>Confirm</a></button>
+    </form>
+</div>
 
     
 <?php
