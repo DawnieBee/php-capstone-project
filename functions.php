@@ -154,16 +154,6 @@ function isAdmin()
     return false;
 }
 
-/**
- * function to create CSRF token on site
- * @return string encrypted csrf token
- */
-function createCsrfToken()
-{
-    if(empty($_SESSION['csrf'])){
-        $_SESSION['csrf'] = md5(uniqid() . time());
-    }
-}
 
 /**
  * this will set the token on the session
@@ -177,3 +167,14 @@ function csrfToken()
     createCsrfToken();
     return $_SESSION['csrf'];
 }
+/**
+ * function to create CSRF token on site
+ * @return string encrypted csrf token
+ */
+function createCsrfToken()
+{
+    if(empty($_SESSION['csrf'])){
+        $_SESSION['csrf'] = md5(uniqid() . time());
+    }
+}
+
