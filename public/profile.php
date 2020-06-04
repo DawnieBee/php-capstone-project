@@ -7,8 +7,6 @@
  */
 require __DIR__ . '/../config.php';
 
-$title = "Profile";
-
 // verify if there is a valid user logging in 
 if(empty($_SESSION['user_id'])) {
     $_SESSION['errors'] = $errors;
@@ -31,6 +29,7 @@ $params = array(
 $stmt->execute($params);
 $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
+// logged in user will get their basket info
 $query = "SELECT * 
         FROM baskets
         WHERE user_id = :user_id";
@@ -40,6 +39,8 @@ $params = array(
     );
 $stmt->execute($params);
 $basket = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+$title = "Profile";
 
 require __DIR__ . '/../includes/header.inc.php';
 ?>
@@ -69,10 +70,12 @@ require __DIR__ . '/../includes/header.inc.php';
             <strong>Basket</strong>: # <?=esc($row['basket_id'])?><br />
             <strong>Created</strong>: <?=esc($row['created_at'])?><br />
             <strong>Updated</strong>: <?=esc($row['updated_at'])?> </p>
+            <form action="/delete_bakset.php" method="post">
+                <input type="hidden" name="csrf" value="<?=csrfToken()?>" />
+                <input type="hidden" name="basket_id" value="<?=esc_attr($row['basket_id'])?>" />
+                <button onclick="return (confirm('Are you sure you want to delete?'))" type="submit">Delete</button>
             <hr />
         <?php endforeach; ?>
-        
-
 
     </div>
 </section>
