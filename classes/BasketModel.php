@@ -90,4 +90,36 @@ class BasketModel extends Model
         return $result;
     }
     
+    public function delBasket(int $id)
+    {
+        $query = "UPDATE baskets 
+                SET deleted = 1
+                WHERE basket_id = :basket_id";
+            $stmt = static::$dbh->prepare($query);
+            $params = array(
+                ':basket_id' => $id
+            );
+
+            $del = $stmt->execute($params);
+
+            return $del;
+    }
+
+    public function getUserBasket()
+    {
+        $query = "SELECT * 
+            FROM baskets
+            WHERE user_id = :user_id
+            AND deleted = 0";
+        $stmt = static::$dbh->prepare($query);
+        $params = array(
+                'user_id' => $_SESSION['user_id']
+            );
+        $stmt->execute($params);
+
+        $result = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+
+        return $result;
+    }
+
 }
