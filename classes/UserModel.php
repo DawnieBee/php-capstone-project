@@ -38,18 +38,22 @@ class UserModel extends Model
         return $result;
     }
 
-    public function userProfile()
+    public function userProfile($id)
     {
-        $query = 'SELECT * 
-            FROM users 
-            WHERE user_id = :user_id';
-            $stmt = $dbh->prepare($query);
-            $params = array(
-                ':user_id' => $_SESSION['user_id']
-                );
-            $stmt->execute($params);
-            $user = $stmt->fetch(PDO::FETCH_ASSOC);
+        $query = 'SELECT * FROM users 
+            WHERE user_id = :user_id
+            AND deleted = 0';  
+            
+            $stmt = static::$dbh->prepare($query);
 
-            return $user;
+            $params = array(
+                ':user_id' => $id
+            );
+
+            $stmt->execute($params);
+
+            $result = $stmt->fetch(\PDO::FETCH_ASSOC);
+
+            return $result;
     }
 }
