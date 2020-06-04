@@ -1,8 +1,8 @@
 <?php
 /**
- * Dawn Baker
- * Inter PHP
- *Assignment 2
+ * Dawn Baker 
+ * June 3 2020 
+ * Capstone project
  */
 require __DIR__ . '/../config.php';
 
