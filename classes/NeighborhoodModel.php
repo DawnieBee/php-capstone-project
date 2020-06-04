@@ -25,6 +25,7 @@ class NeighborhoodModel extends Model
                 hood_id = :hood_id,
                 name = :name,
                 location = :location,
+                loc_code = :loc_code,
                 description = :description,
                 img = :img,
                 rating_scale = :rating_scale,
@@ -50,6 +51,7 @@ class NeighborhoodModel extends Model
             ':hood_id'=> $_POST['hood_id'],
             ':name' => $_POST['name'],
             ':location' => $_POST['location'],
+            ':loc_code' => $_POST['loc_code'],
             ':description' => $_POST['description'],
             ':img'=> $_POST['img'],
             ':rating_scale' => $_POST['rating_scale'],
@@ -139,15 +141,16 @@ class NeighborhoodModel extends Model
     {
 
         $query = "INSERT INTO neighborhoods
-                (name, location, description, img, rating_scale, police_station, fire_station, library, pool, prim_schools, sec_schools, churches, playgrounds, comm_centres, house_price_min, house_price_max)
+                (name, location, loc_code, description, img, rating_scale, police_station, fire_station, library, pool, prim_schools, sec_schools, churches, playgrounds, comm_centres, house_price_min, house_price_max)
                 VALUES
-                (:name, :location, :description, :img, :rating_scale, :police_station, :fire_station, :library, :pool, :prim_schools, :sec_schools, :churches, :playgrounds, :comm_centres, :house_price_min, :house_price_max)";
+                (:name, :location, :loc_code, :description, :img, :rating_scale, :police_station, :fire_station, :library, :pool, :prim_schools, :sec_schools, :churches, :playgrounds, :comm_centres, :house_price_min, :house_price_max)";
 
         $stmt = static::$dbh->prepare($query);
 
         $params = array(
             ':name' => $_POST['name'],
             ':location' => $_POST['location'],
+            ':loc_code' => $_POST['loc_code'],
             ':description' => $_POST['description'],
             ':img'=> $_POST['img'],
             ':rating_scale' => $_POST['rating_scale'],
