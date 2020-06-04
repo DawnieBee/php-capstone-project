@@ -1,8 +1,9 @@
 <?php
 /**
- * Dawn Baker
- * Inter PHP
- *Assignment 2
+ * login page for users will also test if user is admin 
+ * Dawn Baker 
+ * June 3 2020 
+ * Capstone project
  */
 
 require __DIR__ . '/../config.php';
@@ -97,43 +98,41 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     
 }
 
-
-
 require __DIR__ . '/../includes/header.inc.php';
 
 ?>
 
-    <section>
-                
-        <div id="form_container" class="clearfix">
-            <form id="form" name="form" method="post" action="login.php" novalidate>
-                <input type="hidden" name="csrf" value="<?=csrfToken()?>" />
-                    
-                <fieldset>
-                    <legend><?=$title2?></legend>
-                    <?php if(count($errors) > 0) : ?>
-                    <div class="errors">
-                        <ul>
-                            <?php foreach($errors as $error) : ?>
-                            <li><?=$error?></li>
-                            <?php endforeach; ?>
-                        </ul>
-                    </div>
-                    <?php endif; ?>
-                    <p>Required fields &lpar; <strong style="color:#900;">&ast;</strong> &rpar;</p>
-                    <p><label class="required" for="email">Email:</label>
-                          <input type="text" name="email" id="email" value="<?=old('email', $post)?>" />
-                    <p><label class="required" for="password">Password:</label>
-                          <input type="password" name="password" id="password" value=""  />
-                </fieldset><!-- end fieldset -->
-                
-                <p><input type="submit" value="Login" /></p>
-
-            </form>
+<section>
             
-        </div><!-- end login form -->
-    
-    </section>
+    <div id="form_container" class="clearfix">
+        <form id="form" name="form" method="post" action="login.php" novalidate>
+            <input type="hidden" name="csrf" value="<?=csrfToken()?>" />
+                
+            <fieldset>
+                <legend><?=$title2?></legend>
+                <?php if(count($errors) > 0) : ?>
+                <div class="errors">
+                    <ul>
+                        <?php foreach($errors as $error) : ?>
+                        <li><?=$error?></li>
+                        <?php endforeach; ?>
+                    </ul>
+                </div>
+                <?php endif; ?>
+                <p>Required fields &lpar; <strong style="color:#900;">&ast;</strong> &rpar;</p>
+                <p><label class="required" for="email">Email:</label>
+                      <input type="text" name="email" id="email" value="<?=old('email', $post)?>" />
+                <p><label class="required" for="password">Password:</label>
+                      <input type="password" name="password" id="password" value=""  />
+            </fieldset><!-- end fieldset -->
+            
+            <p><input type="submit" value="Login" /></p>
+
+        </form>
+        
+    </div><!-- end login form -->
+
+</section>
 <?php
 
 require __DIR__ . '/../includes/footer.inc.php'

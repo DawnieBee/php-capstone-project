@@ -1,8 +1,9 @@
 <?php
 /**
+ * Handle form for register.php
  * Dawn Baker
- * Inter PHP
- *Assignment 2
+ * Capstone Project
+ * June 3 2020
  */
 /*
 * Handle Add User Form
