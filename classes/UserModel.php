@@ -49,5 +49,7 @@ class UserModel extends Model
                 );
             $stmt->execute($params);
             $user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+            return $user;
     }
 }
