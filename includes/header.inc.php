@@ -115,7 +115,7 @@
         }
         .required:before {
             content: "*";
-            padding-right:; 5px;
+            padding-right: 5px;
             color: #900;
             font-weight: 700;
         }
