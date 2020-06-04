@@ -27,10 +27,6 @@ require __DIR__ . '/../includes/header.inc.php';
 <h2 class="title">Your basket of hoods</h2> 
 
 <div>
-    <form action=""></form>
-</div>
-
-<div>
     <table class="basketofhoods">
         <tr>
             <th><strong>ID</strong></th>
@@ -49,21 +45,12 @@ require __DIR__ . '/../includes/header.inc.php';
         <tr>
             <td colspan="2">
                 <form action="areas.php">
-                    <button class="details_back" type="submit">Contiue Browsing</button>
+                    <button class="details_back" type="submit">Continue Browsing</button>
                 </form>
             </td>
             <td colspan="2">
                 <form action="checkout.php">
                     <button class="details_back" type="submit">Fill Basket</button>
-                </form>
-            </td>
-        </tr>
-        <tr>
-            <td colspan="4">
-                <form action="delete.php" method="post">
-                    <input type="hidden" name="csrf" value="<?=csrfToken()?>" />
-                    <input type="hidden" name="hood_id" value="<?=esc_attr($row['hood_id'])?>" />
-                    <button onclick="return (confirm('Are you sure you want to delete?'))" class="" type="submit">Empty Basket</button>
                 </form>
             </td>
         </tr>
