@@ -39,7 +39,7 @@ $params = array(
         'user_id' => $_SESSION['user_id']
     );
 $stmt->execute($params);
-$basket = $stmt->fetch(PDO::FETCH_ASSOC);
+$basket = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 require __DIR__ . '/../includes/header.inc.php';
 ?>
@@ -47,29 +47,33 @@ require __DIR__ . '/../includes/header.inc.php';
     <div class="user_info">
         <h2><?=esc($user['first_name'])?>'s Profile Page</h2>
         <p>
-            <strong>First Name</strong>: <?=$user['first_name']?><br />
-            <strong>Last Name</strong>: <?=$user['last_name']?><br />
-            <strong>Email Address</strong>: <?=$user['email']?><br />
-            <strong>Phone Number</strong>: <?=$user['phone_number']?>
+            <strong>First Name</strong>: <?=esc($user['first_name'])?><br />
+            <strong>Last Name</strong>: <?=esc($user['last_name'])?><br />
+            <strong>Email Address</strong>: <?=esc($user['email'])?><br />
+            <strong>Phone Number</strong>: <?=esc($user['phone_number'])?>
         </p>
-        <h3>Mailing Address</h3>
+        <hr />
         <p>
-            <strong>Street</strong>: <?=$user['address']?><br />
-            <strong>City</strong>: <?=$user['city']?><br />
-            <strong>Province</strong>: <?=$user['province']?><br />
-            <strong>First Name</strong>: <?=$user['postal_code']?><br />
-            <strong>First Name</strong>: <?=$user['country']?>
+            <strong>Street</strong>: <?=esc($user['address'])?><br />
+            <strong>City</strong>: <?=esc($user['city'])?><br />
+            <strong>Province</strong>: <?=esc($user['province'])?><br />
+            <strong>First Name</strong>: <?=esc($user['postal_code'])?><br />
+            <strong>First Name</strong>: <?=esc($user['country'])?>
         </p>
     </div>
 
     <div class="basket_info">
         <h2>Your Baskets</h2>
+        <?php foreach($basket as $row) : ?>
         <p>
-            <strong>Basket</strong>: # <?=$basket['basket_id']?><br />
-            created: <?=$basket['created_at']?><br />
-            Updated: <?=$basket['updated_at']?>
+            <strong>Basket</strong>: # <?=esc($row['basket_id'])?><br />
+            <strong>Created</strong>: <?=esc($row['created_at'])?><br />
+            <strong>Updated</strong>: <?=esc($row['updated_at'])?> </p>
+            <hr />
+        <?php endforeach; ?>
+        
 
-        </p>
+
     </div>
 </section>
 <?php

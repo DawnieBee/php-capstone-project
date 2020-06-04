@@ -369,6 +369,7 @@ footer{
 }
 .clearfix::after{
     content: "";
+    display: table;
     clear: both;
 }
 /*end footer*/

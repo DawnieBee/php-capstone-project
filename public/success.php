@@ -1,11 +1,10 @@
 <?php
-/**
- * Dawn Baker
- * Inter PHP
- *Assignment 1
- */
+
 /**
  * registration success page
+ * Dawn Baker 
+ * June 3 2020 
+ * Capstone Project
  */
 
 require __DIR__ . '/../config.php';
@@ -62,22 +61,22 @@ require __DIR__ . '/../includes/header.inc.php';
                 <td><?=$result['phone_number']?></td>
             </tr>
             <tr>
-                <td><strong>Address</strong></td>
+                <th><strong>Address</strong></th>
                 <td><?=$result['address']?></td>
             </tr>
             <tr>
-                <td><strong>City</strong></td>
+                <th><strong>City</strong></th>
                 <td><?=$result['city']?></td>
             </tr>
             <tr>
-                <td><strong>Province</strong></td>
+                <th><strong>Province</strong></th>
                 <td><?=$result['province']?></td>
             </tr>
             <tr>
-                <td><strong>Postal Code</strong></td>
+                <th><strong>Postal Code</strong></th>
                 <td><?=$result['postal_code']?></td>
             </tr>
-                <td><strong>Country</strong></td>
+                <th><strong>Country</strong></th>
                 <td><?=$result['country']?></td>
             </tr>
         </table>
