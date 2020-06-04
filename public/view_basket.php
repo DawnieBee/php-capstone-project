@@ -27,6 +27,10 @@ require __DIR__ . '/../includes/header.inc.php';
 <h2 class="title">Your basket of hoods</h2> 
 
 <div>
+    <form action=""></form>
+</div>
+
+<div>
     <table class="basketofhoods">
         <tr>
             <th><strong>ID</strong></th>
@@ -39,7 +43,7 @@ require __DIR__ . '/../includes/header.inc.php';
             <td><?=esc($hood['hood_id'])?></td>
             <td><?=esc($hood['name'])?></td>
             <td><?=esc($hood['location'])?></td>
-            <td><?=esc($hood['rating_scale'])?></td>  
+            <td><?=esc($hood['rating_scale'])?></td> 
         </tr>
         <?php endforeach; ?>
         <tr>
@@ -54,10 +58,17 @@ require __DIR__ . '/../includes/header.inc.php';
                 </form>
             </td>
         </tr>
+        <tr>
+            <td colspan="4">
+                <form action="delete.php" method="post">
+                    <input type="hidden" name="csrf" value="<?=csrfToken()?>" />
+                    <input type="hidden" name="hood_id" value="<?=esc_attr($row['hood_id'])?>" />
+                    <button onclick="return (confirm('Are you sure you want to delete?'))" class="" type="submit">Empty Basket</button>
+                </form>
+            </td>
+        </tr>
     </table>
-</div>
-
-    
+</div> 
 <?php
 
 require __DIR__ . '/../includes/footer.inc.php'
