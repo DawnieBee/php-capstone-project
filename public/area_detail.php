@@ -33,10 +33,9 @@ if(!empty($post)) {
     }
     // instantiate new model 
     $neighborhood = new NeighborhoodModel();
-    // $result = array();
+
     $result = $neighborhood->NeighborhoodOne($_GET['hood_id']);
-    // dd($result);
-    // die;
+   
 }
 
 
