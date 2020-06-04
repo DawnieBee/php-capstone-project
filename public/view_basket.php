@@ -1,4 +1,10 @@
 <?php
+/**
+ * directed here when you click the view_basket link
+ * Dawn Baker 
+ * June 3 2020 
+ * Capstone project
+ */
 
 require __DIR__ . '/../config.php';
 
@@ -18,36 +24,38 @@ if(count($_SESSION['basket']) == 0) {
 require __DIR__ . '/../includes/header.inc.php';
 ?>
 
-    <h2>Your basket of hoods</h2> 
-    
-    <div>
-        <table class="basketofhoods">
-            <tr>
-                <th><strong>ID</strong></th>
-                <th><strong>Neighborhood</strong></th>
-                <th><strong>Location</strong></th>
-                <th><strong>Rating</strong></th>
-            </tr>
-            <?php foreach($_SESSION['basket'] as $hood) : ?>
-            <tr>
-                <td><?=esc($hood['hood_id'])?></td>
-                <td><?=esc($hood['name'])?></td>
-                <td><?=esc($hood['location'])?></td>
-                <td><?=esc($hood['rating_scale'])?></td>  
-            </tr>
-            <?php endforeach; ?>
-            <tr>
-                <td></td>
-                <td colspan="2">
-                    <button><a href="areas.php" class="btn">Continue Browsing</a></button>
-                </td>
-                <td colspan="2">
-                    <button><a href="checkout.php">Fill Basket</a></button>
-                </td>
-            </tr>
+<h2 class="title">Your basket of hoods</h2> 
 
-        </table>
-    </div>
+<div>
+    <table class="basketofhoods">
+        <tr>
+            <th><strong>ID</strong></th>
+            <th><strong>Neighborhood</strong></th>
+            <th><strong>Location</strong></th>
+            <th><strong>Rating</strong></th>
+        </tr>
+        <?php foreach($_SESSION['basket'] as $hood) : ?>
+        <tr>
+            <td><?=esc($hood['hood_id'])?></td>
+            <td><?=esc($hood['name'])?></td>
+            <td><?=esc($hood['location'])?></td>
+            <td><?=esc($hood['rating_scale'])?></td>  
+        </tr>
+        <?php endforeach; ?>
+        <tr>
+            <td colspan="2">
+                <form action="areas.php">
+                    <button class="details_back" type="submit">Contiue Browsing</button>
+                </form>
+            </td>
+            <td colspan="2">
+                <form action="checkout.php">
+                    <button class="details_back" type="submit">Fill Basket</button>
+                </form>
+            </td>
+        </tr>
+    </table>
+</div>
 
     
 <?php

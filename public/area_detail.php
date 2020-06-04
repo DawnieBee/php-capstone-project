@@ -1,5 +1,10 @@
 <?php
-
+/**
+ * directed here when you click the see more link on areas page
+ * Dawn Baker 
+ * June 3 2020 
+ * Capstone project
+ */
 require __DIR__ . '/../config.php';
 require CLASSES . '/NeighborhoodModel.php';
 

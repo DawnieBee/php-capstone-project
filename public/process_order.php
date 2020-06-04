@@ -1,5 +1,10 @@
 <?php
-
+/**
+ * process order form after checkout.php
+ * Dawn Baker 
+ * June 3 2020 
+ * Capstone project
+ */
 
 $title = "Process Order";
 require __DIR__ . '/../config.php';
@@ -9,10 +14,11 @@ use Capstone\BasketModel;
 
 require CLASSES . '/UserModel.php';
 
-
+// make sure server request is post
 if($_SERVER['REQUEST_METHOD'] !== 'POST') {
     die('Illegal access');
 }
+// make sure all transactions work before submitting to database 
 try{
     $dbh->beginTransaction();
 
