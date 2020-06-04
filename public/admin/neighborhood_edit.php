@@ -62,7 +62,6 @@ require __DIR__ . '/../../includes/admin_nav.inc.php';
 
 ?>
 
-<body>
     <?php if(!empty($flash)) : ?>
             <div class="flash <?=esc_attr($flash['class'])?>">
                 <span><?=esc($flash['message'])?></span>
@@ -88,16 +87,19 @@ require __DIR__ . '/../../includes/admin_nav.inc.php';
                 
                 <form action="neighborhood_update.php" method="post">
                     <input type="hidden" name="csrf" value="<?=csrfToken()?>" />
-                    
-                    <input type="hidden" name="hood_id" readonly value="<?=esc_attr(old('hood_id', $result))?>" />
+                    <input type="hidden" name="hood_id" value="<?=esc_attr(old('hood_id', $result))?>" />
                     <div class="form-group">
                         <p><label for="name">Neighborhood: </label><br />
                             <input class="form-control" type="text" name="name" value="<?=esc_attr(old('name', $result))?>" maxlength="255" /></p>
 
                     </div>
                     <div class="form-group">
-                        <p><label for="location">location: </label><br />
+                        <p><label for="location">Location: </label><br />
                             <input class="form-control" type="text" name="location" value="<?=esc_attr(old('location', $result))?>" maxlength="45"/></p>
+                    </div>
+                    <div class="form-group">
+                        <p><label for="loc_code">Loc Code: </label><br />
+                            <input class="form-control" type="text" name="loc_code" value="<?=esc_attr(old('loc_code', $result))?>" maxlength="3"/></p>
                     </div>
                     <div class="form-group">
                         <p><label for="description">Description: </label><br />

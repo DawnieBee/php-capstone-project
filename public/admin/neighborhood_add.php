@@ -32,7 +32,6 @@ require __DIR__ . '/../../includes/admin_nav.inc.php';
 
 ?>
 
-<body>
     <?php if(!empty($flash)) : ?>
             <div class="flash <?=esc_attr($flash['class'])?>">
                 <span><?=esc($flash['message'])?></span>

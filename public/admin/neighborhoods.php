@@ -48,8 +48,6 @@ require __DIR__ . '/../../includes/admin_header.inc.php';
 require __DIR__ . '/../../includes/admin_nav.inc.php';
 
 ?>
-
-<body>
     
     <?php if(!empty($flash)) : ?>
         <div class="flash <?=esc_attr($flash['class'])?>">
@@ -117,7 +115,9 @@ require __DIR__ . '/../../includes/admin_nav.inc.php';
                 </table>
             </div> <!-- end col -->
         </div> <!-- end row -->
-        <button class="btn btn-sm"><a href="#">Back to Top</a></button>
+        <form action="#top">
+            <button type="submit" class="btn btn-sm">Back to Top</button>
+        </form>
     </div> <!-- end container -->
 </body>
 </html>
