@@ -1,5 +1,10 @@
 <?php
-
+/**
+ * profile page displays Profile info and basket info
+ * Dawn Baker 
+ * June 3 2020 
+ * Capstone project
+ */
 require __DIR__ . '/../config.php';
 
 $title = "Profile";
@@ -26,55 +31,47 @@ $params = array(
 $stmt->execute($params);
 $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
+$query = "SELECT * 
+        FROM baskets
+        WHERE user_id = :user_id";
+$stmt = $dbh->prepare($query);
+$params = array(
+        'user_id' => $_SESSION['user_id']
+    );
+$stmt->execute($params);
+$basket = $stmt->fetch(PDO::FETCH_ASSOC);
+
 require __DIR__ . '/../includes/header.inc.php';
 ?>
-
-    
-    <h2><?=esc($user['first_name'])?>'s Profile Page.</h2> 
-
-
-    
+<section class="clearfix">
     <div class="user_info">
-        <table>
-            <tr>
-                <th><strong>First Name</strong></th>
-                <td><?=$user['first_name']?></td>
-            </tr>
-            <tr>
-                <th><strong>Last Name</strong></th> 
-                <td><?=$user['last_name']?></td>
-            </tr>
-            <tr>
-                <th><strong>Email</strong></th>
-                <td><?=$user['email']?></td>
-            </tr>
-            <tr>
-                <th><strong>Phone Number</strong></th> 
-                <td><?=$user['phone_number']?></td>
-            </tr>
-            <tr>
-                <td><strong>Address</strong></td>
-                <td><?=$user['address']?></td>
-            </tr>
-            <tr>
-                <td><strong>City</strong></td>
-                <td><?=$user['city']?></td>
-            </tr>
-            <tr>
-                <td><strong>Province</strong></td>
-                <td><?=$user['province']?></td>
-            </tr>
-            <tr>
-                <td><strong>Postal Code</strong></td>
-                <td><?=$user['postal_code']?></td>
-            </tr>
-                <td><strong>Country</strong></td>
-                <td><?=$user['country']?></td>
-            </tr>
-        </table>
+        <h2><?=esc($user['first_name'])?>'s Profile Page</h2>
+        <p>
+            <strong>First Name</strong>: <?=$user['first_name']?><br />
+            <strong>Last Name</strong>: <?=$user['last_name']?><br />
+            <strong>Email Address</strong>: <?=$user['email']?><br />
+            <strong>Phone Number</strong>: <?=$user['phone_number']?>
+        </p>
+        <h3>Mailing Address</h3>
+        <p>
+            <strong>Street</strong>: <?=$user['address']?><br />
+            <strong>City</strong>: <?=$user['city']?><br />
+            <strong>Province</strong>: <?=$user['province']?><br />
+            <strong>First Name</strong>: <?=$user['postal_code']?><br />
+            <strong>First Name</strong>: <?=$user['country']?>
+        </p>
     </div>
 
-    
+    <div class="basket_info">
+        <h2>Your Baskets</h2>
+        <p>
+            <strong>Basket</strong>: # <?=$basket['basket_id']?><br />
+            created: <?=$basket['created_at']?><br />
+            Updated: <?=$basket['updated_at']?>
+
+        </p>
+    </div>
+</section>
 <?php
 
 require __DIR__ . '/../includes/footer.inc.php'

@@ -198,30 +198,29 @@
     <?php endif; ?>
     <?php if($title == "Profile") : ?>
     <style> 
+
         .user_info{
+            float: left;
+            width: 300px;
             margin-bottom: 20px;
-        }   
-        h2, p{
+            margin-left: 50px;
+        }  
+        .user_info h2{
+            padding-top: 20px;
+        } 
+        .user_info p{
+            line-height: 1.5em;
+        }
+        .user_info h3, p{
+            padding-top: 0;
+            margin-top: 0;
+        }
+        .basket_info{
+            float: right;
+            width: 300px;
             padding: 20px;
-            margin: 0 auto;
         }
-        table{
-            border: 2px solid #bababb;
-            border-spacing: 0px;
-            border-collapse: collapse;
-            width: 500px;
-            margin: 0 auto;
-        }
-        table td, table th{
-            border: 1px solid #bababb;
-            padding: 10px;
-        }
-        table th, table tr:first-child th:first-child{
-            text-align: left;
-            font-weight: 700;
-            padding: 3px;
-            width: 150px;
-        }
+        
     </style>
     <?php endif; ?>
     <!-- login style -->
@@ -233,7 +232,7 @@
         }
         .required:before {
             content: "*";
-            padding-right:; 5px;
+            padding-right: 5px;
             color: #900;
             font-weight: 700;
         }
