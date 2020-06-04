@@ -42,6 +42,7 @@ class BasketModel extends Model
      * function to add multiple items to a basket for user
      * @param  $items     
      * @param  $basket_id 
+     * 
      */
     public function addBasketItems($items, $basket_id)
     {
@@ -70,7 +71,7 @@ class BasketModel extends Model
     /**
      * function query to retrieve the basket_id to present bookmarked areas to user
      * @param  $basket_id user's basket id
-     * @return result            
+     * @return array            
      */
     public function getBasketItems($basket_id)
     {
@@ -90,6 +91,11 @@ class BasketModel extends Model
         return $result;
     }
     
+    /**
+     * function to delete a basket from the user profile page
+     * @param  int    $id basket_id
+     * @return result deleted item will be updated to 1 in database and basket removed from view    
+     */
     public function delBasket(int $id)
     {
         $query = "UPDATE baskets 
@@ -105,6 +111,10 @@ class BasketModel extends Model
             return $del;
     }
 
+    /**
+     * function to show the profile page the users baskets 
+     * @return array 
+     */
     public function getUserBasket()
     {
         $query = "SELECT * 
