@@ -30,7 +30,8 @@ $user = $model->userProfile($_SESSION['user_id']);
 
 // logged in user will get their basket info
 $model = new BasketModel();
-$basket = $model->getUserBasket($_SESSION['basket_id']);
+$basket = $model->getUserBasket($_SESSION['user_id']);
+dd($basket);
 
 $title = "Profile";
 

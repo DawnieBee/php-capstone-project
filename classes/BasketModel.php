@@ -115,7 +115,7 @@ class BasketModel extends Model
      * function to show the profile page the users baskets 
      * @return array 
      */
-    public function getUserBasket()
+    public function getUserBasket(int $id)
     {
         $query = "SELECT * 
             FROM baskets
@@ -123,7 +123,7 @@ class BasketModel extends Model
             AND deleted = 0";
         $stmt = static::$dbh->prepare($query);
         $params = array(
-                'user_id' => $_SESSION['user_id']
+                'user_id' => $id
             );
         $stmt->execute($params);
 
