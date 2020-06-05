@@ -102,7 +102,7 @@ require __DIR__ . '/../../includes/admin_nav.inc.php';
                                 <td><?=esc($row['rating_scale'])?></td>
                                 <td><?=esc($row['description'])?></td>
                                 <td>
-                                    <a class="btn btn-primary btn-sm" href="neighborhood_edit.php?hood_id=<?=$row['hood_id']?>">edit</a>
+                                    <a class="btn btn-primary btn-sm" href="neighborhood_edit.php?hood_id=<?=$row['hood_id']?>">edit</a>&nbsp;
                                     <form action="delete.php" method="post">
                                         <input type="hidden" name="csrf" value="<?=csrfToken()?>" />
                                         <input type="hidden" name="hood_id" value="<?=esc_attr($row['hood_id'])?>" />
